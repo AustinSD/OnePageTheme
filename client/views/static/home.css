@@ -1,0 +1,7 @@
+.home-page{
+  /* your css goes here */
+ background-image: url("images/frsrain.jpg")
+  color: white;
+}
+.footer {color: #fff; height: 200px; margin: 0px 0px 0px 0px; border-color: 607890; border: 0px solid; border-radius: 0px; padding: 5px 5px 5px 5px; background: #32566E; position: bottom }
+

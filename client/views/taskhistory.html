@@ -1,0 +1,38 @@
+<template name="taskhistory">
+   <h1>Task History</h1>
+   <div class="datagrid">
+   <div class="table-responsive">
+    <table>
+         <thead>
+            <tr>
+               <th>Timestamp</th>
+               <th>Completed</th>
+               <th>Time</th>
+               <th>ASM</th>
+               <th>Task</th>
+               <th>Porter</th>
+               <th>Status</th>
+               <th>Additional Notes</th>
+               <th>Username</th>
+            </tr>
+         </thead>
+         <tbody>
+            {{#each taskhistory}}
+            <tr class={{statusClass status}}>
+               <td>{{timeParse timestamp}}</td>
+               <td>{{timeParse completestamp}}</td>
+               <td>{{time}}</td>
+               <td>{{asm}}</td>
+               <td>{{task}}</td>
+               <td>{{porter}}</td>
+               <td>{{status}}</td>
+               <td>{{notes}}</td>
+               <td>{{username}}</td>
+            </tr>
+            {{/each}}
+         </tbody>
+      </table>
+   </div>
+   </div>
+</template>
+
