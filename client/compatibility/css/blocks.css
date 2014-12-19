@@ -802,7 +802,7 @@
 
 /*Parallax Team*/
 .parallax-team {
-  background: url(../image/team/faces.jpg) 50% 0 repeat fixed;  
+  background: #5C2626;
 }
 
 .parallax-team,
@@ -826,7 +826,7 @@
   padding: 100px 0;
   position: relative;
   text-align: center;
-  background: url(../image/contents/faces.jpg) 50% 0 repeat fixed;  
+  background: #32566E;
 }
 
 .parallax-quote:after {
@@ -836,7 +836,7 @@
   height: 100%; 
   content: " ";
   position: absolute;
-  background: rgba(0,0,0,0.8);
+  background: #32566E;
 }
 
 .parallax-quote:before {
@@ -846,7 +846,7 @@
   height: 100%; 
   content: " ";
   position: absolute;
-  background: url(../image/patterns/gridtile.png) repeat;
+  background: #32566E;
 }
 
 .parallax-quote-in {
@@ -856,7 +856,7 @@
 }
 
 .parallax-quote-in p {
-  color: #fff;
+  color: #<img src="5.png" alt="" /><img src="5.png" alt="" /><img src="5.png" alt="" />fff;
   font-size: 28px;
   text-transform: uppercase;
   font-family: 'Open Sans', sans-serif;

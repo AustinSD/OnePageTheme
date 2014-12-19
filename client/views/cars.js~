@@ -11,7 +11,7 @@
   Template.cars.events({
     'click #btnNewCar': function(e, t) {
       e.preventDefault();
-      $('#newBody').get(0).reset();
+      //$('#newBody').get(0).reset();
       $("#newCarDialog").modal("show");
     },
     'click .updateCar': function(e, t) {

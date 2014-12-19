@@ -19,15 +19,16 @@
 
 
 <!-- Datepicker Forms --> 
-<form class="navbar-form navbar-left" role="search">                                    
+<form class="navbar-form navbar-left">                                    
 <div class="form-group">
 <i class="fa fa-calendar"></i>
 <input class="form-control" type="text" name="start" id="start" placeholder="Start Date" >
 <input class="form-control" type="text" name="finish" id="finish" placeholder="End Date" >
 </div>                       
-<button type="submit" class="btn btn-default btn-sm">Show Date Range</button>                       
+<button type="button" class="btn btn-default submitrange">Show Date Range</button>                       
 </form>
 </div>
+<button type="submit" class="btn btn-default test">Test</button>
 <!-- End Datepicker Forms -->
                     </div> <!-- End panel-body -->                                     
                     <table class="table table-bordered">

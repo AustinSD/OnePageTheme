@@ -36,18 +36,13 @@ $( "#start" ).datepicker( "option", "maxDate", selectedDate );
     // show datepicker
     $('#finish').datepicker();  
   },
-  'click .btn-sm': function(event, template) {
-  	console.log('Date Range Button, From: ' + template.find("#start").value + ' To: ' + template.find("#finish").value );
-  	  var myQuery = {
-    selector: {
-      timestamp: '2012-12-12'
-    },
-    options: {
-      limit: 300,
-      skip: 0
-    }
-  };
-  PeopleFilter.filter.set('timestamp', {value:'2012-12-12', operator: ['$lt']});
-  //CarHistoryFilter.query.set(myQuery);
+  	  'click .submitrange': function(event, template) {
+  	  	var startTime = moment(template.find("#start").value).format('YYYY-MM-DD');
+		var finishTime = moment(template.find("#finish").value).format('YYYY-MM-DD');
+  
+    var myQuery = {
+    selector: {"timestamp": {"$gte": startTime, "$lt": finishTime}},
+    };
+  CarHistoryFilter.query.set(myQuery);
   	}
   });
