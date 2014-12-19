@@ -6,7 +6,7 @@
                                <!-- Begin Content -->
             <div class="col-md-12">
                 <!--Basic Table-->
-                <div class="panel panel-dark-blue margin-bottom-40">
+                <div class="panel panel-blue margin-bottom-40">
                     <div class="panel-heading">
                         <h3 class="panel-title"><i class="fa fa-car"></i>Service Desk</h3>
                         {{#if isCreateUser}}
