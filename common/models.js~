@@ -53,13 +53,103 @@ CarHistoryFilter = new Meteor.FilterCollections(CarsHistory, {
   }
   // Other arguments explained later. See Configuration.
 });
+ShuttleHistoryFilter = new Meteor.FilterCollections(ShuttleHistory, {
+  template: 'shuttlehistory',
+    sort:{
+    order: ['desc', 'asc'],
+    defaults: [
+      ['timestamp', 'desc'],
+    ],
+  },
+  filters: {
+		"driver": {
+		title: 'Driver',
+		operator: ['$regex', 'i'],
+		condition: '$or',
+		searchable: 'required'
+		},
+		"name": {
+		title: 'Name',
+		operator: ['$regex', 'i'],
+		condition: '$or',
+		searchable: 'required'
+		},
+		"timestamp": {
+		title: 'Timestamp',
+		operator: ['$regex', 'i'],
+		condition: '$or',
+		searchable: 'required'
+		},
+		"number": {
+		title: 'Number',
+		operator: ['$regex', 'i'],
+		condition: '$or',
+		searchable: 'required'
+		},
+	},
+  pager: {
+    options: [5, 10, 15, 25, 50],
+    itemsPerPage: 10,
+    currentPage: 1,
+    showPages: 5,
+  }
+  // Other arguments explained later. See Configuration.
+});
+TaskHistoryFilter = new Meteor.FilterCollections(TaskHistory, {
+  template: 'taskhistory',
+    sort:{
+    order: ['desc', 'asc'],
+    defaults: [
+      ['timestamp', 'desc'],
+    ],
+  },
+  filters: {
+		"asm": {
+		title: 'ASM',
+		operator: ['$regex', 'i'],
+		condition: '$or',
+		searchable: 'required'
+		},
+		"timestamp": {
+		title: 'Timestamp',
+		operator: ['$regex', 'i'],
+		condition: '$or',
+		searchable: 'required'
+		},
+		"task": {
+		title: 'Task',
+		operator: ['$regex', 'i'],
+		condition: '$or',
+		searchable: 'required'
+		},
+		"porter": {
+		title: 'Porter',
+		operator: ['$regex', 'i'],
+		condition: '$or',
+		searchable: 'required'
+		},
+		"time": {
+		title: 'Time',
+		operator: ['$regex', 'i'],
+		condition: '$or',
+		searchable: 'required'
+		},		
+	},
+  pager: {
+    options: [5, 10, 15, 25, 50],
+    itemsPerPage: 10,
+    currentPage: 1,
+    showPages: 5,
+  }
+  // Other arguments explained later. See Configuration.
+});
   	 Meteor.subscribe("cars");
     //Meteor.subscribe("carshistory");
     Meteor.subscribe("shuttle");
-    Meteor.subscribe("shuttlehistory");
+    //Meteor.subscribe("shuttlehistory");
     Meteor.subscribe("company");
     Meteor.subscribe("task");
-    Meteor.subscribe("taskhistory");
+    //Meteor.subscribe("taskhistory");
     
 }
 createUserServer = function (options) {

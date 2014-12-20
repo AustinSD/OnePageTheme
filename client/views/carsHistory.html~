@@ -28,10 +28,12 @@
 <button type="button" class="btn btn-default submitrange">Show Date Range</button>                       
 </form>
 </div>
-<button type="submit" class="btn btn-default test">Test</button>
 <!-- End Datepicker Forms -->
-                    </div> <!-- End panel-body -->                                     
-                    <table class="table table-bordered">
+
+<a href="#" class="export"><i class="fa fa-file-excel-o"></i> Export</a>
+</div> <!-- End panel-body -->    
+                                 
+                    <table class="table-responsive" id="carhisttable">
          <thead>
             <tr>
              <th>Timestamp</th>
@@ -131,7 +133,7 @@
 </nav>
 
    <div class="datagrid">
-   <div class="table-responsive" id="carhisttable">
+   <div class="table-responsive" id="carhisttable2">
    <a href="#" class="export">Export Table data into CSV</a>
    <br>
       <table>

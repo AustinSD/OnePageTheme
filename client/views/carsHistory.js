@@ -26,7 +26,7 @@ $( "#start" ).datepicker( "option", "maxDate", selectedDate );
 }
   Template.carshistory.events({
  		'click .export': function (event) {
-			exportTableToCSV.apply(this, [$('#carhisttable>table'), 'export.csv']);
+			exportTableToCSV.apply(this, [$('#carhisttable'), 'export.csv']);
 			},
   'focus #start': function (event) {
     // show datepicker
