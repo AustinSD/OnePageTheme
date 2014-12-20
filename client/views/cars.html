@@ -219,18 +219,146 @@
                         <!-- End Modal -->
 </template>
 
-<template name="newCarDialog2">
-   <div class="modal" id="newCarDialog">
-      <div class="modal-dialog">
-         <div class="modal-content">
-            <div class="modal-header">
-               <button type="button" class="close cancel" data-dismiss="modal">&times;</button>
-               <h2>New Car</h2>
-            </div>
-            <form id="newBody">
-            <div class="modal-body">
-               Vehicle: 
-               <select id="vehicleNew" name="vehicleNew">
+<template name="updateCarDialog">
+                        <!-- Modal -->
+                        <div class="modal fade" id="updateCarDialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                                        <h4 id="myModalLabel" class="modal-title">Update Car</h4>
+                                    </div>
+                                    <form id="newBody">
+							<div class="modal-body">
+	               {{#with getCarID}}
+					
+  <div class="form-group form-group-sm">
+    <label class="col-sm-3 control-label" for="vehicleUpdate">Vehicle</label>
+    <div class="col-sm-8" id="vehicleUpdate">
+    	{{vehicle}}
+    </div>
+  </div>
+<br>
+  <div class="form-group form-group-sm">
+    <label class="col-sm-3 control-label" for="colorUpdate">Color</label>
+    <div class="col-sm-8" id="colorUpdate">
+		{{color}}
+    </div>
+  </div>
+<br>
+    <div class="form-group form-group-sm">
+    <label class="col-sm-3 control-label" for="tagnumUpdate">Tag Number</label>
+    <div class="col-sm-8" id="tagnumUpdate">
+      {{tagnum}}
+    </div>
+  </div>
+<br>
+  <div class="form-group form-group-sm">
+    <label class="col-sm-3 control-label" for="vinUpdate">VIN</label>
+    <div class="col-sm-8" id="vinUpdate">
+      {{vin}}
+    </div>
+  </div>
+  <br>
+  <div class="form-group form-group-sm">
+    <label class="col-sm-3 control-label" for="asmUpdate">ASM</label>
+    <div class="col-sm-8" id="asmUpdate">
+    	{{asm}}
+    </div>
+  </div>
+  <br>
+  <div class="form-group form-group-sm">
+    <label class="col-sm-3 control-label" for="teamUpdate">Team</label>
+    <div class="col-sm-8" id="teamUpdate">
+		{{team}}
+    </div>
+  </div>
+   <br>   
+  <div class="form-group form-group-sm">
+    <label class="col-sm-3 control-label" for="username">Username</label>
+    <div class="col-sm-8" id="username">
+		{{username}}
+    </div>
+  </div>
+   <br>   
+  <div class="form-group form-group-sm">
+    <label class="col-sm-3 control-label" for="porterUpdate">Porter</label>
+    <div class="col-sm-8">
+               <select id="porterUpdate" name="porterUpdate" class="form-control">
+               <option></option>
+               {{#with company}} 
+    				{{#each company.porters}}
+               <option {{selected getCarID.porter this }}>{{this}}</option>
+   				{{/each}}
+    				{{/with}}
+               </select>
+    </div>
+  </div>   
+<br>
+  <div class="form-group form-group-sm">
+    <label class="col-sm-3 control-label" for="statusUpdate">Status</label>
+    <div class="col-sm-8">
+               <select id="statusUpdate" name="statusUpdate" class="form-control">
+               <option {{selected status "Prep"}}>Prep</option>
+               <option {{selected status "Ready"}}>Ready</option>
+               <option {{selected status "Waiting"}}>Waiting</option>
+               <option {{selected status "Completed"}}>Completed</option>
+               <option {{selected status "Delete"}}>Delete</option>
+               </select>
+    </div>
+  </div>
+  <br>
+  <div class="form-group form-group-sm">
+    <label class="col-sm-3 control-label" for="washUpdate">Wash</label>
+    <div class="col-sm-8">
+               <select id="washUpdate" name="washUpdate" class="form-control">
+               <option {{selected wash "Yes"}}>Yes</option>
+               <option {{selected wash "No"}}>No</option>
+               <option {{selected wash "In Progress"}}>In Progress</option>
+               <option {{selected wash "Already Washed"}}>Already Washed</option>    
+               </select>
+    </div>
+  </div>
+  <br>
+    <div class="form-group form-group-sm">
+    <label class="col-sm-3 control-label" for="notesUpdate">Notes</label>
+    <div class="col-sm-8">
+			<input class="form-control" type="text" id="notesUpdate" value={{notes}}>      
+    </div>
+  </div>
+  <br>
+  {{/with}}
+
+<br>
+                                    </div>
+                                    </form>
+                                    <div class="modal-footer">
+                                        <button data-dismiss="modal" class="btn-u btn-u-default" type="button">Close</button>
+                                        <button class="btn-u save" type="button">Save changes</button>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                        <!-- End Modal -->
+</template>
+
+<template name="updateCarDialogAdvisor">
+                        <!-- Modal -->
+                        <div class="modal fade" id="updateCarDialogAdvisor" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                                        <h4 id="myModalLabel" class="modal-title">Update Car</h4>
+                                    </div>
+                                    <form id="newBody">
+							<div class="modal-body">
+	               {{#with getCarID}}
+					
+  <div class="form-group form-group-sm">
+    <label class="col-sm-3 control-label" for="vehicleUpdateAdvisor">Vehicle</label>
+    <div class="col-sm-8">
+    	         <select id="vehicleUpdateAdvisor" name="vehicleUpdateAdvisor" class="form-control">
                <option {{selected vehicle "Corolla"}}>Corolla</option>
                <option {{selected vehicle "Camry"}}>Camry</option>
                <option {{selected vehicle "Avalon"}}>Avalon</option>
@@ -262,131 +390,149 @@
                <option {{selected vehicle "Scion xD"}}>Scion xD</option>
                <option {{selected vehicle "Scion FR-S"}}>Scion FR-S</option>
                <option {{selected vehicle "Other"}}>Other</option>
-               </select><br>
-               Color: 
-               <select id="colorNew" name="colorNew">
+               </select>
+    </div>
+  </div>
+<br>
+  <div class="form-group form-group-sm">
+    <label class="col-sm-3 control-label" for="colorUpdateAdvisor">Color</label>
+    <div class="col-sm-8" id="colorUpdateAdvisor">
+		         <select id="colorNew" name="colorNew" class="form-control">
                <option></option>
-               <option {{selected status "White"}}>White</option>
-               <option {{selected status "Black"}}>Black</option>
-               <option {{selected status "Blue"}}>Blue</option>
-               <option {{selected status "Light Blue"}}>Light Blue</option>
-               <option {{selected status "Silver"}}>Silver</option>
-               <option {{selected status "Grey"}}>Grey</option>
-               <option {{selected status "Red"}}>Red</option>
-               <option {{selected status "Burgandy"}}>Burgandy</option>
-               <option {{selected status "Green"}}>Green</option>
-               <option {{selected status "Mint Green"}}>Mint Green</option>
-               <option {{selected status "Brown"}}>Brown</option>
-               <option {{selected status "Beige"}}>Beige</option>
-               <option {{selected status "Orange"}}>Orange</option>
-               <option {{selected status "Yellow"}}>Yellow</option>
-               <option {{selected status "Purple"}}>Purple</option>
-               <option {{selected status "Beige"}}>Beige</option>
-               </select><br>
-               Tag Number: <input type="text" id="tagnumNew" placeholder="Tag Number" /><br>
-               VIN: <input type="text" id="vinNew" placeholder="VIN" /><br>
-               ASM: 
-               <select id="asmNew" name="asmNew">
+               <option {{selected color "White"}}>White</option>
+               <option {{selected color "Black"}}>Black</option>
+               <option {{selected color "Blue"}}>Blue</option>
+               <option {{selected color "Light Blue"}}>Light Blue</option>
+               <option {{selected color "Silver"}}>Silver</option>
+               <option {{selected color "Grey"}}>Grey</option>
+               <option {{selected color "Red"}}>Red</option>
+               <option {{selected color "Burgandy"}}>Burgandy</option>
+               <option {{selected color "Green"}}>Green</option>
+               <option {{selected color "Mint Green"}}>Mint Green</option>
+               <option {{selected color "Brown"}}>Brown</option>
+               <option {{selected color "Beige"}}>Beige</option>
+               <option {{selected color "Orange"}}>Orange</option>
+               <option {{selected color "Yellow"}}>Yellow</option>
+               <option {{selected color "Purple"}}>Purple</option>
+               <option {{selected color "Beige"}}>Beige</option>
+               </select>
+    </div>
+  </div>
+<br>
+    <div class="form-group form-group-sm">
+    <label class="col-sm-3 control-label" for="tagnumUpdateAdvisor">Tag Number</label>
+    <div class="col-sm-8" id="tagnumUpdateAdvisor">
+      <input class="form-control" type="text" id="tagnumUpdateAdvisor" value={{tagnum}}>
+    </div>
+  </div>
+<br>
+  <div class="form-group form-group-sm">
+    <label class="col-sm-3 control-label" for="vinUpdateAdvisor">VIN</label>
+    <div class="col-sm-8" id="vinUpdateAdvisor">
+      <input class="form-control" type="text" id="vinUpdateAdvisor" value={{vin}}>
+    </div>
+  </div>
+  <br>
+  <div class="form-group form-group-sm">
+    <label class="col-sm-3 control-label" for="asmUpdateAdvisor">ASM</label>
+    <div class="col-sm-8" id="asmUpdateAdvisor">
+    	      	<select class="form-control" id="asmUpdateAdvisor" name="asmUpdateAdvisor">
                <option></option>
                {{#with company}} 
     				{{#each company.asm}}
                <option value= {{this}}>{{this}}</option>
    				{{/each}}
     				{{/with}}
-               </select><br>
-               Team:
-               <select id="teamNew" name="teamNew">
-               <option {{selected status "TXM"}}>TXM</option>
-               <option {{selected status "Silver"}}>Silver</option>
-               <option {{selected status "Yellow"}}>Yellow</option>
-               <option {{selected status "Brown"}}>Brown</option>
-               <option {{selected status "Gold"}}>Gold</option>
-               <option {{selected status "Purple"}}>Purple</option>
-               <option {{selected status "Red"}}>Red</option>
-               <option {{selected status "Orange"}}>Orange</option>
-               <option {{selected status "Detail"}}>Detail</option>
-               </select><br>
-               Status:
-               <select id="statusNew" name="statusNew">
-               <option {{selected status "Prep"}}>Prep</option>
-               <option {{selected status "Ready"}}>Ready</option>              
-               <option {{selected status "Waiting"}}>Waiting</option>
-               </select><br>
-               Notes: <input type="text" id="notesNew" placeholder="Notes" /><br>
-               Wash: 
-               <select id="washNew" >
-               <option {{selected wash "Yes"}}>Yes</option>
-               <option {{selected wash "No"}}>No</option>
-               <option {{selected wash "In Progress"}}>In Progress</option>
-               <option {{selected wash "Already Washed"}}>Already Washed</option>
                </select>
-            </div>
-				</form>
-            <div class="modal-footer">
-               <a href="#" class="btn cancel">Cancel</a>
-               <a href="#" class="btn btn-primary save">Save Car</a>
-            </div>
-         </div>
-      </div>
-   </div>
-</template>
-
-<template name="updateCarDialog">
-   <div class="modal" id="updateCarDialog">
-      <div class="modal-dialog">
-         <div class="modal-content">
-            <div class="modal-header">
-               <button type="button" class="close cancel" data-dismiss="modal">&times;</button>
-               <h2>Update Car</h2>
-            </div>
-            <div class="modal-body">
-               {{#with getCarID}}
-               <h3>Vehicle</h3>
-		         <b>Vehicle: {{vehicle}}</b><br>
-		         <b>Color: {{color}}</b><br>
-		         <b>Tag Number: {{tagnum}}</b><br>
-		         <b>Vin: {{vin}}</b><br>
-		         <b>ASM: {{asm}}</b><br>
-		         <b>Username: {{username}}</b><br>
-               <b>Team: {{team}}</b><br>
-               <br>
-               Porter: 
-               <select id="porter" name="porter">
+    </div>
+  </div>
+  <br>
+  <div class="form-group form-group-sm">
+    <label class="col-sm-3 control-label" for="teamUpdateAdvisor">Team</label>
+    <div class="col-sm-8" id="teamUpdateAdvisor">
+               <select id="teamUpdateAdvisor" name="teamUpdateAdvisor" class="form-control">
+               <option {{selected team "TXM"}}>TXM</option>
+               <option {{selected team "Silver"}}>Silver</option>
+               <option {{selected team "Yellow"}}>Yellow</option>
+               <option {{selected team "Brown"}}>Brown</option>
+               <option {{selected team "Gold"}}>Gold</option>
+               <option {{selected team "Purple"}}>Purple</option>
+               <option {{selected team "Red"}}>Red</option>
+               <option {{selected team "Orange"}}>Orange</option>
+               <option {{selected team "Detail"}}>Detail</option>
+               </select>
+    </div>
+  </div>
+   <br>   
+  <div class="form-group form-group-sm">
+    <label class="col-sm-3 control-label" for="usernameAdvisor">Username</label>
+    <div class="col-sm-8" id="usernameAdvisor">
+		{{username}}
+    </div>
+  </div>
+   <br>   
+  <div class="form-group form-group-sm">
+    <label class="col-sm-3 control-label" for="porterUpdateAdvisor">Porter</label>
+    <div class="col-sm-8">
+               <select id="porterUpdateAdvisor" name="porterUpdateAdvisor" class="form-control">
                <option></option>
                {{#with company}} 
     				{{#each company.porters}}
                <option {{selected getCarID.porter this }}>{{this}}</option>
    				{{/each}}
     				{{/with}}
-               </select><br>
-               Status:
-               <select id="status" name="status">
+               </select>
+    </div>
+  </div>   
+<br>
+  <div class="form-group form-group-sm">
+    <label class="col-sm-3 control-label" for="statusUpdateAdvisor">Status</label>
+    <div class="col-sm-8">
+               <select id="statusUpdateAdvisor" name="statusUpdateAdvisor" class="form-control">
                <option {{selected status "Prep"}}>Prep</option>
                <option {{selected status "Ready"}}>Ready</option>
                <option {{selected status "Waiting"}}>Waiting</option>
                <option {{selected status "Completed"}}>Completed</option>
                <option {{selected status "Delete"}}>Delete</option>
-               </select><br>
-               Wash: 
-               <select id="washUpdate" name="washUpdate">
+               </select>
+    </div>
+  </div>
+  <br>
+  <div class="form-group form-group-sm">
+    <label class="col-sm-3 control-label" for="washUpdateAdvisor">Wash</label>
+    <div class="col-sm-8">
+               <select id="washUpdateAdvisor" name="washUpdateAdvisor" class="form-control">
                <option {{selected wash "Yes"}}>Yes</option>
                <option {{selected wash "No"}}>No</option>
                <option {{selected wash "In Progress"}}>In Progress</option>
-               <option {{selected wash "Already Washed"}}>Already Washed</option>             
-               </select><br>
-					Notes: <input type="text" id="notes" value={{notes}} /><br>
-               {{/with}}
-            </div>
-            <div class="modal-footer">
-               <a href="#" class="btn cancel">Cancel</a>
-               <a href="#" class="btn btn-primary save">Update Car</a>
-            </div>
-         </div>
-      </div>
-   </div>
+               <option {{selected wash "Already Washed"}}>Already Washed</option>    
+               </select>
+    </div>
+  </div>
+  <br>
+    <div class="form-group form-group-sm">
+    <label class="col-sm-3 control-label" for="notesUpdateAdvisor">Notes</label>
+    <div class="col-sm-8">
+			<input class="form-control" type="text" id="notesUpdateAdvisor" value={{notes}}>      
+    </div>
+  </div>
+  <br>
+  {{/with}}
+
+<br>
+                                    </div>
+                                    </form>
+                                    <div class="modal-footer">
+                                        <button data-dismiss="modal" class="btn-u btn-u-default" type="button">Close</button>
+                                        <button class="btn-u save" type="button">Save changes</button>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                        <!-- End Modal -->
 </template>
 
-<template name="updateCarDialogAdvisor">
+<template name="updateCarDialogAdvisor2">
    <div class="modal" id="updateCarDialogAdvisor">
       <div class="modal-dialog">
          <div class="modal-content">
