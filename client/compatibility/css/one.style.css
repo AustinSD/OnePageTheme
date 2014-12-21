@@ -128,18 +128,18 @@ a:hover {
 
 .navbar-default .navbar-nav > li > a:hover {
 	z-index: 1;
-	color: #72c02c;
+	color: #32566E;
 }
 
 .navbar-default .navbar-nav > li > a:focus {
-	color: #72c02c;
+	color: #32566E;
 }
 
 .navbar-default .navbar-nav > .active > a, 
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
 	z-index: 1;
-	color: #72c02c;
+	color: #32566E;
 	background: none;
 }
 
@@ -193,7 +193,7 @@ a:hover {
 }
 
 .top-nav-collapse.navbar-default .navbar-toggle:hover .icon-bar {
-	background: #72c02c;
+	background: #32566E;
 }
 
 @media (max-width: 768px) {

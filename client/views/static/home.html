@@ -66,33 +66,47 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
 
 
     <!-- Intro Section -->
-    <section id="intro"> <!-- took out class="intro-section" -->
-        <div class="fullscreenbanner-container">
-            <div class="fullscreenbanner">
-                <ul>
-                    <!-- SLIDE 1 -->
-                    <li data-transition="curtain-1" data-slotamount="5" data-masterspeed="700" data-title="Slide 1">
-                        <!-- MAIN IMAGE -->
-                        <img src="images/sliders/revolution/bg1.jpg" alt="slidebg1" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
-                    </li>
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+  </ol>
 
-                    <!-- SLIDE 2 -->
-                    <li data-transition="slideup" data-slotamount="5" data-masterspeed="1000" data-title="Slide 2">
-                        <!-- MAIN IMAGE -->
-                        <img src="images/sliders/revolution/bg2.jpg" alt="slidebg1"  data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
-                    </li>
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="images/frsrain.png" alt="...">
+      <div class="carousel-caption">
+        This is a great picture
+      </div>
+    </div>
+    <div class="item">
+      <img src="images/nova1.png" alt="...">
+      <div class="carousel-caption">
+        Great pic by me
+      </div>
+    </div>
+    <div class="item">
+      <img src="images/speedometer.png" alt="...">
+      <div class="carousel-caption">
+        dat speed
+      </div>
+    </div>
+  </div>
 
-                    <!-- SLIDE 3 -->
-                    <li data-transition="slideup" data-slotamount="5" data-masterspeed="700"  data-title="Slide 3">
-                        <!-- MAIN IMAGE -->
-                        <img src="images/sliders/revolution/bg3.jpg"  alt="slidebg1"  data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
-                    </li>                    
-                </ul>
-                <div class="tp-bannertimer tp-bottom"></div>
-                <div class="tp-dottedoverlay twoxtwo"></div>
-            </div>
-        </div>
-    </section>
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
     <!-- End Intro Section -->
     
     <!--  About Section -->
@@ -101,23 +115,23 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
             <div class="container">
                 <div class="row content-boxes-v3">
                     <div class="col-md-4 md-margin-bottom-30">
-                        <i class="icon-custom rounded-x icon-bg-dark fa fa-lightbulb-o"></i>
+                        <i class="icon-custom rounded-x icon-bg-dark fa fa-car"></i>
                         <div class="content-boxes-in-v3">
-                            <h2 class="heading-sm">Service Desk</h2>
+                            <h2 class="heading-sm">Service Delivery</h2>
                             <p>Speed and Reliability</p>
                         </div>
                     </div>
                     <div class="col-md-4 md-margin-bottom-30">
-                        <i class="icon-custom rounded-x icon-bg-dark fa fa-flask"></i>
+                        <i class="icon-custom rounded-x icon-bg-dark fa fa-bus"></i>
                         <div class="content-boxes-in-v3">
                             <h2 class="heading-sm">Shuttle Log</h2>
                             <p>Online shuttle log for ease of use</p>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <i class="icon-custom rounded-x icon-bg-dark fa fa-bolt"></i>
+                        <i class="icon-custom rounded-x icon-bg-dark fa fa-tasks"></i>
                         <div class="content-boxes-in-v3">
-                            <h2 class="heading-sm">Historical Reporting</h2>
+                            <h2 class="heading-sm">Task Management</h2>
                             <p>Bring precedented accountability</p>
                         </div>
                     </div>
@@ -128,12 +142,12 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
         <div class="about-image bg-grey">
             <div class="container">
                 <div class="title-v1">
-                    <h1>We are Unify Agency</h1>
+                    <h1>We are Dealer Logistics</h1>
                     <p>Unify <strong>creative</strong> technology company providing key digital services. <br> 
                     Focused on helping our clients to build a <strong>successful</strong> business on web and mobile.</p>                
                 </div>
                 <div class="img-center">
-                    <img class="img-responsive" src="images/mockup/mockup.png" alt="">
+                    <img class="img-responsive" src="images/mockup/Option1.png" alt="">
                 </div>
             </div>
         </div>        
@@ -148,21 +162,21 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
             <div class="row">
                 <div class="col-md-6 content-boxes-v3 margin-bottom-40">
                     <div class="clearfix margin-bottom-30">
-                        <i class="icon-custom icon-md rounded-x icon-bg-u icon-line icon-trophy"></i>
+                        <i class="icon-custom icon-md rounded-x icon-bg-red icon-line icon-trophy"></i>
                         <div class="content-boxes-in-v3">
                             <h2 class="heading-sm">Innovation Leader</h2>
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
                         </div>
                     </div>
                     <div class="clearfix margin-bottom-30">
-                        <i class="icon-custom icon-md rounded-x icon-bg-u icon-line icon-directions"></i>
+                        <i class="icon-custom icon-md rounded-x icon-bg-red icon-line icon-directions"></i>
                         <div class="content-boxes-in-v3">
                             <h2 class="heading-sm">Best Solutions &amp; Approaches</h2>
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
                         </div>
                     </div>
                     <div class="clearfix margin-bottom-30">
-                        <i class="icon-custom icon-md rounded-x icon-bg-u icon-line icon-diamond"></i>
+                        <i class="icon-custom icon-md rounded-x icon-bg-red icon-line icon-diamond"></i>
                         <div class="content-boxes-in-v3">
                             <h2 class="heading-sm">Quality Service &amp; Support</h2>
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
@@ -179,7 +193,7 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
         <div class="parallax-quote parallaxBg">
             <div class="container">
                 <div class="parallax-quote-in">
-                    <p>If you can design one thing <span class="color-green">you can design</span> everything. <br> Just Believe It.</p>
+                    <p>If you can design one thing <span class="color-red">you can design</span> everything. <br> Just Believe It.</p>
                     <small>- HtmlStream -</small>
                 </div>
             </div>
@@ -196,9 +210,9 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
                 <ul class="list-unstyled row">
                     <li class="col-sm-3 col-xs-6 md-margin-bottom-30">
                         <div class="team-img">
-                            <img class="img-responsive" src="images/team/bryan_about2.jpg" alt="">
+                            <img class="img-responsive" src="images/team/bryan_about2.jpg" alt="Bryan Partipilo" height="342" width="326">
                             <ul>
-                                <li><a href="#"><i class="icon-custom icon-sm rounded-x fa fa-twitter"></i></a></li>
+                                <li><a href="http://www.twitter.com/bryanpartipilo" target="_blank"><i class="icon-custom icon-sm rounded-x fa fa-twitter"></i></a></li>
                                 <li><a href="#"><i class="icon-custom icon-sm rounded-x fa fa-facebook"></i></a></li>
                                 <li><a href="#"><i class="icon-custom icon-sm rounded-x fa fa-google-plus"></i></a></li>
                             </ul>
@@ -209,7 +223,7 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
                     </li>
                     <li class="col-sm-3 col-xs-6 md-margin-bottom-30">
                         <div class="team-img">
-                            <img class="img-responsive" src="images/team/austin.jpg" alt="">
+                            <img class="img-responsive" src="images/team/austin.jpg" alt="Austin Johnson" height="342" width="326">
                             <ul>
                                 <li><a href="#"><i class="icon-custom icon-sm rounded-x fa fa-twitter"></i></a></li>
                                 <li><a href="#"><i class="icon-custom icon-sm rounded-x fa fa-facebook"></i></a></li>
@@ -230,25 +244,25 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
                     <div class="col-sm-3 col-xs-6">
                         <div class="counters">
                             <span class="counter">10629</span>   
-                            <h4>Users</h4>
+                            <h4>Vehicles Delivered</h4>
                         </div>    
                     </div>
                     <div class="col-sm-3 col-xs-6">
                         <div class="counters">
                             <span class="counter">277</span> 
-                            <h4>Projects</h4>
+                            <h4>Shuttle Rides</h4>
                         </div>    
                     </div>
                     <div class="col-sm-3 col-xs-6">
                         <div class="counters">
                             <span class="counter">78</span>
-                            <h4>Team Members</h4>
+                            <h4>Car Washes</h4>
                         </div>    
                     </div>
                     <div class="col-sm-3 col-xs-6">
                         <div class="counters">
                             <span class="counter">109</span>
-                            <h4>Awards</h4>
+                            <h4>Tasks Completed</h4>
                         </div>    
                     </div>
                 </div>            
@@ -269,36 +283,36 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
             <div class="row service-box-v1">
                 <div class="col-md-4 col-sm-6">
                     <div class="service-block service-block-default">
-                        <i class="icon-custom icon-lg icon-bg-u rounded-x fa fa-lightbulb-o"></i>
-                        <h2 class="heading-md">Web Design &amp; Development</h2>
+                        <i class="icon-custom icon-lg icon-bg-blue rounded-x fa fa-car"></i>
+                        <h2 class="heading-md">Service Delivery</h2>
                         <p>Donec id elit non mi porta gravida at eget metus id elit mi egetine. Fusce dapibus</p>
                         <ul class="list-unstyled">
-                            <li>Logo &amp; Brand Design</li>
-                            <li>Mobile Development</li>
-                            <li>E-commerce</li>
-                            <li>App &amp; Icon Design</li>
-                            <li>Responsive Web Desgin</li>
+                            <li>Real-Time Requests</li>
+                            <li>Vehicle Status Snapshot</li>
+                            <li>Reporting</li>
+                            <li>Porter Assignment</li>
+                            <li>Archived History</li>
                         </ul>                        
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6">
                     <div class="service-block service-block-default">
-                        <i class="icon-custom icon-lg icon-bg-u rounded-x icon-line icon-present"></i>
-                        <h2 class="heading-sm">Marketing &amp; Cunsulting</h2>
-                        <p>Donec id elit non mi porta gravida at eget metus id elit mi egetine usce dapibus elit nondapibus</p>
+                        <i class="icon-custom icon-lg icon-bg-blue rounded-x icon-line icon-present"></i>
+                        <h2 class="heading-sm">Shuttle Log</h2>
+                        <p>Improve customer service experience by effectively managing shuttle requests, route planning, and time management.</p>
                         <ul class="list-unstyled">
-                            <li>Analysis &amp; Consulting</li>
-                            <li>Mobile Development</li>
-                            <li>Email Marketing</li>
-                            <li>App &amp; Icon Design</li>
-                            <li>Responsive Web Desgin</li>
+                            <li>Real-Time Submission</li>
+                            <li>Driver Assignment</li>
+                            <li>Shuttle Status Snapshot</li>
+                            <li>Notes</li>
+                            <li>Mobile Management</li>
                         </ul>                        
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-12">
                     <div class="service-block service-block-default">            
-                        <i class="icon-custom icon-lg icon-bg-u rounded-x icon-line icon-rocket"></i>
-                        <h2 class="heading-sm">SEO &amp; Advertising</h2>
+                        <i class="icon-custom icon-lg icon-bg-blue rounded-x icon-line icon-rocket"></i>
+                        <h2 class="heading-sm">Task Management</h2>
                         <p>Donec id elit non mi porta gravida at eget metus id elit mi egetine. Fusce dapibus</p>
                         <ul class="list-unstyled">
                             <li>Google AdSense</li>
@@ -418,7 +432,7 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
                         <ul class="list-unstyled owl-twitter-v1">
                             <li class="item">
                                 <p>Unify has reached 10000 plus sales and we just want to thank you to our all customers for being part of the Unify Template success <a href="http://bit.ly/1c0UN3Y">http://bit.ly/1c0UN3Y</a></p>
-                                <span>3 min ago via <a href="https://twitter.com/htmlstream">@htmlstream</a></span>
+                                <span>3 min ago via <a href="https://twitter.com/bryanpartipilo">@bryanpartipilo</a></span>
                             </li>
                             <li class="item">
                                 <p><a href="#">@htmlstream</a> jQuery lightGallery - Lightweight jQuery lightbox gallery for displaying image and video gallery <a href="#">http://sachinchoolur.github.io/lightGallery</a> <a href="#">#javascript</a></p>
@@ -620,10 +634,10 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
                     <div class="col-md-8 col-md-offset-2">
                         <ul class="list-unstyled owl-ts-v1">
                             <li class="item">
-                                <img class="rounded-x img-bordered" src="images/team/img3-sm.jpg" alt="">
+                                <img class="rounded-x img-bordered" src="images/team/cadwell.jpg" alt="">
                                 <div class="testimonials-v3-title">
-                                    <p>David Case</p>
-                                    <span>Web Developer, Google</span>
+                                    <p>Jeremy Cadwell</p>
+                                    <span>Service Director, Toyota of El Cajon</span>
                                 </div>
                                 <p>I just wanted to tell you how much I like to use Unify - <strong>it's so sleek and elegant!</strong> <br>
                                 The customisation options you implemented are countless, and I feel sorry I can't use them all. Good job, and keep going!</p>
@@ -657,8 +671,7 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
         <div class="container content-lg">
             <div class="title-v1">
                 <h2>Contact Us</h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. <br>
-                It has been the industry's standard dummy text.</p>
+                <p>Interested in learning more about Dealer Logistics and our services? Fill out this quick form and one of our representatives will contact you as soon as possible.</p>
             </div>
 
             <div class="row contacts-in">
@@ -666,8 +679,8 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
                     <ul class="list-unstyled">
                         <li><i class="fa fa-home"></i> 5B Streat, City 50987 New Town US</li>
                         <li><i class="fa fa-phone"></i> 1(800) 220 084</li>
-                        <li><i class="fa fa-envelope"></i> <a href="info@example.com">info@example.com</a></li>
-                        <li><i class="fa fa-globe"></i> <a href="http://htmlstream.com">www.htmlstream.com</a></li>
+                        <li><i class="fa fa-envelope"></i> <a href="info@example.com">info@dealer-logistics.com</a></li>
+                        <li><i class="fa fa-globe"></i> <a href="http://htmlstream.com">www.dealer-logistics.com</a></li>
                     </ul>
                 </div>
 

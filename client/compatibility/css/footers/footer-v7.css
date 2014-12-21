@@ -3,7 +3,7 @@
 .contacts-section {
   color: #fff;
     position: relative;
-  background: #333 url(../../img/bg/bg3.jpg) center fixed;
+  background: #333 url(../images/bg/bg3.jpg) center fixed;
 }
 
 .contacts-section:after {
@@ -23,7 +23,7 @@
   height: 100%; 
   content: " ";
   position: absolute;
-  background: url(../../img/patterns/gridtile.png) repeat;
+  background: url(../images/patterns/gridtile.png) repeat;
 }
 
 /*Contacts Title*/

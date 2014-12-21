@@ -239,7 +239,7 @@ h3.heading-xs {
   content: " ";
   margin-left: -35px;
   position: absolute;
-  background: #72c02c;  
+  background: #5C2626;  
 }
 
 .title-v1 p {
@@ -1796,10 +1796,10 @@ i.icon-bg-u {
    background: #72c02c;
 }
 i.icon-bg-blue {
-   background: #3498db;
+   background: #32566E;
 }
 i.icon-bg-red {
-   background: #e74c3c;
+   background: #5C2626;
 }
 i.icon-bg-sea {
    background: #1abc9c;
@@ -2057,7 +2057,7 @@ i.icon-bg-light-grey {
 }
 
 .service-block-u {
-  background: #72c02c;
+  background: #32566E;
 }
 .service-block-blue {
   background: #3498db;
@@ -2515,7 +2515,7 @@ blockquote.hero.hero-default small {
 }
 
 .testimonials .testimonial-info {
-  color: #72c02c;
+  color: #32566E;
   font-size: 16px;
   padding: 0 15px;
   margin-top: 18px;
@@ -2658,16 +2658,16 @@ blockquote.hero.hero-default small {
 
 /*Testimonials Default*/
 .testimonials-bg-default .item p {
-  background: #72c02c;
+  background: #32566E;
 }
 
 .testimonials.testimonials-bg-default .item p:after,
 .testimonials.testimonials-bg-default .item p:after {
-  border-top-color: #72c02c;
+  border-top-color: #32566E;
 }
 
 .testimonials-bg-default .carousel-arrow i {
-  background: #72c02c;
+  background: #32566E;
 }
 
 .testimonials.testimonials-bg-default .carousel-arrow i:hover {
@@ -3182,7 +3182,7 @@ img.image-md {
 /*Text Colors
 ------------------------------------*/
 .color-sea { color: #1abc9c;}
-.color-red { color: #e74c3c;}
+.color-red { color: #5C2626;}
 .color-aqua { color: #27d7e7;}
 .color-blue { color: #3498db;}
 .color-grey { color: #95a5a6;}

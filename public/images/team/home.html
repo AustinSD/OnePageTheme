@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<!-- saved from url=(0026)http://localhost:3000/home -->
+<html class=" js no-touch csstransforms csstransitions"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" type="text/css" class="__meteor-css__" href="./home_files/facc5c5f8be49602ee884a83a90a8410eead2f27.css">
+
+
+<script type="text/javascript">__meteor_runtime_config__ = {"meteorRelease":"METEOR@1.0.2","ROOT_URL":"http://localhost:3000/","ROOT_URL_PATH_PREFIX":"","appId":"zxjdq6xnj15eswwaa","autoupdateVersion":"a410a5d899d8b4f566bcc5b34b62a7e1fb7b037c","autoupdateVersionRefreshable":"296f9a50b6e630f01fca1c27de755024a6a7dd5c","autoupdateVersionCordova":"none"};</script>
+
+  <script type="text/javascript" src="./home_files/underscore.js"></script>
+  <script type="text/javascript" src="./home_files/meteor.js"></script>
+  <script type="text/javascript" src="./home_files/json.js"></script>
+  <script type="text/javascript" src="./home_files/base64.js"></script>
+  <script type="text/javascript" src="./home_files/ejson.js"></script>
+  <script type="text/javascript" src="./home_files/logging.js"></script>
+  <script type="text/javascript" src="./home_files/reload.js"></script>
+  <script type="text/javascript" src="./home_files/tracker.js"></script>
+  <script type="text/javascript" src="./home_files/random.js"></script>
+  <script type="text/javascript" src="./home_files/retry.js"></script>
+  <script type="text/javascript" src="./home_files/check.js"></script>
+  <script type="text/javascript" src="./home_files/id-map.js"></script>
+  <script type="text/javascript" src="./home_files/ordered-dict.js"></script>
+  <script type="text/javascript" src="./home_files/geojson-utils.js"></script>
+  <script type="text/javascript" src="./home_files/minimongo.js"></script>
+  <script type="text/javascript" src="./home_files/ddp.js"></script>
+  <script type="text/javascript" src="./home_files/follower-livedata.js"></script>
+  <script type="text/javascript" src="./home_files/application-configuration.js"></script>
+  <script type="text/javascript" src="./home_files/mongo.js"></script>
+  <script type="text/javascript" src="./home_files/autoupdate.js"></script>
+  <script type="text/javascript" src="./home_files/meteor-platform.js"></script>
+  <script type="text/javascript" src="./home_files/deps.js"></script>
+  <script type="text/javascript" src="./home_files/jquery.js"></script>
+  <script type="text/javascript" src="./home_files/htmljs.js"></script>
+  <script type="text/javascript" src="./home_files/observe-sequence.js"></script>
+  <script type="text/javascript" src="./home_files/reactive-var.js"></script>
+  <script type="text/javascript" src="./home_files/blaze.js"></script>
+  <script type="text/javascript" src="./home_files/ui.js"></script>
+  <script type="text/javascript" src="./home_files/templating.js"></script>
+  <script type="text/javascript" src="./home_files/iron_core.js"></script>
+  <script type="text/javascript" src="./home_files/iron_dynamic-template.js"></script>
+  <script type="text/javascript" src="./home_files/iron_layout.js"></script>
+  <script type="text/javascript" src="./home_files/iron_url.js"></script>
+  <script type="text/javascript" src="./home_files/iron_middleware-stack.js"></script>
+  <script type="text/javascript" src="./home_files/iron_location.js"></script>
+  <script type="text/javascript" src="./home_files/reactive-dict.js"></script>
+  <script type="text/javascript" src="./home_files/iron_controller.js"></script>
+  <script type="text/javascript" src="./home_files/iron_router.js"></script>
+  <script type="text/javascript" src="./home_files/mizzao_bootstrap-3.js"></script>
+  <script type="text/javascript" src="./home_files/localstorage.js"></script>
+  <script type="text/javascript" src="./home_files/accounts-base.js"></script>
+  <script type="text/javascript" src="./home_files/sha.js"></script>
+  <script type="text/javascript" src="./home_files/srp.js"></script>
+  <script type="text/javascript" src="./home_files/accounts-password.js"></script>
+  <script type="text/javascript" src="./home_files/session.js"></script>
+  <script type="text/javascript" src="./home_files/handlebars.js"></script>
+  <script type="text/javascript" src="./home_files/stylus.js"></script>
+  <script type="text/javascript" src="./home_files/anti_i18n.js"></script>
+  <script type="text/javascript" src="./home_files/url.js"></script>
+  <script type="text/javascript" src="./home_files/oauth.js"></script>
+  <script type="text/javascript" src="./home_files/accounts-oauth.js"></script>
+  <script type="text/javascript" src="./home_files/ian_accounts-ui-bootstrap-3.js"></script>
+  <script type="text/javascript" src="./home_files/alanning_roles.js"></script>
+  <script type="text/javascript" src="./home_files/mizzao_bootboxjs.js"></script>
+  <script type="text/javascript" src="./home_files/service-configuration.js"></script>
+  <script type="text/javascript" src="./home_files/oauth2.js"></script>
+  <script type="text/javascript" src="./home_files/google.js"></script>
+  <script type="text/javascript" src="./home_files/accounts-google.js"></script>
+  <script type="text/javascript" src="./home_files/mrt_moment.js"></script>
+  <script type="text/javascript" src="./home_files/tsega_filter-collections.js"></script>
+  <script type="text/javascript" src="./home_files/coffeescript.js"></script>
+  <script type="text/javascript" src="./home_files/spacebars.js"></script>
+  <script type="text/javascript" src="./home_files/tmeasday_paginated-subscription.js"></script>
+  <script type="text/javascript" src="./home_files/dburles_mongo-collection-instances.js"></script>
+  <script type="text/javascript" src="./home_files/houston_admin.js"></script>
+  <script type="text/javascript" src="./home_files/webapp.js"></script>
+  <script type="text/javascript" src="./home_files/livedata.js"></script>
+  <script type="text/javascript" src="./home_files/launch-screen.js"></script>
+  <script type="text/javascript" src="./home_files/global-imports.js"></script>
+  <script type="text/javascript" src="./home_files/template.accounts_admin.js"></script>
+  <script type="text/javascript" src="./home_files/template.adduser.js"></script>
+  <script type="text/javascript" src="./home_files/template.delete_account_modal.js"></script>
+  <script type="text/javascript" src="./home_files/template.info_account_modal.js"></script>
+  <script type="text/javascript" src="./home_files/template.modifyporters.js"></script>
+  <script type="text/javascript" src="./home_files/template.update_account_modal.js"></script>
+  <script type="text/javascript" src="./home_files/template.update_roles_modal.js"></script>
+  <script type="text/javascript" src="./home_files/template.about.js"></script>
+  <script type="text/javascript" src="./home_files/template.dealerdesk.js"></script>
+  <script type="text/javascript" src="./home_files/template.follow.js"></script>
+  <script type="text/javascript" src="./home_files/template.footer.js"></script>
+  <script type="text/javascript" src="./home_files/template.home.js"></script>
+  <script type="text/javascript" src="./home_files/template.meetstaff.js"></script>
+  <script type="text/javascript" src="./home_files/template.notfound.js"></script>
+  <script type="text/javascript" src="./home_files/template.portertasks.js"></script>
+  <script type="text/javascript" src="./home_files/template.shuttlog.js"></script>
+  <script type="text/javascript" src="./home_files/template.vehiclestatus.js"></script>
+  <script type="text/javascript" src="./home_files/template.adminPanel.js"></script>
+  <script type="text/javascript" src="./home_files/template.cars.js"></script>
+  <script type="text/javascript" src="./home_files/template.carsHistory.js"></script>
+  <script type="text/javascript" src="./home_files/template.header.js"></script>
+  <script type="text/javascript" src="./home_files/template.shuttle.js"></script>
+  <script type="text/javascript" src="./home_files/template.shuttleHistory.js"></script>
+  <script type="text/javascript" src="./home_files/template.signup.js"></script>
+  <script type="text/javascript" src="./home_files/template.task.js"></script>
+  <script type="text/javascript" src="./home_files/template.taskhistory.js"></script>
+  <script type="text/javascript" src="./home_files/template.index.js"></script>
+  <script type="text/javascript" src="./home_files/back-to-top.js"></script>
+  <script type="text/javascript" src="./home_files/bootstrap.js"></script>
+  <script type="text/javascript" src="./home_files/bootstrap.min.js"></script>
+  <script type="text/javascript" src="./home_files/gmap.js"></script>
+  <script type="text/javascript" src="./home_files/html5shiv.js"></script>
+  <script type="text/javascript" src="./home_files/icons-lte-ie7.js"></script>
+  <script type="text/javascript" src="./home_files/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="./home_files/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="./home_files/jquery.counterup.js"></script>
+  <script type="text/javascript" src="./home_files/jquery.counterup.min.js"></script>
+  <script type="text/javascript" src="./home_files/jquery.cubeportfolio.js"></script>
+  <script type="text/javascript" src="./home_files/jquery.cubeportfolio.min.js"></script>
+  <script type="text/javascript" src="./home_files/jquery.easing.min.js"></script>
+  <script type="text/javascript" src="./home_files/jquery.mixitup.min.js"></script>
+  <script type="text/javascript" src="./home_files/jquery.parallax.js"></script>
+  <script type="text/javascript" src="./home_files/jquery.themepunch.revolution.min.js"></script>
+  <script type="text/javascript" src="./home_files/jquery.themepunch.tools.min.js"></script>
+  <script type="text/javascript" src="./home_files/modernizr.custom.js"></script>
+  <script type="text/javascript" src="./home_files/owl.carousel.js"></script>
+  <script type="text/javascript" src="./home_files/owl.carousel.min.js"></script>
+  <script type="text/javascript" src="./home_files/pace.min.js"></script>
+  <script type="text/javascript" src="./home_files/respond.js"></script>
+  <script type="text/javascript" src="./home_files/waypoints.js"></script>
+  <script type="text/javascript" src="./home_files/waypoints.min.js"></script>
+  <script type="text/javascript" src="./home_files/owl-carousel.js"></script>
+  <script type="text/javascript" src="./home_files/pace-loader.js"></script>
+  <script type="text/javascript" src="./home_files/revolution-slider.js"></script>
+  <script type="text/javascript" src="./home_files/style-switcher.js"></script>
+  <script type="text/javascript" src="./home_files/accounts_admin.js"></script>
+  <script type="text/javascript" src="./home_files/adduser.js"></script>
+  <script type="text/javascript" src="./home_files/delete_account_modal.js"></script>
+  <script type="text/javascript" src="./home_files/info_account_modal.js"></script>
+  <script type="text/javascript" src="./home_files/modifyporters.js"></script>
+  <script type="text/javascript" src="./home_files/startup.js"></script>
+  <script type="text/javascript" src="./home_files/update_account_modal.js"></script>
+  <script type="text/javascript" src="./home_files/update_roles_modal.js"></script>
+  <script type="text/javascript" src="./home_files/one.app.js"></script>
+  <script type="text/javascript" src="./home_files/home.js"></script>
+  <script type="text/javascript" src="./home_files/adminPanel.js"></script>
+  <script type="text/javascript" src="./home_files/cars.js"></script>
+  <script type="text/javascript" src="./home_files/carsHistory.js"></script>
+  <script type="text/javascript" src="./home_files/header.js"></script>
+  <script type="text/javascript" src="./home_files/shuttle.js"></script>
+  <script type="text/javascript" src="./home_files/shuttleHistory.js"></script>
+  <script type="text/javascript" src="./home_files/signup.js"></script>
+  <script type="text/javascript" src="./home_files/task.js"></script>
+  <script type="text/javascript" src="./home_files/taskhistory.js"></script>
+  <script type="text/javascript" src="./home_files/exportcsv.js"></script>
+  <script type="text/javascript" src="./home_files/user_query.js"></script>
+  <script type="text/javascript" src="./home_files/index.js"></script>
+  <script type="text/javascript" src="./home_files/collections.js"></script>
+  <script type="text/javascript" src="./home_files/models.js"></script>
+  <script type="text/javascript" src="./home_files/routes.js"></script>
+
+
+
+
+</head>
+<body class=" pace-done" data-feedly-mini="yes"><div class="pace  pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="width: 100%;">
+  <div class="pace-progress-inner"></div>
+</div>
+<div class="pace-activity"></div></div>
+
+
+
+
+	
+	
+	
+
+	<!-- if we're not showing a dropdown, we need some other place to show messages -->
+	<div id="topcontrol" title="Scroll Back to Top" style="position: fixed; bottom: 5px; right: 5px; cursor: pointer; opacity: 1;"><img src="./home_files/up.png" style="width:51px; height:42px"></div><head>
+  <title>Dealer Logistics</title>
+</head>
+<!--<header>
+{{> yield "header"}}
+</header>-->
+
+<div class="mainBody">
+<!-- 
+The #page-top ID is part of the scrolling feature.
+The data-spy and data-target are part of the built-in Bootstrap scrollspy function.
+-->
+<body id="body" data-spy="scroll" class="demo-lightbox-gallery">
+    <!--=== Header ===-->    
+    <nav class="navbar navbar-default navbar-fixed-top top-nav-collapse" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://localhost:3000/home#intro">
+                    <img src="./home_files/logosmall.png" alt="Logo"> 
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="page-scroll home">
+                        <a href="http://localhost:3000/home#body">Home</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="http://localhost:3000/home#about">About Us</a>
+                    </li>
+                    <li class="page-scroll active">
+                        <a href="http://localhost:3000/home#services">Services</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="http://localhost:3000/home#news">News</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="http://localhost:3000/home#portfolio">Portfolio</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="http://localhost:3000/home#contact">Contact</a>
+                    </li>                    
+                    <li class="page-scroll">
+                        <a href="http://localhost:3000/cars">App</a>
+                    </li>
+                    
+		
+			
+		<li id="login-dropdown-list" class="dropdown">
+		<a class="dropdown-toggle" data-toggle="dropdown">
+			bpartipilo@gmail.com
+			
+			<b class="caret"></b>
+		</a>
+		<div class="dropdown-menu col-sm-3">
+			
+				
+					
+
+	
+		<button class="btn btn-default btn-block" id="login-buttons-open-change-password">Change password</button>
+	
+
+	<button class="btn btn-block btn-primary" id="login-buttons-logout">Sign out</button>
+				
+			
+		</div>
+	</li>
+	
+		
+	
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <!--=== End Header ===-->    
+
+
+    <!-- Intro Section -->
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="./home_files/frsrain.jpg" alt="...">
+      <div class="carousel-caption">
+        This is a great picture
+      </div>
+    </div>
+    <div class="item">
+      <img src="./home_files/nova1.jpg" alt="...">
+      <div class="carousel-caption">
+        Great pic by me
+      </div>
+    </div>
+    ...
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="http://localhost:3000/home#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="http://localhost:3000/home#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+    <!-- End Intro Section -->
+    
+    <!--  About Section -->
+    <section id="about" class="about-section section-first">
+        <div class="block-v1">
+            <div class="container">
+                <div class="row content-boxes-v3">
+                    <div class="col-md-4 md-margin-bottom-30">
+                        <i class="icon-custom rounded-x icon-bg-dark fa fa-car"></i>
+                        <div class="content-boxes-in-v3">
+                            <h2 class="heading-sm">Service Delivery</h2>
+                            <p>Speed and Reliability</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 md-margin-bottom-30">
+                        <i class="icon-custom rounded-x icon-bg-dark fa fa-bus"></i>
+                        <div class="content-boxes-in-v3">
+                            <h2 class="heading-sm">Shuttle Log</h2>
+                            <p>Online shuttle log for ease of use</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <i class="icon-custom rounded-x icon-bg-dark fa fa-tasks"></i>
+                        <div class="content-boxes-in-v3">
+                            <h2 class="heading-sm">Task Management</h2>
+                            <p>Bring precedented accountability</p>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+
+        <div class="about-image bg-grey">
+            <div class="container">
+                <div class="title-v1">
+                    <h1>We are Dealer Logistics</h1>
+                    <p>Unify <strong>creative</strong> technology company providing key digital services. <br> 
+                    Focused on helping our clients to build a <strong>successful</strong> business on web and mobile.</p>                
+                </div>
+                <div class="img-center">
+                    <img class="img-responsive" src="./home_files/Option1.png" alt="">
+                </div>
+            </div>
+        </div>        
+
+        <div class="container content-lg">
+            <div class="title-v1">
+                <h2>Our Vision And Mission</h2>
+                <p>We <strong>meet</strong> and get to know you. You tell us and we listen. <br> 
+                We build your website to realise your vision and we <strong>deliver</strong> the ready product.</p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 content-boxes-v3 margin-bottom-40">
+                    <div class="clearfix margin-bottom-30">
+                        <i class="icon-custom icon-md rounded-x icon-bg-u icon-line icon-trophy"></i>
+                        <div class="content-boxes-in-v3">
+                            <h2 class="heading-sm">Innovation Leader</h2>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+                        </div>
+                    </div>
+                    <div class="clearfix margin-bottom-30">
+                        <i class="icon-custom icon-md rounded-x icon-bg-u icon-line icon-directions"></i>
+                        <div class="content-boxes-in-v3">
+                            <h2 class="heading-sm">Best Solutions &amp; Approaches</h2>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+                        </div>
+                    </div>
+                    <div class="clearfix margin-bottom-30">
+                        <i class="icon-custom icon-md rounded-x icon-bg-u icon-line icon-diamond"></i>
+                        <div class="content-boxes-in-v3">
+                            <h2 class="heading-sm">Quality Service &amp; Support</h2>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <img class="img-responsive" src="./home_files/mockup1.png" alt="">
+                </div>
+            </div>
+        </div>        
+
+        <div class="parallax-quote parallaxBg" style="background-position: 50% -434px;">
+            <div class="container">
+                <div class="parallax-quote-in">
+                    <p>If you can design one thing <span class="color-red">you can design</span> everything. <br> Just Believe It.</p>
+                    <small>- HtmlStream -</small>
+                </div>
+            </div>
+        </div>        
+
+        <div class="team-v1 bg-grey content-lg">
+            <div class="container">
+                <div class="title-v1">
+                    <h2>Meet Our Team</h2>
+                    <p>We <strong>meet</strong> and get to know you. You tell us and we listen. <br> 
+                    We build your website to realise your vision and we <strong>deliver</strong> the ready product.</p>
+                </div>
+
+                <ul class="list-unstyled row">
+                    <li class="col-sm-3 col-xs-6 md-margin-bottom-30">
+                        <div class="team-img">
+                            <img class="img-responsive" src="./home_files/bryan_about2.jpg" alt="">
+                            <ul>
+                                <li><a href="http://www.twitter.com/bryanpartipilo" target="_blank"><i class="icon-custom icon-sm rounded-x fa fa-twitter"></i></a></li>
+                                <li><a href="http://localhost:3000/home#"><i class="icon-custom icon-sm rounded-x fa fa-facebook"></i></a></li>
+                                <li><a href="http://localhost:3000/home#"><i class="icon-custom icon-sm rounded-x fa fa-google-plus"></i></a></li>
+                            </ul>
+                        </div>
+                        <h3>Bryan Partipilo</h3>
+                        <h4>Co-Founder, CEO</h4>
+                        <p>In charge of all things related to Booger</p>
+                    </li>
+                    <li class="col-sm-3 col-xs-6 md-margin-bottom-30">
+                        <div class="team-img">
+                            <img class="img-responsive" src="./home_files/austin.jpg" alt="">
+                            <ul>
+                                <li><a href="http://localhost:3000/home#"><i class="icon-custom icon-sm rounded-x fa fa-twitter"></i></a></li>
+                                <li><a href="http://localhost:3000/home#"><i class="icon-custom icon-sm rounded-x fa fa-facebook"></i></a></li>
+                                <li><a href="http://localhost:3000/home#"><i class="icon-custom icon-sm rounded-x fa fa-google-plus"></i></a></li>
+                            </ul>
+                        </div>
+                        <h3>Austin Johnson</h3>
+                        <h4>Co-Founder, COO</h4>
+                        <p>Lead Designer and Badass</p>
+                    </li>
+                </ul>                
+            </div>
+        </div>
+
+        <div class="parallax-counter parallaxBg" style="background-position: 50% -434px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3 col-xs-6">
+                        <div class="counters">
+                            <span class="counter">10629</span>   
+                            <h4>Users</h4>
+                        </div>    
+                    </div>
+                    <div class="col-sm-3 col-xs-6">
+                        <div class="counters">
+                            <span class="counter">277</span> 
+                            <h4>Projects</h4>
+                        </div>    
+                    </div>
+                    <div class="col-sm-3 col-xs-6">
+                        <div class="counters">
+                            <span class="counter">78</span>
+                            <h4>Team Members</h4>
+                        </div>    
+                    </div>
+                    <div class="col-sm-3 col-xs-6">
+                        <div class="counters">
+                            <span class="counter">109</span>
+                            <h4>Awards</h4>
+                        </div>    
+                    </div>
+                </div>            
+            </div>
+        </div>        
+    </section>
+    <!--  About Section -->
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container content-lg">
+            <div class="title-v1">
+                <h2>Our Services</h2>
+                <p>We do <strong>things</strong> differently company providing key digital services. <br> 
+                Focused on helping our clients to build a <strong>successful</strong> business on web and mobile.</p>                
+            </div>            
+    
+            <div class="row service-box-v1">
+                <div class="col-md-4 col-sm-6">
+                    <div class="service-block service-block-default">
+                        <i class="icon-custom icon-lg icon-bg-u rounded-x fa fa-car"></i>
+                        <h2 class="heading-md">Service Delivery</h2>
+                        <p>Donec id elit non mi porta gravida at eget metus id elit mi egetine. Fusce dapibus</p>
+                        <ul class="list-unstyled">
+                            <li>Real-Time Requests</li>
+                            <li>Vehicle Status Snapshot</li>
+                            <li>Reporting</li>
+                            <li>Porter Assignment</li>
+                            <li>Archived History</li>
+                        </ul>                        
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="service-block service-block-default">
+                        <i class="icon-custom icon-lg icon-bg-u rounded-x icon-line icon-present"></i>
+                        <h2 class="heading-sm">Shuttle Log</h2>
+                        <p>Donec id elit non mi porta gravida at eget metus id elit mi egetine usce dapibus elit nondapibus</p>
+                        <ul class="list-unstyled">
+                            <li>Real-Time Submission</li>
+                            <li>Driver Assignment</li>
+                            <li>Shuttle Status Snapshot</li>
+                            <li>Notes</li>
+                            <li>Mobile Management</li>
+                        </ul>                        
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <div class="service-block service-block-default">            
+                        <i class="icon-custom icon-lg icon-bg-u rounded-x icon-line icon-rocket"></i>
+                        <h2 class="heading-sm">Task Management</h2>
+                        <p>Donec id elit non mi porta gravida at eget metus id elit mi egetine. Fusce dapibus</p>
+                        <ul class="list-unstyled">
+                            <li>Google AdSense</li>
+                            <li>Social Media</li>
+                            <li>Display Advertising</li>
+                            <li>App &amp; Icon Design</li>
+                            <li>Analysis &amp; Consulting</li>
+                        </ul>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <ul class="list-unstyled row portfolio-box-v1">
+            <li class="col-sm-4">
+                <img class="img-responsive" src="./home_files/img1.jpg" alt="">
+                <div class="portfolio-box-v1-in">
+                    <h3>Collective Package</h3>
+                    <p>Web Design, Mock-up</p>
+                    <a class="btn-u btn-u-sm btn-brd btn-brd-hover btn-u-light" href="http://localhost:3000/home#">Read More</a>
+                </div>
+            </li>
+            <li class="col-sm-4">
+                <img class="img-responsive" src="./home_files/img2.jpg" alt="">
+                <div class="portfolio-box-v1-in">
+                    <h3>Ahola Company</h3>
+                    <p>Brand Design, UI</p>
+                    <a class="btn-u btn-u-sm btn-brd btn-brd-hover btn-u-light" href="http://localhost:3000/home#">Read More</a>
+                </div>
+            </li>
+            <li class="col-sm-4">
+                <img class="img-responsive" src="./home_files/img4.jpg" alt="">
+                <div class="portfolio-box-v1-in">
+                    <h3>Allan Project</h3>
+                    <p>Web Development, HTML5</p>
+                    <a class="btn-u btn-u-sm btn-brd btn-brd-hover btn-u-light" href="http://localhost:3000/home#">Read More</a>
+                </div>
+            </li>
+        </ul>
+        
+        <div class="call-action-v1">
+            <div class="container">
+                <div class="call-action-v1-box">
+                    <div class="call-action-v1-in">
+                        <p>Unify creative technology company providing key digital services and focused on helping our clients to build a successful business on web and mobile.</p>
+                    </div>
+                    <div class="call-action-v1-in inner-btn page-scroll">
+                        <a href="http://localhost:3000/home#portfolio" class="btn-u btn-brd btn-brd-hover btn-u-dark btn-u-block">View Our Portfolio</a>
+                    </div>
+                </div>
+            </div>
+        </div>                    
+    </section>
+    <!-- End Services Section -->
+
+    <!-- News Section -->
+    <section id="news" class="news-section">
+        <div class="container content-lg">
+            <div class="title-v1">
+                <h2>Latest News</h2>
+                <p>We do <strong>things</strong> differently company providing key digital services. <br> 
+                Focused on helping our clients to build a <strong>successful</strong> business on web and mobile.</p>             
+            </div>
+
+            <div class="row news-v1">
+                <div class="col-md-4 md-margin-bottom-40">
+                    <div class="news-v1-in">
+                        <img class="img-responsive" src="./home_files/img1(1).jpg" alt="">
+                        <h3><a href="http://localhost:3000/home#">Focused on helping our clients to build a successful business</a></h3>
+                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.</p>
+                        <ul class="list-inline news-v1-info">
+                            <li><span>By</span> <a href="http://localhost:3000/home#">Kathy Reyes</a></li>
+                            <li>|</li>
+                            <li><i class="fa fa-clock-o"></i> July 02, 2014</li>
+                            <li class="pull-right"><a href="http://localhost:3000/home#"><i class="fa fa-comments-o"></i> 14</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 md-margin-bottom-40">
+                    <div class="news-v1-in">
+                        <img class="img-responsive" src="./home_files/img4(1).jpg" alt="">
+                        <h3><a href="http://localhost:3000/home#">We build your website to realise your vision and best product</a></h3>
+                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.</p>
+                        <ul class="list-inline news-v1-info">
+                            <li><span>By</span> <a href="http://localhost:3000/home#">John Clarck</a></li>
+                            <li>|</li>
+                            <li><i class="fa fa-clock-o"></i> July 02, 2014</li>
+                            <li class="pull-right"><a href="http://localhost:3000/home#"><i class="fa fa-comments-o"></i> 07</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="news-v1-in">
+                        <img class="img-responsive" src="./home_files/img3.jpg" alt="">
+                        <h3><a href="http://localhost:3000/home#">Focused on helping our clients to build a successful business</a></h3>
+                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.</p>
+                        <ul class="list-inline news-v1-info">
+                            <li><span>By</span> <a href="http://localhost:3000/home#">Tina Kruiger</a></li>
+                            <li>|</li>
+                            <li><i class="fa fa-clock-o"></i> July 02, 2014</li>
+                            <li class="pull-right"><a href="http://localhost:3000/home#"><i class="fa fa-comments-o"></i> 22</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <div class="parallax-twitter parallaxBg" style="background-position: 50% -434px;">
+            <div class="container parallax-twitter-in">
+                <div class="margin-bottom-30">
+                    <i class="icon-custom rounded-x icon-bg-blue fa fa-twitter"></i>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <ul class="list-unstyled owl-twitter-v1">
+                            <li class="item">
+                                <p>Unify has reached 10000 plus sales and we just want to thank you to our all customers for being part of the Unify Template success <a href="http://bit.ly/1c0UN3Y">http://bit.ly/1c0UN3Y</a></p>
+                                <span>3 min ago via <a href="https://twitter.com/bryanpartipilo">@bryanpartipilo</a></span>
+                            </li>
+                            <li class="item">
+                                <p><a href="http://localhost:3000/home#">@htmlstream</a> jQuery lightGallery - Lightweight jQuery lightbox gallery for displaying image and video gallery <a href="http://localhost:3000/home#">http://sachinchoolur.github.io/lightGallery</a> <a href="http://localhost:3000/home#">#javascript</a></p>
+                                <span>10 min ago Retweeted by <a href="https://twitter.com/htmlstream">@twbootstrap</a></span>
+                            </li>
+                            <li class="item">
+                                <p>New 100% Free Stock Photos. Every. Single. Day. Everything you need for your creative projects. <a href="http://localhost:3000/home#">http://publicdomainarchive.com</a></p>
+                                <span>30 min ago via <a href="https://twitter.com/htmlstream">@wrapbootstrap</a></span>
+                            </li>
+                        </ul>                    
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </section>
+    <!-- End News Section -->
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="about-section">
+        <div class="container content-lg">
+            <div class="title-v1">
+                <h2>Our Portfolio</h2>
+                <p>We do <strong>things</strong> differently company providing key digital services. <br> 
+                Focused on helping our clients to build a <strong>successful</strong> business on web and mobile.</p>                
+            </div>
+            <div class="wrapper-portfolio">
+                <div id="filters-container" class="cbp-l-filters-alignLeft">
+                    <div data-filter="*" class="cbp-filter-item-active cbp-filter-item">All (<span class="cbp-filter-counter"></span> items)</div>
+                    <div data-filter=".print" class="cbp-filter-item">Print (<span class="cbp-filter-counter"></span> items)</div>
+                    <div data-filter=".web-design" class="cbp-filter-item">Web Design (<span class="cbp-filter-counter"></span> items)</div>
+                    <div data-filter=".motion" class="cbp-filter-item">Motion (<span class="cbp-filter-counter"></span> items)</div>
+                </div>
+
+                <div id="grid-container" class="cbp-l-grid-gallery">
+                    <ul>
+                        <li class="cbp-item print motion">
+                            <a href="http://localhost:3000/assets/ajax/project1.html" class="cbp-caption cbp-singlePageInline" data-title="World Clock Widget&lt;br&gt;by Paul Flavius Nechita">
+                                <div class="cbp-caption-defaultWrap">
+                                    <img src="./home_files/1.jpg" alt="" width="100">
+                                </div>
+                                <div class="cbp-caption-activeWrap">
+                                    <div class="cbp-l-caption-alignLeft">
+                                        <div class="cbp-l-caption-body">
+                                            <div class="cbp-l-caption-title">World Clock Widget</div>
+                                            <div class="cbp-l-caption-desc">by Paul Flavius Nechita</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="cbp-item web-design">
+                            <a href="http://localhost:3000/assets/ajax/project2.html" class="cbp-caption cbp-singlePageInline" data-title="Bolt UI&lt;br&gt;by Tiberiu Neamu">
+                                <div class="cbp-caption-defaultWrap">
+                                    <img src="./home_files/2.jpg" alt="" width="100">
+                                </div>
+                                <div class="cbp-caption-activeWrap">
+                                    <div class="cbp-l-caption-alignLeft">
+                                        <div class="cbp-l-caption-body">
+                                            <div class="cbp-l-caption-title">Bolt UI</div>
+                                            <div class="cbp-l-caption-desc">by Tiberiu Neamu</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="cbp-item print motion">
+                            <a href="http://localhost:3000/assets/ajax/project3.html" class="cbp-caption cbp-singlePageInline" data-title="WhereTO App&lt;br&gt;by Tiberiu Neamu">
+                                <div class="cbp-caption-defaultWrap">
+                                    <img src="./home_files/3.jpg" alt="" width="100">
+                                </div>
+                                <div class="cbp-caption-activeWrap">
+                                    <div class="cbp-l-caption-alignLeft">
+                                        <div class="cbp-l-caption-body">
+                                            <div class="cbp-l-caption-title">WhereTO App</div>
+                                            <div class="cbp-l-caption-desc">by Tiberiu Neamu</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="cbp-item web-design print">
+                            <a href="http://localhost:3000/assets/ajax/project4.html" class="cbp-caption cbp-singlePageInline" data-title="iDevices&lt;br&gt;by Tiberiu Neamu">
+                                <div class="cbp-caption-defaultWrap">
+                                    <img src="./home_files/11.jpg" alt="" width="100">
+                                </div>
+                                <div class="cbp-caption-activeWrap">
+                                    <div class="cbp-l-caption-alignLeft">
+                                        <div class="cbp-l-caption-body">
+                                            <div class="cbp-l-caption-title">iDevices</div>
+                                            <div class="cbp-l-caption-desc">by Tiberiu Neamu</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="cbp-item motion">
+                            <a href="http://localhost:3000/assets/ajax/project5.html" class="cbp-caption cbp-singlePageInline" data-title="Seemple* Music for iPad&lt;br&gt;by Tiberiu Neamu">
+                                <div class="cbp-caption-defaultWrap">
+                                    <img src="./home_files/5.jpg" alt="" width="100">
+                                </div>
+                                <div class="cbp-caption-activeWrap">
+                                    <div class="cbp-l-caption-alignLeft">
+                                        <div class="cbp-l-caption-body">
+                                            <div class="cbp-l-caption-title">Seemple* Music for iPad</div>
+                                            <div class="cbp-l-caption-desc">by Tiberiu Neamu</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="cbp-item print motion">
+                            <a href="http://localhost:3000/assets/ajax/project6.html" class="cbp-caption cbp-singlePageInline" data-title="Remind~Me Widget&lt;br&gt;by Tiberiu Neamu">
+                                <div class="cbp-caption-defaultWrap">
+                                    <img src="./home_files/6.jpg" alt="" width="100">
+                                </div>
+                                <div class="cbp-caption-activeWrap">
+                                    <div class="cbp-l-caption-alignLeft">
+                                        <div class="cbp-l-caption-body">
+                                            <div class="cbp-l-caption-title">Remind~Me Widget</div>
+                                            <div class="cbp-l-caption-desc">by Tiberiu Neamu</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="cbp-item web-design print">
+                            <a href="http://localhost:3000/assets/ajax/project7.html" class="cbp-caption cbp-singlePageInline" data-title="Workout Buddy&lt;br&gt;by Tiberiu Neamu">
+                                <div class="cbp-caption-defaultWrap">
+                                    <img src="./home_files/7.jpg" alt="" width="100">
+                                </div>
+                                <div class="cbp-caption-activeWrap">
+                                    <div class="cbp-l-caption-alignLeft">
+                                        <div class="cbp-l-caption-body">
+                                            <div class="cbp-l-caption-title">Workout Buddy</div>
+                                            <div class="cbp-l-caption-desc">by Tiberiu Neamu</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="cbp-item print">
+                            <a href="http://localhost:3000/assets/ajax/project8.html" class="cbp-caption cbp-singlePageInline" data-title="Digital Menu&lt;br&gt;by Cosmin Capitanu">
+                                <div class="cbp-caption-defaultWrap">
+                                    <img src="./home_files/8.jpg" alt="" width="100">
+                                </div>
+                                <div class="cbp-caption-activeWrap">
+                                    <div class="cbp-l-caption-alignLeft">
+                                        <div class="cbp-l-caption-body">
+                                            <div class="cbp-l-caption-title">Digital Menu</div>
+                                            <div class="cbp-l-caption-desc">by Cosmin Capitanu</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="cbp-item motion">
+                            <a href="http://localhost:3000/assets/ajax/project9.html" class="cbp-caption cbp-singlePageInline" data-title="Holiday Selector&lt;br&gt;by Cosmin Capitanu">
+                                <div class="cbp-caption-defaultWrap">
+                                    <img src="./home_files/4.jpg" alt="" width="100">
+                                </div>
+                                <div class="cbp-caption-activeWrap">
+                                    <div class="cbp-l-caption-alignLeft">
+                                        <div class="cbp-l-caption-body">
+                                            <div class="cbp-l-caption-title">Holiday Selector</div>
+                                            <div class="cbp-l-caption-desc">by Cosmin Capitanu</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="cbp-l-loadMore-button">
+                    <a href="http://localhost:3000/assets/ajax/loadMore.html" class="cbp-l-loadMore-button-link">LOAD MORE</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="clients-section parallaxBg" style="background-position: 50% -434px;">
+            <div class="container">
+                <div class="title-v1">
+                    <h2>Our Clients</h2>
+                </div>            
+                <ul class="owl-clients-v2">
+                    <li class="item"><a href="http://localhost:3000/home#"><img src="./home_files/national-geographic.png" alt=""></a></li>
+                    <li class="item"><a href="http://localhost:3000/home#"><img src="./home_files/inspiring.png" alt=""></a></li>
+                    <li class="item"><a href="http://localhost:3000/home#"><img src="./home_files/fred-perry.png" alt=""></a></li>
+                    <li class="item"><a href="http://localhost:3000/home#"><img src="./home_files/emirates.png" alt=""></a></li>
+                    <li class="item"><a href="http://localhost:3000/home#"><img src="./home_files/baderbrau.png" alt=""></a></li>
+                    <li class="item"><a href="http://localhost:3000/home#"><img src="./home_files/inspiring.png" alt=""></a></li>
+                </ul>            
+            </div>
+        </div>
+
+        <div class="testimonials-v3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <ul class="list-unstyled owl-ts-v1">
+                            <li class="item">
+                                <img class="rounded-x img-bordered" src="./home_files/cadwell.jpg" alt="">
+                                <div class="testimonials-v3-title">
+                                    <p>Jeremy Cadwell</p>
+                                    <span>Service Director, Toyota of El Cajon</span>
+                                </div>
+                                <p>I just wanted to tell you how much I like to use Unify - <strong>it's so sleek and elegant!</strong> <br>
+                                The customisation options you implemented are countless, and I feel sorry I can't use them all. Good job, and keep going!</p>
+                            </li>
+                            <li class="item">
+                                <img class="rounded-x img-bordered" src="./home_files/img2-sm.jpg" alt="">
+                                <div class="testimonials-v3-title">
+                                    <p>Tina Krueger</p>
+                                    <span>UI Designer, Apple</span>
+                                </div>                                
+                                <p>Keep up the great work. Your template is by far the best on the market in terms of features, quality and value or money.</p>
+                            </li>
+                            <li class="item">
+                                <img class="rounded-x img-bordered" src="./home_files/img1-sm.jpg" alt="">
+                                <div class="testimonials-v3-title">
+                                    <p>John Clarck</p>
+                                    <span>Marketing &amp; Cunsulting, IBM</span>
+                                </div>
+                                <p>So far I really like the theme. I am looking forward to exploring more of your themes. Thank you!</p>
+                            </li>
+                        </ul>
+                    </div>                    
+                </div>
+            </div>
+        </div>                 
+    </section>
+    <!-- End Portfolio Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contacts-section">
+        <div class="container content-lg">
+            <div class="title-v1">
+                <h2>Contact Us</h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. <br>
+                It has been the industry's standard dummy text.</p>
+            </div>
+
+            <div class="row contacts-in">
+                <div class="col-md-6 md-margin-bottom-40">
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-home"></i> 5B Streat, City 50987 New Town US</li>
+                        <li><i class="fa fa-phone"></i> 1(800) 220 084</li>
+                        <li><i class="fa fa-envelope"></i> <a href="http://localhost:3000/info@example.com">info@example.com</a></li>
+                        <li><i class="fa fa-globe"></i> <a href="http://htmlstream.com/">www.htmlstream.com</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-6">
+                    <form>
+                        <label>Name</label>
+                        <div class="row margin-bottom-20">
+                            <div class="col-md-7 col-md-offset-0">
+                                <input type="text" class="form-control">
+                            </div>                
+                        </div>
+                        
+                        <label>Email <span class="color-red">*</span></label>
+                        <div class="row margin-bottom-20">
+                            <div class="col-md-7 col-md-offset-0">
+                                <input type="text" class="form-control">
+                            </div>                
+                        </div>
+                        
+                        <label>Message</label>
+                        <div class="row margin-bottom-20">
+                            <div class="col-md-11 col-md-offset-0">
+                                <textarea rows="8" class="form-control"></textarea>
+                            </div>                
+                        </div>
+                        
+                        <p><button type="submit" class="btn-u btn-brd btn-brd-hover btn-u-dark">Send Message</button></p>
+                    </form> 
+                </div>
+            </div>            
+        </div>
+
+        <div class="copyright-section">
+            <p>2014 © All Rights Reserved. Unify Theme by <a target="_blank" href="https://twitter.com/htmlstream">Htmlstream</a></p>
+            <ul class="social-icons">
+                <li><a href="http://localhost:3000/home#" data-original-title="Facebook" class="social_facebook rounded-x"></a></li>
+                <li><a href="http://localhost:3000/home#" data-original-title="Twitter" class="social_twitter rounded-x"></a></li>
+                <li><a href="http://localhost:3000/home#" data-original-title="Goole Plus" class="social_googleplus rounded-x"></a></li>
+                <li><a href="http://localhost:3000/home#" data-original-title="Pinterest" class="social_pintrest rounded-x"></a></li>
+                <li><a href="http://localhost:3000/home#" data-original-title="Linkedin" class="social_linkedin rounded-x"></a></li>
+            </ul>
+            <span class="page-scroll"><a href="http://localhost:3000/home#intro"><i class="fa fa-angle-double-up back-to-top"></i></a></span>
+        </div>
+    </section>
+    <!-- End Contact Section -->  
+</body>
+</div><div id="feedly-mini" title="feedly Mini tookit"></div><script id="hiddenlpsubmitdiv" style="display: none;"></script><script>try{for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){ var lastpass_f = document.forms[lastpass_iter]; if(typeof(lastpass_f.lpsubmitorig2)=="undefined"){ lastpass_f.lpsubmitorig2 = lastpass_f.submit; lastpass_f.submit = function(){ var form=this; var customEvent = document.createEvent("Event"); customEvent.initEvent("lpCustomEvent", true, true); var d = document.getElementById("hiddenlpsubmitdiv"); if (d) {for(var i = 0; i < document.forms.length; i++){ if(document.forms[i]==form){ if (typeof(d.innerText) != 'undefined') { d.innerText=i; } else { d.textContent=i; } } } d.dispatchEvent(customEvent); }form.lpsubmitorig2(); } } }}catch(e){}</script></body></html>

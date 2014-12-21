@@ -9,7 +9,7 @@
 /*Block Grid v1
 ------------------------------------*/
 .block-grid-v1 {
-  background: #fff;
+  background: #333;
   padding: 15px 15px 5px;
   border-bottom: solid 2px #eee;
   -webkit-transition: all 0.4s ease-in-out;
@@ -191,7 +191,7 @@
   bottom: -15px;
   position: absolute;
   margin-left: -25px;
-  background: #72c02c; 
+  background: #CCC; 
 }
 
 .service-box-v1 ul {
@@ -202,11 +202,11 @@
   margin: 8px 0;
   font-size: 15px;
   padding-top: 8px;
-  border-top: dotted 1px #72c02c;
+  border-top: dotted 1px #5C2626;
 }
 
 .service-box-v1 li:hover {
-  color: #72c02c;
+  color: #32566E;
 }
 
 .service-box-v1 li:first-child {
@@ -744,7 +744,7 @@
   height: auto;
   padding: 50px 0;
   position: relative;
-  background: url(../img/bg/11.jpg) repeat fixed; 
+  background: url(../image/bg/11.jpg) repeat fixed; 
 }
 
 .bg-image-v1:before {
@@ -764,7 +764,7 @@
   height: auto;
   padding: 50px 0;
   position: relative;
-  background: url(../img/bg/15.jpg) repeat fixed;
+  background: url(../image/bg/15.jpg) repeat fixed;
 }
 
 .bg-image-v2:before {
@@ -782,11 +782,11 @@
 /*Parallax Counter Block*/
 .parallax-counter {
   padding: 30px 0;
-  background: url(../img/patterns/5.png) repeat fixed;
+  background: url(../images/wallpaper.png) repeat fixed;
 }
 
 .parallax-counter .counters {
-  color: #fff;
+  color: #333;
   padding: 15px 0;
 }
 
@@ -802,7 +802,7 @@
 
 /*Parallax Team*/
 .parallax-team {
-  background: url(../img/team/faces.jpg) 50% 0 repeat fixed;  
+  background: #5C2626;
 }
 
 .parallax-team,
@@ -826,7 +826,7 @@
   padding: 100px 0;
   position: relative;
   text-align: center;
-  background: url(../img/contents/faces.jpg) 50% 0 repeat fixed;  
+  background: #32566E;
 }
 
 .parallax-quote:after {
@@ -836,7 +836,7 @@
   height: 100%; 
   content: " ";
   position: absolute;
-  background: rgba(0,0,0,0.8);
+  background: #32566E;
 }
 
 .parallax-quote:before {
@@ -846,7 +846,7 @@
   height: 100%; 
   content: " ";
   position: absolute;
-  background: url(../img/patterns/gridtile.png) repeat;
+  background: #32566E;
 }
 
 .parallax-quote-in {
@@ -898,7 +898,7 @@
 ------------------------------------*/
 .flat-bg-block-v1 {
   padding: 40px 0;
-  background: url(../img/patterns/16.png) repeat;
+  background: url(../image/patterns/16.png) repeat;
 }
 
 .flat-bg-block-v1 .checked-list.first-child {

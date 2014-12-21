@@ -9,7 +9,7 @@
 /*Block Grid v1
 ------------------------------------*/
 .block-grid-v1 {
-  background: #fff;
+  background: #333;
   padding: 15px 15px 5px;
   border-bottom: solid 2px #eee;
   -webkit-transition: all 0.4s ease-in-out;
@@ -191,7 +191,7 @@
   bottom: -15px;
   position: absolute;
   margin-left: -25px;
-  background: #72c02c; 
+  background: #CCC; 
 }
 
 .service-box-v1 ul {
@@ -202,11 +202,11 @@
   margin: 8px 0;
   font-size: 15px;
   padding-top: 8px;
-  border-top: dotted 1px #72c02c;
+  border-top: dotted 1px #5C2626;
 }
 
 .service-box-v1 li:hover {
-  color: #72c02c;
+  color: #32566E;
 }
 
 .service-box-v1 li:first-child {
@@ -782,7 +782,7 @@
 /*Parallax Counter Block*/
 .parallax-counter {
   padding: 30px 0;
-  background: url(../image/patterns/5.png) repeat fixed;
+  background: url(../images/wallpaper.png) repeat fixed;
 }
 
 .parallax-counter .counters {
@@ -802,7 +802,7 @@
 
 /*Parallax Team*/
 .parallax-team {
-  background: url(../image/team/faces.jpg) 50% 0 repeat fixed;  
+  background: #5C2626;
 }
 
 .parallax-team,
@@ -826,7 +826,7 @@
   padding: 100px 0;
   position: relative;
   text-align: center;
-  background: url(../image/contents/faces.jpg) 50% 0 repeat fixed;  
+  background: #32566E;
 }
 
 .parallax-quote:after {
@@ -836,7 +836,7 @@
   height: 100%; 
   content: " ";
   position: absolute;
-  background: rgba(0,0,0,0.8);
+  background: #32566E;
 }
 
 .parallax-quote:before {
@@ -846,7 +846,7 @@
   height: 100%; 
   content: " ";
   position: absolute;
-  background: url(../image/patterns/gridtile.png) repeat;
+  background: #32566E;
 }
 
 .parallax-quote-in {

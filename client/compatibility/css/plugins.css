@@ -678,7 +678,7 @@
 }
 
 .testimonials-v3 .testimonials-v3-title p {
-  color: #72c02c;
+  color: #32566E;
   margin-bottom: 0;
 }
 
@@ -807,11 +807,11 @@
 /*Parallax Twitter (Owl Carousel)
 ------------------------------------*/
 .parallax-twitter {
-  color: #fff;
+  color: #333;
   padding: 100px 0;
   position: relative;
   text-align: center;
-  background: #333 url(../image/bg/bg2.jpg) 50% 0 fixed;
+  background: url(../images/bg/bg2.jpg) center fixed;
 }
 
 .parallax-twitter:after {
@@ -831,7 +831,7 @@
   height: 100%; 
   content: " ";
   position: absolute;
-  background: url(../image/patterns/gridtile.png) repeat;
+  background: url(../images/patterns/gridtile.png) repeat;
 }
 
 .parallax-twitter-in {
@@ -845,17 +845,17 @@
 }
 
 .parallax-twitter-in li {
-  color: #fff;
+  color: #333;
 }
 
 .parallax-twitter-in li p {
-  color: #fff;
+  color: #000;
   font-size: 18px;
   font-weight: 200;
 }
 
 .parallax-twitter-in li a {
-  color: #eee;
+  color: #5C2626;
   text-decoration: underline;
 }
 
@@ -864,7 +864,7 @@
 }
 
 .parallax-twitter-in li span {
-  color: #ddd;
+  color: #5C2626;
   display: block;
   font-size: 14px;
   font-weight: 400;
