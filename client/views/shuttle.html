@@ -1,58 +1,71 @@
 <template name="shuttle">
-
-   {{> updateShuttleDialog}}
-   {{> updateShuttleDialogAdvisor}}
+   <!-- Modal Templates -->
+   {{> updateShuttleDialog}} 
+   {{> updateShuttleDialogAdvisor}} 
    {{> newShuttleDialog}}
-  <h1>Shuttle Log</h1>
-
-   <div>
-   {{#if isCreateUser}}
-   <button id="btnNewShuttle" class="btn btn-primary newShuttle">New Shuttle</button>
-   {{/if}}
-               <select id="toggleDir" name="toggleDir">
-               <option {{selected shuttleDirection "Pick Up"}}>Pick Up</option>
-               <option {{selected shuttleDirection "Drop Off"}}>Drop Off</option>
-               
-               </select>
-   </div>
-
-<div class="datagrid">
-<div class="table-responsive">
-  <table>
-         <thead>
-            <tr>
-               <th>Timestamp</th>
-               <th>Time Requested</th>
-               <th>Customer Name</th>
-               <th>Phone Number</th>
-               <th>Address</th>
-               <th>Driver</th>
-               <th>Username</th>
-               <th>Status</th>
-               <th>Time Out</th>
-               <th>Time In</th>
-               <th>Update</th>
-            </tr>
-         </thead>
-         <tbody>
-            {{#each shuttle}}
-            <tr class={{statusClass status}}>
-               <td>{{timeParse timestamp}}</td>
-               <td>{{time}}</td>
-               <td>{{name}}</td>
-               <td>{{number}}</td>
-               <td>{{address}}</td>
-               <td>{{driver}}</td>
-               <td>{{username}}</td>
-               <td>{{status}}</td>
-               <td>{{timeout}}</td>
-               <td>{{timein}}</td>
-               <td><a id="updateShuttle" class="btn btn-primary updateShuttle">Update Shuttle</a></td>
-            </tr>
-            {{/each}}
-         </tbody>
-      </table>
-   </div>
+   
+   <h1>Shuttle Log</h1>
+   <!-- Begin Content -->
+   <div class="col-md-12">
+      <!--Basic Table-->
+      <div class="panel panel-dark-blue margin-bottom-40">
+         <div class="panel-heading">
+            <h3 class="panel-title"><i class="fa fa-car"></i>Service Desk</h3> {{#if isCreateUser}}
+            <button id="btnNewCar" class="btn btn-default btn-sm newShuttle">New Shuttle</button>
+            {{/if}}
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default ">{{shuttleDirection}}</button>
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-sort"></i>
+                            <span class="sr-only">Toggle Dropdown</span>                            
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a value="Pick Up">Pick Up</a></li>
+                            <li><a value="Drop Off">Drop Off</a></li>
+                        </ul>
+                    </div>
+            <select id="toggleDir" name="toggleDir">
+         <option {{selected shuttleDirection "Pick Up"}}>Pick Up</option>
+         <option {{selected shuttleDirection "Drop Off"}}>Drop Off</option>
+      </select>
+         </div>
+         <table class="table table-bordered">
+            <thead>
+               <tr>
+                  <th>Timestamp</th>
+                  <th>Time Requested</th>
+                  <th>Customer Name</th>
+                  <th>Phone Number</th>
+                  <th>Address</th>
+                  <th>Driver</th>
+                  <th>Username</th>
+                  <th>Status</th>
+                  <th>Time Out</th>
+                  <th>Time In</th>
+                  <th>Update</th>
+               </tr>
+            </thead>
+            <tbody>
+               {{#each shuttle}}
+               <tr class={{statusClass status}}>
+                  <td>{{timeParse timestamp}}</td>
+                  <td>{{time}}</td>
+                  <td>{{name}}</td>
+                  <td>{{number}}</td>
+                  <td>{{address}}</td>
+                  <td>{{driver}}</td>
+                  <td>{{username}}</td>
+                  <td>{{status}}</td>
+                  <td>{{timeout}}</td>
+                  <td>{{timein}}</td>
+                  <td><a id="updateShuttle" class="btn btn-primary updateShuttle">Update Shuttle</a>
+                  </td>
+               </tr>
+               {{/each}}
+            </tbody>
+         </table>
+      </div>
+      <!--End Basic Table-->
    </div>
 </template>
 
@@ -65,18 +78,23 @@
                <h2>New Shuttle</h2>
             </div>
             <form id="newBody">
-            <div class="modal-body">
-               {{> timeselect}}<br>               
-               Customer Name: <input type="text" id="name" placeholder="Customer Name"/><br>
-               Customer Number: <input type="text" id="number" placeholder="Customer Number" /><br>
-               Customer Address: <input type="text" id="address" placeholder="Address" /><br>
-               <select id="direction" name="direction">
-               <option></option>
-               <option {{selected direction "pickup"}}>Pick Up</option>
-               <option {{selected direction "dropoff"}}>Drop Off</option>
-               </select><br>
-            </div>
-				</form>
+               <div class="modal-body">
+                  {{> timeselect}}
+                  <br> Customer Name:
+                  <input type="text" id="name" placeholder="Customer Name" />
+                  <br> Customer Number:
+                  <input type="text" id="number" placeholder="Customer Number" />
+                  <br> Customer Address:
+                  <input type="text" id="address" placeholder="Address" />
+                  <br>
+                  <select id="direction" name="direction">
+                     <option></option>
+                     <option {{selected direction "pickup"}}>Pick Up</option>
+                     <option {{selected direction "dropoff"}}>Drop Off</option>
+                  </select>
+                  <br>
+               </div>
+            </form>
             <div class="modal-footer">
                <a href="#" class="btn cancel">Cancel</a>
                <a href="#" class="btn btn-primary save">Save Shuttle</a>
@@ -97,30 +115,33 @@
             <div class="modal-body">
                {{#with getShuttleID}}
                <h3>Shuttle</h3>
-               <b>Time Requested: {{time}}</b><br>
-		         <b>Customer name: {{name}}</b><br>
-		         <b>Customer Number: {{number}}</b><br>
-		         <b>Customer Address: {{address}}</b><br>
+               <b>Time Requested: {{time}}</b>
                <br>
-               Driver:
+               <b>Customer name: {{name}}</b>
+               <br>
+               <b>Customer Number: {{number}}</b>
+               <br>
+               <b>Customer Address: {{address}}</b>
+               <br>
+               <br> Driver:
                <select id="driver" name="driver">
-               <option></option>
-               {{#with company}} 
-    				{{#each company.drivers}}
-               <option {{selected getShuttleID.driver this }}>{{this}}</option>
-   				{{/each}}
-    				{{/with}}
-               </select><br>
-               Status:
+                  <option></option>
+                  {{#with company}} {{#each company.drivers}}
+                  <option {{selected getShuttleID.driver this }}>{{this}}</option>
+                  {{/each}} {{/with}}
+               </select>
+               <br> Status:
                <select id="status" name="status">
-               <option></option>
-               <option {{selected status "Confirmed"}}>Confirmed</option>
-               <option {{selected status "En Route"}}>En Route</option>
-               <option {{selected status "Completed"}}>Completed</option>
-               </select><br>
-               Time out: <input type="text" id="timeout" value={{timeout}} /><br>
-               Time In: <input type="text" id="timein" value={{timein}} /><br>
-               {{/with}}
+                  <option></option>
+                  <option {{selected status "Confirmed"}}>Confirmed</option>
+                  <option {{selected status "En Route"}}>En Route</option>
+                  <option {{selected status "Completed"}}>Completed</option>
+               </select>
+               <br> Time out:
+               <input type="text" id="timeout" value={{timeout}} />
+               <br> Time In:
+               <input type="text" id="timein" value={{timein}} />
+               <br> {{/with}}
             </div>
             <div class="modal-footer">
                <a href="#" class="btn cancel">Cancel</a>
@@ -129,9 +150,9 @@
          </div>
       </div>
    </div>
-	</template>
-	
-	<template name="updateShuttleDialogAdvisor">
+</template>
+
+<template name="updateShuttleDialogAdvisor">
    <div class="modal" id="updateShuttleDialogAdvisor">
       <div class="modal-dialog">
          <div class="modal-content">
@@ -141,68 +162,69 @@
             </div>
             <div class="modal-body">
                {{#with getShuttleID}}
-               <h3>Shuttle</h3>
-               {{#each timesplit}}
-               Time Requested:
+               <h3>Shuttle</h3> {{#each timesplit}} Time Requested:
                <select id="hourAdvisor" name="hourAdvisor">
-	            <option {{selected hour "1"}}>1</option>
-               <option {{selected hour "2"}}>2</option>
-	            <option {{selected hour "3"}}>3</option>
-               <option {{selected hour "4"}}>4</option>
-               <option {{selected hour "5"}}>5</option>
-               <option {{selected hour "6"}}>6</option>
-               <option {{selected hour "7"}}>7</option>
-               <option {{selected hour "8"}}>8</option>
-               <option {{selected hour "9"}}>9</option>
-               <option {{selected hour "10"}}>10</option>
-               <option {{selected hour "11"}}>11</option>
-               <option {{selected hour "12"}}>12</option>
+                  <option {{selected hour "1"}}>1</option>
+                  <option {{selected hour "2"}}>2</option>
+                  <option {{selected hour "3"}}>3</option>
+                  <option {{selected hour "4"}}>4</option>
+                  <option {{selected hour "5"}}>5</option>
+                  <option {{selected hour "6"}}>6</option>
+                  <option {{selected hour "7"}}>7</option>
+                  <option {{selected hour "8"}}>8</option>
+                  <option {{selected hour "9"}}>9</option>
+                  <option {{selected hour "10"}}>10</option>
+                  <option {{selected hour "11"}}>11</option>
+                  <option {{selected hour "12"}}>12</option>
                </select>
                <select id="minuteAdvisor" name="minuteAdvisor">
-               <option {{selected minute "00"}}>00</option>
-               <option {{selected minute "05"}}>05</option>
-               <option {{selected minute "10"}}>10</option>
-               <option {{selected minute "15"}}>15</option>
-               <option {{selected minute "20"}}>20</option>
-               <option {{selected minute "25"}}>25</option>
-					<option {{selected minute "30"}}>30</option>
-					<option {{selected minute "35"}}>35</option>
-					<option {{selected minute "40"}}>40</option>
-					<option {{selected minute "45"}}>45</option>
-					<option {{selected minute "50"}}>50</option>
-					<option {{selected minute "55"}}>55</option>
+                  <option {{selected minute "00"}}>00</option>
+                  <option {{selected minute "05"}}>05</option>
+                  <option {{selected minute "10"}}>10</option>
+                  <option {{selected minute "15"}}>15</option>
+                  <option {{selected minute "20"}}>20</option>
+                  <option {{selected minute "25"}}>25</option>
+                  <option {{selected minute "30"}}>30</option>
+                  <option {{selected minute "35"}}>35</option>
+                  <option {{selected minute "40"}}>40</option>
+                  <option {{selected minute "45"}}>45</option>
+                  <option {{selected minute "50"}}>50</option>
+                  <option {{selected minute "55"}}>55</option>
                </select>
                <select id="ampmAdvisor" name="ampmAdvisor">
-               <option {{selected ampm "AM"}}>AM</option>
-               <option {{selected ampm "PM"}}>PM</option>
-               </select> <br>   
-               {{/each}}      
-               Customer Name: <input type="text" id="nameAdvisor" value={{name}} /><br>
-               Customer Number: <input type="text" id="numberAdvisor" value={{number}} /><br>
-               Customer Address: <input type="text" id="addressAdvisor" value={{address}} /><br>
+                  <option {{selected ampm "AM"}}>AM</option>
+                  <option {{selected ampm "PM"}}>PM</option>
+               </select>
+               <br> {{/each}} Customer Name:
+               <input type="text" id="nameAdvisor" value={{name}} />
+               <br> Customer Number:
+               <input type="text" id="numberAdvisor" value={{number}} />
+               <br> Customer Address:
+               <input type="text" id="addressAdvisor" value={{address}} />
+               <br>
                <select id="directionAdvisor" name="directionAdvisor">
-               <option {{selected direction "Pick Up"}}>Pick Up</option>
-               <option {{selected direction "Drop Off"}}>Drop Off</option>
-               </select><br>
-               Driver:
+                  <option {{selected direction "Pick Up"}}>Pick Up</option>
+                  <option {{selected direction "Drop Off"}}>Drop Off</option>
+               </select>
+               <br> Driver:
                <select id="driverAdvisor" name="driverAdvisor">
-               <option></option>
-               {{#with company}} 
-    				{{#each company.drivers}}
-               <option {{selected getShuttleID.driver this }}>{{this}}</option>
-   				{{/each}}
-    				{{/with}}
-               </select><br>
-               Status:
+                  <option></option>
+                  {{#with company}} {{#each company.drivers}}
+                  <option {{selected getShuttleID.driver this }}>{{this}}</option>
+                  {{/each}} {{/with}}
+               </select>
+               <br> Status:
                <select id="statusAdvisor" name="statusAdvisor">
-               <option></option>
-               <option {{selected status "Confirmed"}}>Confirmed</option>
-               <option {{selected status "En Route"}}>En Route</option>
-               <option {{selected status "Completed"}}>Completed</option>
-               </select><br>
-               Time out: <input type="text" id="timeoutAdvisor" value={{timeout}} /><br>
-               Time In: <input type="text" id="timeinAdvisor" value={{timein}} /><br>
-               {{/with}}
+                  <option></option>
+                  <option {{selected status "Confirmed"}}>Confirmed</option>
+                  <option {{selected status "En Route"}}>En Route</option>
+                  <option {{selected status "Completed"}}>Completed</option>
+               </select>
+               <br> Time out:
+               <input type="text" id="timeoutAdvisor" value={{timeout}} />
+               <br> Time In:
+               <input type="text" id="timeinAdvisor" value={{timein}} />
+               <br> {{/with}}
             </div>
             <div class="modal-footer">
                <a href="#" class="btn cancel">Cancel</a>
@@ -211,41 +233,40 @@
          </div>
       </div>
    </div>
-	</template>
-	<template name="timeselect">
-               Time Requested:
-                <select id="hour" name="hour">
-               <option {{selected hour "1"}}>1</option>
-               <option {{selected hour "2"}}>2</option>
-               <option {{selected hour "3"}}>3</option>
-               <option {{selected hour "4"}}>4</option>
-               <option {{selected hour "5"}}>5</option>
-               <option {{selected hour "6"}}>6</option>
-               <option {{selected hour "7"}}>7</option>
-               <option {{selected hour "8"}}>8</option>
-               <option {{selected hour "9"}}>9</option>
-               <option {{selected hour "10"}}>10</option>
-               <option {{selected hour "11"}}>11</option>
-               <option {{selected hour "12"}}>12</option>
-               </select>
-               <select id="minute" name="minute">
-               <option {{selected minute "00"}}>00</option>
-               <option {{selected minute "05"}}>05</option>
-               <option {{selected minute "10"}}>10</option>
-               <option {{selected minute "15"}}>15</option>
-               <option {{selected minute "20"}}>20</option>
-               <option {{selected minute "25"}}>25</option>
-					<option {{selected minute "30"}}>30</option>
-					<option {{selected minute "35"}}>35</option>
-					<option {{selected minute "40"}}>40</option>
-					<option {{selected minute "45"}}>45</option>
-					<option {{selected minute "50"}}>50</option>
-					<option {{selected minute "55"}}>55</option>
-               </select>
-               <select id="ampm" name="ampm">
-               <option {{selected ampm "AM"}}>AM</option>
-               <option {{selected ampm "PM"}}>PM</option>
-               </select>
-             
 </template>
+<template name="timeselect">
+   Time Requested:
+   <select id="hour" name="hour">
+      <option {{selected hour "1"}}>1</option>
+      <option {{selected hour "2"}}>2</option>
+      <option {{selected hour "3"}}>3</option>
+      <option {{selected hour "4"}}>4</option>
+      <option {{selected hour "5"}}>5</option>
+      <option {{selected hour "6"}}>6</option>
+      <option {{selected hour "7"}}>7</option>
+      <option {{selected hour "8"}}>8</option>
+      <option {{selected hour "9"}}>9</option>
+      <option {{selected hour "10"}}>10</option>
+      <option {{selected hour "11"}}>11</option>
+      <option {{selected hour "12"}}>12</option>
+   </select>
+   <select id="minute" name="minute">
+      <option {{selected minute "00"}}>00</option>
+      <option {{selected minute "05"}}>05</option>
+      <option {{selected minute "10"}}>10</option>
+      <option {{selected minute "15"}}>15</option>
+      <option {{selected minute "20"}}>20</option>
+      <option {{selected minute "25"}}>25</option>
+      <option {{selected minute "30"}}>30</option>
+      <option {{selected minute "35"}}>35</option>
+      <option {{selected minute "40"}}>40</option>
+      <option {{selected minute "45"}}>45</option>
+      <option {{selected minute "50"}}>50</option>
+      <option {{selected minute "55"}}>55</option>
+   </select>
+   <select id="ampm" name="ampm">
+      <option {{selected ampm "AM"}}>AM</option>
+      <option {{selected ampm "PM"}}>PM</option>
+   </select>
 
+</template>

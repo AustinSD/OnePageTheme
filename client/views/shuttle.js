@@ -30,6 +30,9 @@ Template.shuttle.rendered = function(){
   };  
     
   Template.shuttle.events({
+    'change .dropdown-toggle':function(e,t) {
+		Session.set("shuttleDirection",t.find(".dropdown-menu").value);
+	},
   	'change #toggleDir' :function(e,t) {
 		Session.set("shuttleDirection",t.find("#toggleDir").value);
 	},
