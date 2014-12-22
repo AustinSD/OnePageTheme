@@ -1,4 +1,4 @@
-<template name="header">
+<template name="header2">
    <nav class="navbar navbar-default" role="navigation">
       <div class="container-fluid">
          <!-- Brand and toggle get grouped for better mobile display -->
@@ -9,7 +9,9 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href={{pathFor 'home'}}>Dealer Desk</a>
+            <a class="navbar-brand" href={{pathFor 'home'}}>
+                    <img src="images/logosmall.png" alt="Logo"> 
+            </a>
          </div>
          <div class="navbar-text">
             <label> <a href={{pathFor 'cars'}}>Cars</a></label> <span class="badge"> {{cars}}</span>
@@ -18,6 +20,7 @@
 				<label> <a href={{pathFor 'task'}}>Tasks</a></label> <span class="badge"> {{taskcount}}</span>
 				<label> <a href={{pathFor 'cars'}}>Wash</a></label> <span class="badge"> {{washCount}}</span>			
    		</div>  
+
          <!-- Collect the nav links, forms, and other content for toggling -->
          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
@@ -62,4 +65,123 @@
          </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
    </nav>
+</template>
+
+<template name="header">
+    <!--=== Header ===-->    
+    <div class="header">
+        
+        {{#if isUser}}
+        <!-- Topbar -->
+        <div class="topbar">
+            <div class="container">
+                <!-- Topbar Navigation -->	
+         		<ul class="list-inline badge-lists text-center">
+         		<li>
+        				<a class="btn-u btn-u-xs btn-u-default" href={{pathFor 'cars'}}>Cars</a>
+        				<span class="badge badge-orange rounded"> {{cars}}</span>
+        			</li>
+        			<li>
+        				<a class="btn-u btn-u-xs btn-u-default" href={{pathFor 'shuttleP'}}>Pick-ups</a>
+        				<span class="badge badge-orange rounded"> {{pickup}}</span>
+        			</li>
+        			<li>
+        				<a class="btn-u btn-u-xs btn-u-default" href={{pathFor 'shuttleD'}}>Drop-offs</a>
+        				<span class="badge badge-orange rounded"> {{dropoff}}</span>
+        			</li>
+        			<li>
+        				<a class="btn-u btn-u-xs btn-u-default" href={{pathFor 'task'}}>Tasks</a>
+        				<span class="badge badge-orange rounded"> {{taskcount}}</span>
+        			</li>
+        			<li>
+        				<a class="btn-u btn-u-xs btn-u-default" href={{pathFor 'cars'}}>Wash</a>
+        				<span class="badge badge-orange rounded"> {{washCount}}</span>
+        			</li>
+        			</ul>
+                <!-- End Topbar Navigation -->
+            </div>
+        </div>
+        <!-- End Topbar -->
+        {{/if}}
+
+        <!-- Navbar -->
+        <div class="navbar navbar-default mega-menu" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="fa fa-bars"></span>
+                    </button>
+                    <a class="navbar-brand" href={{pathFor 'home'}}>
+                        <img id="logo-header" src="images/logosmall.png" alt="Logo">
+                    </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-responsive-collapse">
+                    <ul class="nav navbar-nav">
+                        <!-- Home -->
+                        <li class="">
+                            <a href={{pathFor 'home'}}>Home</a>
+                        </li>
+                        <!-- End Home -->
+
+								{{#if isUser}}
+                        <!-- Dealer-Logistics -->                        
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                Dealer-Logistics
+                            </a>
+                            <ul class="dropdown-menu">
+										  <!-- Car Pages -->
+                                <li class="dropdown-submenu">
+                                    <a href={{pathFor 'cars'}}>Cars</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href={{pathFor 'cars'}}>Cars</a></li>
+                                        <li><a href={{pathFor 'carshistory'}}>Cars History</a></li>
+                                    </ul>                                
+                                </li>
+                                <!-- End Car Pages -->                                
+                                <!-- Shuttle Pages -->
+                                <li class="dropdown-submenu">
+                                    <a href={{pathFor 'shuttle'}}>Shuttle</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href={{pathFor 'shuttle'}}>Shuttle</a></li>
+                                        <li><a href={{pathFor 'shuttlehistory'}}>Shuttle History</a></li>
+                                    </ul>                                
+                                </li>
+                                <!-- End Shuttle Pages -->
+                                <!-- Task Pages -->
+                                <li class="dropdown-submenu">
+                                    <a href={{pathFor 'task'}}>Tasks</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href={{pathFor 'task'}}>Tasks</a></li>
+                     						 <li><a href={{pathFor 'taskhistory'}}>Tasks History</a></li>
+                                    </ul>                                
+                                </li>
+                                <!-- End Task Pages -->
+                            </ul>
+                        </li>
+                        <!-- End Dealer-Logistics -->
+                        {{/if}}
+                                                
+                        <!-- Admin --> 
+                        {{#if isInRole 'admin'}}                       
+                        <li class="">
+									<a href={{pathFor 'adminTemplate'}}>
+                                Admin Panel
+                            </a>
+                        </li>
+                        {{/if}}
+                        <!-- End Admin -->
+                        
+							{{> loginButtons }}
+                    </ul>
+                </div><!--/navbar-collapse-->
+            </div>    
+        </div>            
+        <!-- End Navbar -->       
+    </div>
+    <!--=== End Header ===-->    
 </template>

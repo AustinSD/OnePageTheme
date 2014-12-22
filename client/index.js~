@@ -14,13 +14,16 @@
 	});
 	UI.registerHelper("statusClass" , function(status){
     if(status == "Ready"){
-        return 'carReady';
+    	return "label-warning";
+        //return 'carReady';
     }
     if (status == "Prep") {
-    return 'carPrep';
+    	return "label-info";
+    	//return 'carPrep';
     }
     if (status == "Waiting") {
-    	return "carWait";
+    	return "label-danger";
+    	//return "carWait";
     }
 });
 	UI.registerHelper("timeParse" , function(value){

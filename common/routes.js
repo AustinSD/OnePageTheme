@@ -26,6 +26,7 @@ Router.route('/carshistory', {
     this.next();
   }},
   action: function () {
+	this.layout('appLayout');
     // render all templates and regions for this route
     this.render();
   }
@@ -33,8 +34,7 @@ Router.route('/carshistory', {
 Router.route('/cars', {
   name: 'cars',
   path: '/cars',
-  template: 'cars',
-  
+  template: 'cars', 
   onBeforeAction: function () {
     if (!Meteor.userId()) {
 		this.redirect('home');
@@ -42,6 +42,7 @@ Router.route('/cars', {
     this.next();
   }},
   action: function () {
+	this.layout('appLayout');
     // render all templates and regions for this route
     this.render();
   }
@@ -57,6 +58,7 @@ Router.route('/shuttle', {
     this.next();
   }},
   action: function () {
+  	this.layout('appLayout');
     // render all templates and regions for this route
     this.render();
   }
@@ -74,6 +76,7 @@ Router.route('/shuttleD', {
     //this.next();
   }},
   action: function () {
+  	this.layout('appLayout');
     // render all templates and regions for this route
     this.render();
   }
@@ -91,6 +94,7 @@ Router.route('/shuttleP', {
     //this.next();
   }},
   action: function () {
+  	this.layout('appLayout');
     // render all templates and regions for this route
     this.render();
   }
@@ -106,6 +110,7 @@ Router.route('/shuttlehistory', {
     this.next();
   }},
   action: function () {
+  	this.layout('appLayout');
     // render all templates and regions for this route
     this.render();
   }
@@ -121,6 +126,7 @@ Router.route('/task', {
     this.next();
   }},
   action: function () {
+  	this.layout('appLayout');
     // render all templates and regions for this route
     this.render();
   }
@@ -136,6 +142,7 @@ Router.route('/taskhistory', {
     this.next();
   }},
   action: function () {
+  	this.layout('appLayout');
     // render all templates and regions for this route
     this.render();
   }
@@ -151,6 +158,7 @@ Router.route('/adminTemplate', {
     this.next();
   }},
   action: function () {
+  	this.layout('appLayout');
     // render all templates and regions for this route
     this.render();
   }

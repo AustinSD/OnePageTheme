@@ -53,16 +53,16 @@
     'click .save': function(event, template) {
 
       var properties = {
-        status: template.find("#status").value,
-        notes: template.find("#notes").value,
-        porter: template.find("#porter").value,
+        status: template.find("#statusUpdate").value,
+        notes: template.find("#notesUpdate").value,
+        porter: template.find("#porterUpdate").value,
         wash: template.find("#washUpdate").value,
         completestamp: moment().format() //moment().format('MM/DD/YYYY h:mm A')
       };
       Cars.update(Session.get("carID"), {
         $set: properties
       });
-      if (template.find("#status").value == "Completed" || template.find("#status").value == "Delete") {
+      if (template.find("#statusUpdate").value == "Completed" || template.find("#statusUpdate").value == "Delete") {
         createCarHistory(Session.get("carID"));
         Cars.remove({
           _id: Session.get("carID")
@@ -105,22 +105,22 @@
     'click .save': function(event, template) {
       event.preventDefault();
       var properties = {
-        vehicle: template.find("#vehicleAdvisor").value,
-        color: template.find("#colorAdvisor").value,
-        tagnum: template.find("#tagnumAdvisor").value,
-        vin: template.find("#vinAdvisor").value,
-        team: template.find("#teamAdvisor").value,
-        asm: template.find("#asmAdvisor").value,
-        status: template.find("#statusAdvisor").value,
-        notes: template.find("#notesAdvisor").value,
-        porter: template.find("#porterAdvisor").value,
-        wash: template.find("#washUpdateAdvisor").value,
+        vehicle: template.find("#vehicleUpdateAdvisor").value,
+        color: template.find("#colorUpdateAdvisor").value,
+        tagnum: template.find("#tagnumUpdateAdvisor").value,
+        vin: template.find("#vinUpdateAdvisor").value,
+        team: template.find("#teamUpdateAdvisor").value,
+        asm: template.find("#asmUpdateAdvisor").value,
+        status: template.find("#statusUpdateAdvisor").value,
+        notes: template.find("#notesUpdateAdvisor").value,
+        porter: template.find("#porterUpdateAdvisor").value,
+        wash: template.find("#washUpdateUpdateAdvisor").value,
         completestamp: moment().format() //moment().format('MM/DD/YYYY h:mm A')
       };
       Cars.update(Session.get("carID"), {
         $set: properties
       });
-      if (template.find("#statusAdvisor").value == "Completed" || template.find("#statusAdvisor").value == "Delete") {
+      if (template.find("#statusUpdateAdvisor").value == "Completed" || template.find("#statusUpdateAdvisor").value == "Delete") {
         createCarHistory(Session.get("carID"));
         Cars.remove({
           _id: Session.get("carID")

@@ -1,0 +1,148 @@
+<template name="taskhistory">
+
+            <!-- Begin Content -->
+            <div class="col-md-12">
+                <!--Basic Table-->
+                <div class="panel panel-dark-blue margin-bottom-40">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><i class="fa fa-car"></i>Task History</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<form class="navbar-form navbar-left" role="search">
+<div class="form-group">
+<input type="text" class="form-control" placeholder="Search" value="{{fcFilterSearchable.criteria}}" data-fc-search-target="search-box">
+</div>
+<button type="submit" class="btn btn-default fc-search-trigger" data-fc-search-trigger="search-box">Submit</button>
+<button type="button" class="btn btn-default fc-search-clear">Reset</button>
+</form>
+
+
+<!-- Datepicker Forms --> 
+<form class="navbar-form navbar-left">                                    
+<div class="form-group">
+<i class="fa fa-calendar"></i>
+<input class="form-control" type="text" name="start" id="start" placeholder="Start Date" >
+<input class="form-control" type="text" name="finish" id="finish" placeholder="End Date" >
+</div>                       
+<button type="button" class="btn btn-default submitrange">Show Date Range</button>                       
+</form>
+</div>
+
+<!-- End Datepicker Forms -->
+                    </div> <!-- End panel-body -->                                     
+                    <table class="table table-bordered" id="taskhisttable">
+         <thead>
+            <tr>
+               <th>Timestamp</th>
+               <th>Completed</th>
+               <th>Time</th>
+               <th>ASM</th>
+               <th>Task</th>
+               <th>Porter</th>
+               <th>Status</th>
+               <th>Additional Notes</th>
+               <th>Username</th>
+            </tr>
+         </thead>
+         <tbody>
+            {{#each fcResults}}
+            <tr class={{statusClass status}}>
+               <td>{{timeParse timestamp}}</td>
+               <td>{{timeParse completestamp}}</td>
+               <td>{{time}}</td>
+               <td>{{asm}}</td>
+               <td>{{task}}</td>
+               <td>{{porter}}</td>
+               <td>{{status}}</td>
+               <td>{{notes}}</td>
+               <td>{{username}}</td>
+            </tr>
+            {{/each}}
+         </tbody>
+      </table>
+                </div>
+                <!--End Basic Table-->
+
+
+ {{#if fcPager.pages}}
+<div class="row">
+<div class="col-md-2">
+<!-- items per page -->
+<small><strong>Results per page select</strong></small>
+<select class="fc-pager-options form-control">
+{{#each fcPager.options}}
+<option value="{{value}}" {{status}}>{{value}}</option>
+{{/each}}
+</select>
+<!-- /items per page -->
+</div>
+<div class="col-md-7 text-center">
+{{#if fcPager.pages}}
+<!-- numbered pager -->
+<ul class="pagination">
+<li><a href="#" class="fc-pager-first">&lt;&lt;</a></li>
+<li><a href="#" class="fc-pager-previous">&lt;</a></li>
+{{#each fcPager.pages}}
+<li class="{{status}}"><a href="#" class="fc-pager-page" data-fc-pager-page="{{page}}">{{page}}</a></li>
+{{/each}}
+<li><a href="#" class="fc-pager-next">&gt;</a></li>
+<li><a href="#" class="fc-pager-last">&gt;&gt;</a></li>
+</ul>
+<!-- /numbered pager -->
+{{/if}}
+</div>
+<div class="col-md-3">
+<!-- pager status -->
+<ul class="small">
+<li>Current page is: <strong>{{fcPager.currentPage}}</strong>.</li>
+<li>We are displaying <strong>{{fcPager.itemsPerPage}}</strong> results.</li>
+<li>From <strong>{{fcPager.offsetStart}}</strong> to <strong>{{fcPager.offsetEnd}}</strong>.</li>
+<li>We have found a total of <strong>{{fcPager.totalItems}}</strong> records.</li>
+</ul>
+<!-- /pager status -->
+</div>
+</div>
+{{/if}}
+                </div>
+                
+</template>
+
+<template name="taskhistory2">
+   <h1>Task History</h1>
+   <div class="datagrid">
+   <div class="table-responsive">
+    <table>
+         <thead>
+            <tr>
+               <th>Timestamp</th>
+               <th>Completed</th>
+               <th>Time</th>
+               <th>ASM</th>
+               <th>Task</th>
+               <th>Porter</th>
+               <th>Status</th>
+               <th>Additional Notes</th>
+               <th>Username</th>
+            </tr>
+         </thead>
+         <tbody>
+            {{#each taskhistory}}
+            <tr class={{statusClass status}}>
+               <td>{{timeParse timestamp}}</td>
+               <td>{{timeParse completestamp}}</td>
+               <td>{{time}}</td>
+               <td>{{asm}}</td>
+               <td>{{task}}</td>
+               <td>{{porter}}</td>
+               <td>{{status}}</td>
+               <td>{{notes}}</td>
+               <td>{{username}}</td>
+            </tr>
+            {{/each}}
+         </tbody>
+      </table>
+   </div>
+   </div>
+</template>
+

@@ -108,6 +108,17 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
   </a>
 </div>
     <!-- End Intro Section -->
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
     
     <!--  About Section -->
     <section id="about" class="about-section section-first">
@@ -451,7 +462,7 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
     <!-- End News Section -->
 
     <!-- Portfolio Section -->
-    <!--<section id="portfolio" class="about-section">
+    <section id="portfolio" class="about-section">
         <div class="container content-lg">
             <div class="title-v1">
                 <h2>Our Portfolio</h2>
@@ -663,7 +674,7 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
                 </div>
             </div>
         </div>                 
-    </section>-->
+    </section>
     <!-- End Portfolio Section -->
 
     <!-- Contact Section -->

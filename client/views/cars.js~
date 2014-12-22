@@ -53,16 +53,16 @@
     'click .save': function(event, template) {
 
       var properties = {
-        status: template.find("#status").value,
-        notes: template.find("#notes").value,
-        porter: template.find("#porter").value,
+        status: template.find("#statusUpdate").value,
+        notes: template.find("#notesUpdate").value,
+        porter: template.find("#porterUpdate").value,
         wash: template.find("#washUpdate").value,
         completestamp: moment().format() //moment().format('MM/DD/YYYY h:mm A')
       };
       Cars.update(Session.get("carID"), {
         $set: properties
       });
-      if (template.find("#status").value == "Completed" || template.find("#status").value == "Delete") {
+      if (template.find("#statusUpdate").value == "Completed" || template.find("#statusUpdate").value == "Delete") {
         createCarHistory(Session.get("carID"));
         Cars.remove({
           _id: Session.get("carID")
