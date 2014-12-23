@@ -137,7 +137,7 @@ Template.shuttle.rendered = function(){
       'click .save': function(event, template) {
 
           var properties = {
-              time: template.find("#hour").value +":"+template.find("#minute").value + " " + template.find("#ampm").value,
+              time: template.find("#hourAdvisor").value +":"+template.find("#minuteAdvisor").value + " " + template.find("#ampmAdvisor").value,
               name: template.find("#nameAdvisor").value,
               number: template.find("#numberAdvisor").value,
               address: template.find("#addressAdvisor").value,
