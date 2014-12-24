@@ -30,6 +30,7 @@
 </div>
 
 <!-- End Datepicker Forms -->
+<a href="#" class="export"><i class="fa fa-file-excel-o"></i> Export</a>
                     </div> <!-- End panel-body -->                                     
                     <table class="table table-bordered" id="taskhisttable">
          <thead>

@@ -73,7 +73,7 @@
 <a href="#" class="export">Export Table data into CSV</a>
 <!-- End Datepicker Forms -->
                     </div> <!-- End panel-body -->                                     
-                    <table id="shuttlehisttable">
+                    <table class="table table-bordered" id="shuttlehisttable">
          <thead>
             <tr>
                <th>Timestamp</th>

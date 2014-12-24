@@ -67,7 +67,7 @@
    </nav>
 </template>
 
-<template name="header">
+<template name="header3">
     <!--=== Header ===-->    
     <div class="header">
         
@@ -184,4 +184,97 @@
         <!-- End Navbar -->       
     </div>
     <!--=== End Header ===-->    
+</template>
+
+<template name="header">
+    <!--=== Header ===-->    
+    <div class="header">
+
+        <!-- Navbar -->
+        <div class="navbar navbar-default mega-menu" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="fa fa-bars"></span>
+                    </button>
+                    <a class="navbar-brand" href={{pathFor 'home'}}>
+                        <img id="logo-header" src="images/logosmall.png" alt="Logo">
+                    </a>
+                </div>
+                
+                <div>
+                <ul class="nav nav-pills">
+                <li><a href="#">Home</a></li>
+					<li><a href="#">Profile</a></li>
+					<li class="active"><a href="#">Messages <span class="badge">24</span></a></li>
+					<li><a href="#">Notification  <span class="badge">5</span></a></li>
+					</ul>				
+					</div>
+					
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-responsive-collapse">
+                    <ul class="nav navbar-nav">
+
+								{{#if isUser}}
+                        <!-- Dealer-Logistics -->                        
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                Menu
+                            </a>
+                            <ul class="dropdown-menu">
+										  <!-- Home Pages -->
+                                <li>
+                                    <a href={{pathFor 'home'}}>Home</a>                          
+                                </li>
+                                <!-- End Home Pages -->                              
+										  <!-- Car Pages -->
+                                <li class="dropdown-submenu">
+                                    <a href={{pathFor 'cars'}}>Cars</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href={{pathFor 'cars'}}>Cars</a></li>
+                                        <li><a href={{pathFor 'carshistory'}}>Cars History</a></li>
+                                    </ul>                                
+                                </li>
+                                <!-- End Car Pages -->                                
+                                <!-- Shuttle Pages -->
+                                <li class="dropdown-submenu">
+                                    <a href={{pathFor 'shuttle'}}>Shuttle</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href={{pathFor 'shuttle'}}>Shuttle</a></li>
+                                        <li><a href={{pathFor 'shuttlehistory'}}>Shuttle History</a></li>
+                                    </ul>                                
+                                </li>
+                                <!-- End Shuttle Pages -->
+                                <!-- Task Pages -->
+                                <li class="dropdown-submenu">
+                                    <a href={{pathFor 'task'}}>Tasks</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href={{pathFor 'task'}}>Tasks</a></li>
+                     						 <li><a href={{pathFor 'taskhistory'}}>Tasks History</a></li>
+                                    </ul>                                
+                                </li>
+                                <!-- End Task Pages -->
+										  <!-- Admin Pages -->
+                                <li>
+                                    <a href={{pathFor 'adminTemplate'}}>Admin Panel</a>                            
+                                </li>
+                                <!-- EndAdmin Pages --> 
+										  <!-- Login Pages -->
+                                <li>
+                                    {{> loginButtons }}                            
+                                </li>
+                                <!-- End Login Pages -->                                   
+                            </ul>
+                        </li>
+                        <!-- End Dealer-Logistics -->
+                        {{/if}}							
+                    </ul>
+                </div><!--/navbar-collapse-->
+            </div>    
+        </div>            
+        <!-- End Navbar -->       
+    </div>
+    <!--=== End Header ===-->     
 </template>

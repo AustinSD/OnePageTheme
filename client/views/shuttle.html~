@@ -9,7 +9,7 @@
       <!--Basic Table-->
       <div class="panel panel-dark-blue margin-bottom-40">
          <div class="panel-heading">
-            <h3 class="panel-title"><i class="fa fa-car"></i>Shuttle Log</h3> {{#if isCreateUser}}
+            <h3 class="panel-title"><i class="fa fa-bus"></i>Shuttle Log</h3> {{#if isCreateUser}}
             <button id="btnNewShuttle" class="btn btn-default btn-sm newShuttle">New Shuttle</button>
             {{/if}}
                     <div class="btn-group">
@@ -129,35 +129,34 @@
                 </div>
             <div class="modal-body">
                {{#with getShuttleID}}
-               <h3>Shuttle</h3>
                         <div class="form-group form-group-sm">
                             <label class="col-sm-4 control-label" for="time">Time Requested</label>
                             <div class="col-sm-8" id="time">
                                 {{time}}
                             </div>
                         </div>
-
+                        <br>
                         <div class="form-group form-group-sm">
                             <label class="col-sm-4 control-label" for="name">Customer Name</label>
                             <div class="col-sm-8" id="name">
                                 {{name}}
                             </div>
                         </div>
-                        
+                        <br>
 								<div class="form-group form-group-sm">
                             <label class="col-sm-4 control-label" for="number">Customer Number</label>
                             <div class="col-sm-8" id="number">
                                 {{number}}
                             </div>
                         </div>
-
+                        <br>
                         <div class="form-group form-group-sm">
                             <label class="col-sm-4 control-label" for="address">Customer Address</label>
                             <div class="col-sm-8" id="address">
                                 {{address}}
                             </div>
                         </div>
-
+                        <br>
 						<div class="form-group form-group-sm">
                   	<label class="col-sm-4 control-label" for="driver">Driver</label>
                      <div class="col-sm-8">
@@ -169,7 +168,7 @@
                         </select>
                       </div>
                   </div> 
-
+                  <br>
                   <div class="form-group form-group-sm">
                   	<label class="col-sm-4 control-label" for="status">Status</label>
                      <div class="col-sm-8">
@@ -184,14 +183,14 @@
                   <br>
                         <div class="form-group form-group-sm">
                             <label class="col-sm-4 control-label" for="timeout">Time out</label>
-                            <div class="col-sm-8" id="timeout">
+                            <div class="col-sm-8">
                             <input class="form-control" type="text" id="timeout" placeholder="Time out" value={{timeout}}>                                
                             </div>
                         </div>
 								<br>
                         <div class="form-group form-group-sm">
                             <label class="col-sm-4 control-label" for="timein">Time In</label>
-                            <div class="col-sm-8" id="timein">
+                            <div class="col-sm-8">
                             <input class="form-control" type="text" id="timein" placeholder="Time In" value={{timein}}>
                                 
                             </div>

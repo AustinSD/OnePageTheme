@@ -159,7 +159,7 @@
                                 <select class="form-control" id="porter" name="porter">
                   					<option></option>
                   					{{#with company}} {{#each company.porters}}
-                  					<option {{selected getTaskID.porter this }}>{{this}}</option>
+                  					<option {{selected getCarID.porter this }}>{{this}}</option>
                   					{{/each}} {{/with}}
                					</select>
                             </div>
