@@ -109,16 +109,6 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
 </div>
     <!-- End Intro Section -->
 
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
     
     <!--  About Section -->
     <section id="about" class="about-section section-first">
@@ -733,7 +723,7 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
                 <li><a href="#" data-original-title="Pinterest" class="social_pintrest rounded-x"></a></li>
                 <li><a href="#" data-original-title="Linkedin" class="social_linkedin rounded-x"></a></li>
             </ul>
-            <span class="page-scroll"><a href="#intro"><i class="fa fa-angle-double-up back-to-top"></i></a></span>
+            <span class="page-scroll"><a href="#body"><i class="fa fa-angle-double-up back-to-top"></i></a></span>
         </div>
     </section>
     <!-- End Contact Section -->  
