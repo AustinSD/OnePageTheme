@@ -1,201 +1,13 @@
-<template name="header2">
-   <nav class="navbar navbar-default" role="navigation">
-      <div class="container-fluid">
-         <!-- Brand and toggle get grouped for better mobile display -->
-         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href={{pathFor 'home'}}>
-                    <img src="images/logosmall.png" alt="Logo"> 
-            </a>
-         </div>
-         <div class="navbar-text">
-            <label> <a href={{pathFor 'cars'}}>Cars</a></label> <span class="badge"> {{cars}}</span>
-				<label>  <a href={{pathFor 'shuttleP'}}>Pick-ups</a></label> <span class="badge"> {{pickup}}</span>
-				<label> <a href={{pathFor 'shuttleD'}}>Drop-offs</a></label> <span class="badge"> {{dropoff}}</span>
-				<label> <a href={{pathFor 'task'}}>Tasks</a></label> <span class="badge"> {{taskcount}}</span>
-				<label> <a href={{pathFor 'cars'}}>Wash</a></label> <span class="badge"> {{washCount}}</span>			
-   		</div>  
-
-         <!-- Collect the nav links, forms, and other content for toggling -->
-         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-               <li><a class="brand" href={{pathFor 'home'}}>Home</a></li>
-               {{#if isUser}}
-               <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Service Desk<span class="caret"></span></a>
-                  <ul class="dropdown-menu" role="menu">
-                     <li><a href={{pathFor 'cars'}}>Cars</a></li>
-                     <li><a href={{pathFor 'carshistory'}}>Cars History</a></li>
-                  </ul>
-               </li>
-               <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Shuttle Log<span class="caret"></span></a>
-                  <ul class="dropdown-menu" role="menu">
-                     <li><a href={{pathFor 'shuttle'}}>Shuttle</a></li>
-                     <li><a href={{pathFor 'shuttlehistory'}}>Shuttle History</a></li>
-                  </ul>
-               </li>
-               <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tasks<span class="caret"></span></a>
-                  <ul class="dropdown-menu" role="menu">
-                     <li><a href={{pathFor 'task'}}>Tasks</a></li>
-                     <li><a href={{pathFor 'taskhistory'}}>Tasks History</a></li>
-                  </ul>
-               </li>
-               {{/if}}
-               {{#if isInRole 'admin'}}
-               <li><a href={{pathFor 'adminTemplate'}}>Admin Panel</a></li>
-               {{/if}}
-<!--               <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">About<span class="caret"></span></a>
-                  <ul class="dropdown-menu" role="menu">
-                     <li><a href={{pathFor 'about'}}>About</a></li>
-                     <li><a href={{pathFor 'meetstaff'}}>Meet the Staff</a></li>
-                  </ul>
-               </li>-->
-               {{> loginButtons }}
-            </ul>
-         </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-   </nav>
-</template>
-
-<template name="header3">
-    <!--=== Header ===-->    
-    <div class="header">
-        
-        {{#if isUser}}
-        <!-- Topbar -->
-        <div class="topbar">
-            <div class="container">
-                <!-- Topbar Navigation -->	
-         		<ul class="list-inline badge-lists text-center">
-         		<li>
-        				<a class="btn-u btn-u-xs btn-u-default" href={{pathFor 'cars'}}>Cars</a>
-        				<span class="badge badge-orange rounded"> {{cars}}</span>
-        			</li>
-        			<li>
-        				<a class="btn-u btn-u-xs btn-u-default" href={{pathFor 'shuttleP'}}>Pick-ups</a>
-        				<span class="badge badge-orange rounded"> {{pickup}}</span>
-        			</li>
-        			<li>
-        				<a class="btn-u btn-u-xs btn-u-default" href={{pathFor 'shuttleD'}}>Drop-offs</a>
-        				<span class="badge badge-orange rounded"> {{dropoff}}</span>
-        			</li>
-        			<li>
-        				<a class="btn-u btn-u-xs btn-u-default" href={{pathFor 'task'}}>Tasks</a>
-        				<span class="badge badge-orange rounded"> {{taskcount}}</span>
-        			</li>
-        			<li>
-        				<a class="btn-u btn-u-xs btn-u-default" href={{pathFor 'cars'}}>Wash</a>
-        				<span class="badge badge-orange rounded"> {{washCount}}</span>
-        			</li>
-        			</ul>
-                <!-- End Topbar Navigation -->
-            </div>
-        </div>
-        <!-- End Topbar -->
-        {{/if}}
-
-        <!-- Navbar -->
-        <div class="navbar navbar-default mega-menu" role="navigation">
-            <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="fa fa-bars"></span>
-                    </button>
-                    <a class="navbar-brand" href={{pathFor 'home'}}>
-                        <img id="logo-header" src="images/logosmall.png" alt="Logo">
-                    </a>
-                </div>
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse navbar-responsive-collapse">
-                    <ul class="nav navbar-nav">
-                        <!-- Home -->
-                        <li class="">
-                            <a href={{pathFor 'home'}}>Home</a>
-                        </li>
-                        <!-- End Home -->
-
-								{{#if isUser}}
-                        <!-- Dealer-Logistics -->                        
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown">
-                                Dealer-Logistics
-                            </a>
-                            <ul class="dropdown-menu">
-										  <!-- Car Pages -->
-                                <li class="dropdown-submenu">
-                                    <a href={{pathFor 'cars'}}>Cars</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href={{pathFor 'cars'}}>Cars</a></li>
-                                        <li><a href={{pathFor 'carshistory'}}>Cars History</a></li>
-                                    </ul>                                
-                                </li>
-                                <!-- End Car Pages -->                                
-                                <!-- Shuttle Pages -->
-                                <li class="dropdown-submenu">
-                                    <a href={{pathFor 'shuttle'}}>Shuttle</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href={{pathFor 'shuttle'}}>Shuttle</a></li>
-                                        <li><a href={{pathFor 'shuttlehistory'}}>Shuttle History</a></li>
-                                    </ul>                                
-                                </li>
-                                <!-- End Shuttle Pages -->
-                                <!-- Task Pages -->
-                                <li class="dropdown-submenu">
-                                    <a href={{pathFor 'task'}}>Tasks</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href={{pathFor 'task'}}>Tasks</a></li>
-                     						 <li><a href={{pathFor 'taskhistory'}}>Tasks History</a></li>
-                                    </ul>                                
-                                </li>
-                                <!-- End Task Pages -->
-                            </ul>
-                        </li>
-                        <!-- End Dealer-Logistics -->
-                        {{/if}}
-                                                
-                        <!-- Admin --> 
-                        {{#if isInRole 'admin'}}                       
-                        <li class="">
-									<a href={{pathFor 'adminTemplate'}}>
-                                Admin Panel
-                            </a>
-                        </li>
-                        {{/if}}
-                        <!-- End Admin -->
-                        
-							{{> loginButtons }}
-                    </ul>
-                </div><!--/navbar-collapse-->
-            </div>    
-        </div>            
-        <!-- End Navbar -->       
-    </div>
-    <!--=== End Header ===-->    
-</template>
-
 <template name="header">
     <!--=== Header ===-->    
     <div class="header">
-
+<a href="javascript:void(0);" onclick="$('#login-dropdown-list b').remove('.caret');">remove() more bold</a>
         <!-- Navbar -->
-        <div class="navbar navbar-default mega-menu" role="navigation">
+        <div class="navbar navbar-default" role="navigation">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="fa fa-bars"></span>
                     </button>
@@ -203,23 +15,12 @@
                         <img id="logo-header" src="images/logosmall.png" alt="Logo">
                     </a>
                 </div>
-                
-                <div>
-                <ul class="nav nav-pills">
-                <li><a href="#">Home</a></li>
-					<li><a href="#">Profile</a></li>
-					<li class="active"><a href="#">Messages <span class="badge">24</span></a></li>
-					<li><a href="#">Notification  <span class="badge">5</span></a></li>
-					</ul>				
-					</div>
 					
                 <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse navbar-responsive-collapse">
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav">
-
-								{{#if isUser}}
                         <!-- Dealer-Logistics -->                        
-                        <li class="dropdown">
+                        <li class="dropdown home">
                             <a class="dropdown-toggle" data-toggle="dropdown">
                                 Menu
                             </a>
@@ -257,19 +58,37 @@
                                 </li>
                                 <!-- End Task Pages -->
 										  <!-- Admin Pages -->
+										  {{#if isInRole 'admin'}}
                                 <li>
                                     <a href={{pathFor 'adminTemplate'}}>Admin Panel</a>                            
                                 </li>
-                                <!-- EndAdmin Pages --> 
-										  <!-- Login Pages -->
-                                <li>
-                                    {{> loginButtons }}                            
-                                </li>
-                                <!-- End Login Pages -->                                   
+                                {{/if}} 
+                                <!-- EndAdmin Pages -->                                
                             </ul>
                         </li>
                         <!-- End Dealer-Logistics -->
-                        {{/if}}							
+                               		
+         		<li>
+        				<a href={{pathFor 'cars'}}>Cars
+        				<span class="badge badge-red rounded"> {{cars}}</span></a>
+        			</li>
+        			<li>
+        				<a href={{pathFor 'shuttleP'}}>Pick-ups
+        				<span class="badge badge-red rounded"> {{pickup}}</span></a>
+        			</li>
+        			<li>
+        				<a href={{pathFor 'shuttleD'}}>Drop-offs
+        				<span class="badge badge-red rounded"> {{dropoff}}</span></a>
+        			</li>
+        			<li>
+        				<a href={{pathFor 'task'}}>Tasks
+        				<span class="badge badge-red rounded"> {{taskcount}}</span></a>
+        			</li>
+        			<li>
+        				<a href={{pathFor 'cars'}}>Wash
+        				<span class="badge badge-red rounded"> {{washCount}}</span></a>
+        			</li>
+        			{{> loginButtons }} 							
                     </ul>
                 </div><!--/navbar-collapse-->
             </div>    

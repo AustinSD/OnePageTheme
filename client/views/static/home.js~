@@ -29,6 +29,7 @@
         });
         
         $(window).load(function(){
+        	$('#login-dropdown-list b').remove('.caret');
                 $('.parallaxBg').parallax("50%", 0.4);
             });
 });

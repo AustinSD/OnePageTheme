@@ -27,3 +27,10 @@ Template.header.rendered = function() {
     // is finished rendering.
     $('#login-dropdown-list b').remove('.caret');
 };
+Meteor.startup(function() {
+        $(function() {
+            $('#login-dropdown-list b').remove('.caret');
+            
+        });
+        
+});

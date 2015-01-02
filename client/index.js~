@@ -31,6 +31,9 @@
 		return moment(value).format("MM/DD/YYYY h:mm A");
 });
 Meteor.startup(
+		$(function() {
+            $('.dropdown-toggle').remove('b');
+      }),
 		function() {
 		    var revapi;
 	        jQuery(document).ready(function() {
