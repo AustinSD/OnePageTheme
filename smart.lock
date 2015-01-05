@@ -2,7 +2,8 @@
   "meteor": {},
   "dependencies": {
     "basePackages": {
-      "accounts-ui-bootstrap-3": {}
+      "accounts-ui-bootstrap-3": {},
+      "chartjs": {}
     },
     "packages": {
       "accounts-ui-bootstrap-3": {
@@ -10,10 +11,10 @@
         "tag": "v0.3.5",
         "commit": "bbd0a8a46ae02526c2ebfee05fa8075d8d04a9ba"
       },
-      "roles": {
-        "git": "https://github.com/alanning/meteor-roles.git",
-        "tag": "v1.2.8",
-        "commit": "68844ba216c348d332bdb840825850f497f515bb"
+      "chartjs": {
+        "git": "https://github.com/donskifarrell/meteor-chartjs.git",
+        "tag": "v0.0.6",
+        "commit": "7999ee282dc6302806c421607ecd9248d160c6e7"
       }
     }
   }

@@ -14,6 +14,7 @@ Router.route('/home');
 Router.route('/about');
 Router.route('/meetstaff');
 Router.route('/signup');
+Router.route('/report');
 
 Router.route('/carshistory', {
   name: 'carshistory',
