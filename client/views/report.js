@@ -2,9 +2,50 @@ Template.report.helpers({
 	company: function () {
 		return Company.findOne({companyname: Meteor.user().profile.company});		
 		},
+		carCount: function () {
+			return CarsHistory.find().count();
+		},
+		taskCount: function () {
+			return TaskHistory.find().count();
+		},
+		shuttleCount: function () {
+			return ShuttleHistory.find().count();
+		}
 });
 
 Template.report.events ({
+    'click #btnLoad': function(event, template) {
+      event.preventDefault();
+      
+      var labelsPorters = Company.findOne({companyname: Meteor.user().profile.company}).porters;
+      var carNum = new Array();
+      var taskNum = new Array();
+
+      var data = {
+			labels : labelsPorters,
+
+			datasets : [
+			{
+				fillColor : "rgba(220,220,220,0.5)",
+				strokeColor : "rgba(220,220,220,1)",
+				pointColor : "rgba(220,220,220,1)",
+				pointStrokeColor : "#fff",
+				data : carNum
+			},
+			{
+				fillColor : "rgba(151,187,205,0.5)",
+				strokeColor : "rgba(151,187,205,1)",
+				pointColor : "rgba(151,187,205,1)",
+				pointStrokeColor : "#fff",
+				data : taskNum
+			}
+			]
+		};
+
+      makeChart(data);      
+      
+      },
+      	
     'click #btnPorter': function(event, template) {
       event.preventDefault();
       
@@ -32,10 +73,10 @@ Template.report.events ({
         			label: "Cars"
     			},
     			{
-        		value: 1,
-        		color: "#FDB45C",
-        		highlight: "#FFC870",
-        		label: "Other"
+        			value: 1,
+        			color: "#FDB45C",
+        			highlight: "#FFC870",
+        			label: "Other"
     			}
 				];
 		}
@@ -67,21 +108,60 @@ Template.report.events ({
       makePieCharts(portIndex,porterName, data2);
       },
 });
-	
+
+/*Template.report.created = function () {
+	console.log("created");
+	$( "#btnLoad" ).click();
+	};
 Template.report.rendered = function() {
-
-//Get the context of the canvas element we want to select
-
+	console.log("rendered");
+	$( "#btnLoad" ).click();
 };
+
+Deps.autorun(function () {
+	var user = Deps.nonreactive(function () { return Meteor.user(); });
+	console.log(user);
+	makeChart2();
+});*/
 
 function makeChart(data) {  
 var ctx = document.getElementById("myChart").getContext("2d");
 var myNewChart = new Chart(ctx).Line(data,null);
 }
 
+function makeChart2() {  
+      var labelsPorters = Company.findOne({companyname: Meteor.user().profile.company}).porters;
+      var carNum = new Array();
+      var taskNum = new Array();
+
+      var data = {
+			labels : labelsPorters,
+
+			datasets : [
+			{
+				fillColor : "rgba(220,220,220,0.5)",
+				strokeColor : "rgba(220,220,220,1)",
+				pointColor : "rgba(220,220,220,1)",
+				pointStrokeColor : "#fff",
+				data : carNum
+			},
+			{
+				fillColor : "rgba(151,187,205,0.5)",
+				strokeColor : "rgba(151,187,205,1)",
+				pointColor : "rgba(151,187,205,1)",
+				pointStrokeColor : "#fff",
+				data : taskNum
+			}
+			]
+		};
+		
+var ctx = document.getElementById("myChart").getContext("2d");
+var myNewChart = new Chart(ctx).Line(data,null);
+}
+
 function makePieCharts(porterIndex, portName, data) {  
 
-		$('#porterName').text(portName);
+		$('#porterName').text("Details for " + portName);
 		var ctx2 = document.getElementById("myPieChart").getContext("2d");
 		var myPieChart = new Chart(ctx2).Pie(data[porterIndex],null);
 
