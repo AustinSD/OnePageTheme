@@ -7,6 +7,7 @@
 
   
   Template.carshistory.rendered = function() {
+
  $( "#start" ).datepicker({
 defaultDate: "+1w",
 changeMonth: true,

@@ -435,7 +435,7 @@
                                 <select class="form-control" id="asmUpdateAdvisor" name="asmUpdateAdvisor">
                                     <option></option>
                                     {{#with company}} {{#each company.asm}}
-                                    <option value={{this}}>{{this}}</option>
+                                    <option {{selected getCarID.asm this }}>{{this}}</option>
                                     {{/each}} {{/with}}
                                 </select>
                             </div>

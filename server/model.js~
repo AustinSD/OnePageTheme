@@ -13,8 +13,19 @@ Meteor.publish("cars", function () {
 	var company = Meteor.users.findOne(this.userId).profile.company;
 	return Cars.find({company : company});
 });
+
 Meteor.FilterCollections.publish(CarsHistory, {
-  name: 'carshistory',
+  name: 'carshistroy',
+  callbacks: {
+    beforePublish: function(query, handler){
+      if (handler.userId)
+        query.selector =  _.extend(query.selector, {company: Meteor.users.findOne(handler.userId).profile.company});
+      return query;
+    },
+    },
+});
+Meteor.FilterCollections.publish(CarsHistory, {
+name: 'carreport',
   callbacks: {
     beforePublish: function(query, handler){
       if (handler.userId)
@@ -35,6 +46,16 @@ Meteor.FilterCollections.publish(ShuttleHistory, {
 });
 Meteor.FilterCollections.publish(TaskHistory, {
   name: 'taskhistory',
+  callbacks: {
+    beforePublish: function(query, handler){
+      if (handler.userId)
+        query.selector =  _.extend(query.selector, {company: Meteor.users.findOne(handler.userId).profile.company});
+      return query;
+    },
+    },
+});
+Meteor.FilterCollections.publish(TaskHistory, {
+name: 'taskreport',
   callbacks: {
     beforePublish: function(query, handler){
       if (handler.userId)

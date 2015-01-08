@@ -5,7 +5,9 @@ if (Meteor.isClient) {
             return Roles.userIsInRole(Meteor.user(), ['admin']);
         }
     });
+
 CarHistoryFilter = new Meteor.FilterCollections(CarsHistory, {
+	name: 'carshistroy',
   template: 'carshistory',
     sort:{
     order: ['desc', 'asc'],
@@ -52,6 +54,18 @@ CarHistoryFilter = new Meteor.FilterCollections(CarsHistory, {
     showPages: 5,
   }
   // Other arguments explained later. See Configuration.
+});
+ReportCarHistoryFilter = new Meteor.FilterCollections(CarsHistory, {
+	name: 'carreport',
+	template: 'report',
+	filters: {
+		"name": {
+			title: 'Name',
+			operator: ['$regex', 'i'],
+			condition: '$and',
+			searchable: 'required'
+		}
+	},
 });
 ShuttleHistoryFilter = new Meteor.FilterCollections(ShuttleHistory, {
   template: 'shuttlehistory',
@@ -142,6 +156,18 @@ TaskHistoryFilter = new Meteor.FilterCollections(TaskHistory, {
     showPages: 5,
   }
   // Other arguments explained later. See Configuration.
+});
+ReportTaskHistoryFilter = new Meteor.FilterCollections(TaskHistory, {
+	name: 'taskreport',
+	template: 'report',
+	filters: {
+		"name": {
+			title: 'Name',
+			operator: ['$regex', 'i'],
+			condition: '$and',
+			searchable: 'required'
+		}
+	},
 });
   	 Meteor.subscribe("cars");
     //Meteor.subscribe("carshistory");

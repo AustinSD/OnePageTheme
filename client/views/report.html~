@@ -1,7 +1,15 @@
 <template name="report"> 
  
 <h1>Meteor-ChartJs Example</h1>
+
+{{#with company}} {{#each company.porters}}
+<button id="btnPorter" class="btn btn-default btn-sm " value={{this}} >{{this}}</button>
+{{/each}} {{/with}}
+<br>
+
 <canvas id="myChart" style="width:100%; height:100%"></canvas>
 <canvas id="myPieChart" style="width:100%; height:100%"></canvas>
 <canvas id="myDoughnutChart" style="width:100%; height:100%"></canvas>
+
+
 </template>
