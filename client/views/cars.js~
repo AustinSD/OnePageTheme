@@ -114,7 +114,7 @@
         status: template.find("#statusUpdateAdvisor").value,
         notes: template.find("#notesUpdateAdvisor").value,
         porter: template.find("#porterUpdateAdvisor").value,
-        wash: template.find("#washUpdateUpdateAdvisor").value,
+        wash: template.find("#washUpdateAdvisor").value,
         completestamp: moment().format() //moment().format('MM/DD/YYYY h:mm A')
       };
       Cars.update(Session.get("carID"), {

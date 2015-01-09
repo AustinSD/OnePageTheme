@@ -976,10 +976,10 @@ a.btn-u-xs {
 .btn-u:active, 
 .btn-u.active, 
 .open .dropdown-toggle.btn-u {
-   background: #2D4D63;
+   background: #233C4D;
 }
 .btn-u-split.dropdown-toggle {
-   border-left: solid 1px #2D4D63;
+   border-left: solid 1px #233C4D;
 }
 
 .btn-u.btn-u-blue {

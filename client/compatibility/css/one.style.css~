@@ -263,12 +263,12 @@ a:hover {
 }
 
 .wrapper-portfolio #filters-container .cbp-filter-item-active {
-	background: #32566E;
-	border-color: #5C2626;
+	background: #72c02c;
+	border-color: #72c02c;
 }
 
 .wrapper-portfolio #filters-container .cbp-filter-item:hover {
 	color: #fff;
-	background: #5C2626;
-	border-color: #32566E;
+	background: #72c02c;
+	border-color: #72c02c;
 }

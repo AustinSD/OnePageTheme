@@ -27,7 +27,8 @@ shuttleDirection: function(){
 Template.shuttle.rendered = function(){
     var direction = Session.get("shuttleDirection");
     $(".dropdown-menu").val(direction);
-  };    
+  };   
+   
   Template.shuttle.events({
 		'click .dropdown-menu li':  function( event ) {
    		var $target = $( event.currentTarget );

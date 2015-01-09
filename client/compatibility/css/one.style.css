@@ -33,7 +33,7 @@ li a {
 }
 
 a {
-   color: #72c02c;
+   color: #32566E;
    text-decoration: none;  
 }
 
@@ -47,13 +47,13 @@ a:focus {
   text-decoration: none;
 }
 a:hover {
-   color: #72c02c;
+   color: #32566E;
    text-decoration: underline;
 }
 
 ::selection {
 	color: #fff;
-	background: #72c02c;
+	background: #32566E;
 }
 
 /*Header
@@ -70,7 +70,7 @@ a:hover {
 	width: 300px;
 }
 .navbar-brand span {
-	color: #72c02c !important;
+	color: #32566E !important;
 }
 
 /*Navbar Toggle*/
@@ -263,12 +263,12 @@ a:hover {
 }
 
 .wrapper-portfolio #filters-container .cbp-filter-item-active {
-	background: #72c02c;
-	border-color: #72c02c;
+	background: #32566E;
+	border-color: #32566E;
 }
 
 .wrapper-portfolio #filters-container .cbp-filter-item:hover {
 	color: #fff;
-	background: #72c02c;
-	border-color: #72c02c;
+	background: #32566E;
+	border-color: #32566E;
 }
