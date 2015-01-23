@@ -1,5 +1,7 @@
-Template.home.events({
-
+Template.home.helpers({
+ carCount: function() {
+      return CarsHistory.find().count();
+      }
 });
   Template.carousel.rendered = function() {
     $(".owl-carousel").owlCarousel({

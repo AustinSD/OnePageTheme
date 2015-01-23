@@ -54,7 +54,7 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
 {{>carousel}}
     <!--  About Section -->
     <section id="about" class="about-section section-first">
-        <div class="block-v1">
+<!--        <div class="block-v1">
             <div class="container">
                 <div class="row content-boxes-v3">
                     <div class="col-md-4 md-margin-bottom-30">
@@ -80,7 +80,7 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
                     </div>
                 </div>                
             </div>
-        </div>
+        </div>-->
 
         <div class="about-image bg-grey">
             <div class="container">
@@ -105,7 +105,7 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
             <div class="row">
                 <div class="col-md-6 content-boxes-v3 margin-bottom-40">
                     <div class="clearfix margin-bottom-30">
-                        <i class="icon-custom icon-md rounded-x icon-bg-red icon-line icon-trophy"></i>
+                        <i class="icon-custom icon-md rounded-x icon-bg-red fa fa-car"></i>
                         <div class="content-boxes-in-v3">
                             <h2 class="heading-sm">Automotive Background</h2>
                             <p>Our team consists of a balance of dealership experienced personnel and technology enthusiast. With over 10 years of automotive involvement; we have designed our applications with hands on knowledge of day to day service department work flow.</p>
@@ -119,7 +119,7 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
                         </div>
                     </div>
                     <div class="clearfix margin-bottom-30">
-                        <i class="icon-custom icon-md rounded-x icon-bg-red icon-line icon-diamond"></i>
+                        <i class="icon-custom icon-md rounded-x icon-bg-red fa fa-desktop"></i>
                         <div class="content-boxes-in-v3">
                             <h2 class="heading-sm">Support &amp; Service</h2>
                             <p>We are constantly improving our applications with regular updates and new features. we value our users feedback and often implement suggested features and modifications </p>
@@ -141,78 +141,6 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
                 </div>
             </div>
         </div>        
-
-        <div class="team-v1 bg-grey content-lg">
-            <div class="container">
-                <div class="title-v1">
-                    <h2>Meet Our Team</h2>
-                    <p>We <strong>meet</strong> and get to know you. You tell us and we listen. <br> 
-                    We build your website to realise your vision and we <strong>deliver</strong> the ready product.</p>
-                </div>
-
-                <ul class="list-unstyled row">
-                    <li class="col-sm-3 col-xs-6 md-margin-bottom-30">
-                        <div class="team-img">
-                            <img class="img-responsive" src="images/team/bryan_about2.jpg" alt="Bryan Partipilo" height="342" width="326">
-                            <ul>
-                                <li><a href="http://www.twitter.com/bryanpartipilo" target="_blank"><i class="icon-custom icon-sm rounded-x fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="icon-custom icon-sm rounded-x fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="icon-custom icon-sm rounded-x fa fa-google-plus"></i></a></li>
-                            </ul>
-                        </div>
-                        <h3>Bryan Partipilo</h3>
-                        <h4>Co-Founder, CEO</h4>
-                        <p>In charge of all things related to Booger</p>
-                    </li>
-                    <li class="col-sm-3 col-xs-6 md-margin-bottom-30">
-                        <div class="team-img">
-                            <img class="img-responsive" src="images/team/austin.jpg" alt="Austin Johnson" height="342" width="326">
-                            <ul>
-                                <li><a href="#"><i class="icon-custom icon-sm rounded-x fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="icon-custom icon-sm rounded-x fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="icon-custom icon-sm rounded-x fa fa-google-plus"></i></a></li>
-                            </ul>
-                        </div>
-                        <h3>Austin Johnson</h3>
-                        <h4>Co-Founder, COO</h4>
-                        <p>Lead Designer and Badass</p>
-                    </li>
-                </ul>                
-            </div>
-        </div>
-
-        <div class="parallax-counter parallaxBg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-3 col-xs-6">
-                        <div class="counters">
-                            <span class="counter">10629</span>   
-                            <h4>Vehicles Delivered</h4>
-                        </div>    
-                    </div>
-                    <div class="col-sm-3 col-xs-6">
-                        <div class="counters">
-                            <span class="counter">277</span> 
-                            <h4>Shuttle Rides</h4>
-                        </div>    
-                    </div>
-                    <div class="col-sm-3 col-xs-6">
-                        <div class="counters">
-                            <span class="counter">78</span>
-                            <h4>Car Washes</h4>
-                        </div>    
-                    </div>
-                    <div class="col-sm-3 col-xs-6">
-                        <div class="counters">
-                            <span class="counter">109</span>
-                            <h4>Tasks Completed</h4>
-                        </div>    
-                    </div>
-                </div>            
-            </div>
-        </div>        
-    </section>
-    <!--  About Section -->
 
     <!-- Services Section -->
     <section id="services">
@@ -267,7 +195,81 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
                     </div>
                 </div>
             </div>
-        </div>    
+        </div> 
+
+
+        <div class="parallax-counter parallaxBg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3 col-xs-6">
+                        <div class="counters">
+                            <span class="counter">{{carCount}}</span>   
+                            <h4>Vehicles Delivered</h4>
+                        </div>    
+                    </div>
+                    <div class="col-sm-3 col-xs-6">
+                        <div class="counters">
+                            <span class="counter">277</span> 
+                            <h4>Shuttle Rides</h4>
+                        </div>    
+                    </div>
+                    <div class="col-sm-3 col-xs-6">
+                        <div class="counters">
+                            <span class="counter">78</span>
+                            <h4>Car Washes</h4>
+                        </div>    
+                    </div>
+                    <div class="col-sm-3 col-xs-6">
+                        <div class="counters">
+                            <span class="counter">109</span>
+                            <h4>Tasks Completed</h4>
+                        </div>    
+                    </div>
+                </div>            
+            </div>
+        </div>        
+    </section>
+    <!--  About Section -->
+   
+                   
+        <div class="testimonials-v3">
+            <div class="container">
+            <div class="title-v1">
+                <h2>Testimonials</h2>              
+            </div>    
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <ul class="list-unstyled owl-ts-v1">
+                            <li class="item">
+                                <img class="rounded-x img-bordered" src="images/team/cadwell.jpg" alt="">
+                                <div class="testimonials-v3-title">
+                                    <p>Jeremy Cadwell</p>
+                                    <span>Service Director, Toyota of El Cajon</span>
+                                </div>
+                                <p>I just wanted to tell you how much I like to use Unify - <strong>it's so sleek and elegant!</strong> <br>
+                                The customisation options you implemented are countless, and I feel sorry I can't use them all. Good job, and keep going!</p>
+                            </li>
+                            <li class="item">
+                                <img class="rounded-x img-bordered" src="images/team/img2-sm.jpg" alt="">
+                                <div class="testimonials-v3-title">
+                                    <p>Tina Krueger</p>
+                                    <span>UI Designer, Apple</span>
+                                </div>                                
+                                <p>Keep up the great work. Your template is by far the best on the market in terms of features, quality and value or money.</p>
+                            </li>
+                            <li class="item">
+                                <img class="rounded-x img-bordered" src="images/team/img1-sm.jpg" alt="">
+                                <div class="testimonials-v3-title">
+                                    <p>John Clarck</p>
+                                    <span>Marketing &amp; Cunsulting, IBM</span>
+                                </div>
+                                <p>So far I really like the theme. I am looking forward to exploring more of your themes. Thank you!</p>
+                            </li>
+                        </ul>
+                    </div>                    
+                </div>
+            </div>
+        </div>
 <!--         <ul class="list-unstyled row portfolio-box-v1">
             <li class="col-sm-4">
                 <img class="img-responsive" src="images/mockup/img1.jpg" alt="">
@@ -382,7 +384,7 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
     <!-- Portfolio Section -->
     <section id="portfolio" class="about-section">
 
-        <div class="clients-section parallaxBg">
+<!--        <div class="clients-section parallaxBg">
             <div class="container">
                 <div class="title-v1">
                     <h2>Our Clients</h2>
@@ -396,43 +398,46 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
                     <li class="item"><a href="#"><img src="images/clients/inspiring.png" alt=""></a></li>
                 </ul>            
             </div>
-        </div>
+        </div>-->
 
-        <div class="testimonials-v3">
+                <div class="team-v1 bg-grey content-lg">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <ul class="list-unstyled owl-ts-v1">
-                            <li class="item">
-                                <img class="rounded-x img-bordered" src="images/team/cadwell.jpg" alt="">
-                                <div class="testimonials-v3-title">
-                                    <p>Jeremy Cadwell</p>
-                                    <span>Service Director, Toyota of El Cajon</span>
-                                </div>
-                                <p>I just wanted to tell you how much I like to use Unify - <strong>it's so sleek and elegant!</strong> <br>
-                                The customisation options you implemented are countless, and I feel sorry I can't use them all. Good job, and keep going!</p>
-                            </li>
-                            <li class="item">
-                                <img class="rounded-x img-bordered" src="images/team/img2-sm.jpg" alt="">
-                                <div class="testimonials-v3-title">
-                                    <p>Tina Krueger</p>
-                                    <span>UI Designer, Apple</span>
-                                </div>                                
-                                <p>Keep up the great work. Your template is by far the best on the market in terms of features, quality and value or money.</p>
-                            </li>
-                            <li class="item">
-                                <img class="rounded-x img-bordered" src="images/team/img1-sm.jpg" alt="">
-                                <div class="testimonials-v3-title">
-                                    <p>John Clarck</p>
-                                    <span>Marketing &amp; Cunsulting, IBM</span>
-                                </div>
-                                <p>So far I really like the theme. I am looking forward to exploring more of your themes. Thank you!</p>
-                            </li>
-                        </ul>
-                    </div>                    
+                <div class="title-v1">
+                    <h2>Meet Our Team</h2>
+                    <p>We <strong>meet</strong> and get to know you. You tell us and we listen. <br> 
+                    We build your website to realise your vision and we <strong>deliver</strong> the ready product.</p>
                 </div>
+
+                <ul class="list-unstyled row">
+                    <li class="col-sm-3 col-xs-6 md-margin-bottom-30">
+                        <div class="team-img">
+                            <img class="img-responsive" src="images/team/bryan_about2.jpg" alt="Bryan Partipilo" height="342" width="326">
+                            <ul>
+                                <li><a href="http://www.twitter.com/bryanpartipilo" target="_blank"><i class="icon-custom icon-sm rounded-x fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="icon-custom icon-sm rounded-x fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="icon-custom icon-sm rounded-x fa fa-google-plus"></i></a></li>
+                            </ul>
+                        </div>
+                        <h3>Bryan Partipilo</h3>
+                        <h4>Co-Founder, CEO</h4>
+                        <p>In charge of all things related to Booger</p>
+                    </li>
+                    <li class="col-sm-3 col-xs-6 md-margin-bottom-30">
+                        <div class="team-img">
+                            <img class="img-responsive" src="images/team/austin.jpg" alt="Austin Johnson" height="342" width="326">
+                            <ul>
+                                <li><a href="#"><i class="icon-custom icon-sm rounded-x fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="icon-custom icon-sm rounded-x fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="icon-custom icon-sm rounded-x fa fa-google-plus"></i></a></li>
+                            </ul>
+                        </div>
+                        <h3>Austin Johnson</h3>
+                        <h4>Co-Founder, COO</h4>
+                        <p>Lead Designer and Badass</p>
+                    </li>
+                </ul>                
             </div>
-        </div>                 
+        </div>                
     </section>
     <!-- End Portfolio Section -->
     

@@ -54,7 +54,7 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
 {{>carousel}}
     <!--  About Section -->
     <section id="about" class="about-section section-first">
-        <div class="block-v1">
+<!--        <div class="block-v1">
             <div class="container">
                 <div class="row content-boxes-v3">
                     <div class="col-md-4 md-margin-bottom-30">
@@ -80,7 +80,7 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
                     </div>
                 </div>                
             </div>
-        </div>
+        </div>-->
 
         <div class="about-image bg-grey">
             <div class="container">
@@ -105,7 +105,7 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
             <div class="row">
                 <div class="col-md-6 content-boxes-v3 margin-bottom-40">
                     <div class="clearfix margin-bottom-30">
-                        <i class="icon-custom icon-md rounded-x icon-bg-red icon-line icon-trophy"></i>
+                        <i class="icon-custom icon-md rounded-x icon-bg-red fa fa-car"></i>
                         <div class="content-boxes-in-v3">
                             <h2 class="heading-sm">Automotive Background</h2>
                             <p>Our team consists of a balance of dealership experienced personnel and technology enthusiast. With over 10 years of automotive involvement; we have designed our applications with hands on knowledge of day to day service department work flow.</p>
@@ -119,7 +119,7 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
                         </div>
                     </div>
                     <div class="clearfix margin-bottom-30">
-                        <i class="icon-custom icon-md rounded-x icon-bg-red icon-line icon-diamond"></i>
+                        <i class="icon-custom icon-md rounded-x icon-bg-red fa fa-desktop"></i>
                         <div class="content-boxes-in-v3">
                             <h2 class="heading-sm">Support &amp; Service</h2>
                             <p>We are constantly improving our applications with regular updates and new features. we value our users feedback and often implement suggested features and modifications </p>
@@ -186,7 +186,7 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
                 <div class="row">
                     <div class="col-sm-3 col-xs-6">
                         <div class="counters">
-                            <span class="counter">10629</span>   
+                            <span class="counter">{{carCount}}</span>   
                             <h4>Vehicles Delivered</h4>
                         </div>    
                     </div>
@@ -240,7 +240,7 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
                 </div>
                 <div class="col-md-4 col-sm-6">
                     <div class="service-block service-block-default">
-                        <i class="icon-custom icon-lg icon-bg-blue rounded-x icon-line icon-present"></i>
+                        <i class="icon-custom icon-lg icon-bg-blue rounded-x fa fa-bus"></i>
                         <h2 class="heading-sm">Shuttle Log</h2>
                         <p>Improve customer service experience by effectively managing shuttle requests and route coordination as well as accurately record time management.</p>
                         <ul class="list-unstyled">
@@ -254,7 +254,7 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
                 </div>
                 <div class="col-md-4 col-sm-12">
                     <div class="service-block service-block-default">            
-                        <i class="icon-custom icon-lg icon-bg-blue rounded-x icon-line icon-rocket"></i>
+                        <i class="icon-custom icon-lg icon-bg-blue rounded-x fa fa-tasks"></i>
                         <h2 class="heading-sm">Task Management</h2>
                         <p>Submit task requests from any device.</p>
                         <ul class="list-unstyled">
@@ -382,7 +382,7 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
     <!-- Portfolio Section -->
     <section id="portfolio" class="about-section">
 
-        <div class="clients-section parallaxBg">
+<!--        <div class="clients-section parallaxBg">
             <div class="container">
                 <div class="title-v1">
                     <h2>Our Clients</h2>
@@ -396,10 +396,13 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
                     <li class="item"><a href="#"><img src="images/clients/inspiring.png" alt=""></a></li>
                 </ul>            
             </div>
-        </div>
-
+        </div>-->
+           
         <div class="testimonials-v3">
             <div class="container">
+            <div class="title-v1">
+                <h2>Testimonials</h2>              
+            </div>    
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <ul class="list-unstyled owl-ts-v1">
