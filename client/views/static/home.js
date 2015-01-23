@@ -1,8 +1,31 @@
-  Template.home.events({
+Template.home.events({
 
-    });
+});
+  Template.carousel.rendered = function() {
+    $(".owl-carousel").owlCarousel({
+ 			navigation : false, // Show next and prev buttons
+			slideSpeed : 300,
+			paginationSpeed : 400,
+			singleItem:true,
+			autoPlay: true
+ 
+	});
+  };
+Template.contactform.events({
+  'click #contactSubmit': function (event) {
+   var emailFrom = $('#emailAddress').val();
+   var emailSubject = $('#emailName').val();
+   var emailMessage = $('#emailMessage').val();
+	Meteor.call('sendEmail',
+            'austin.johnson.sd@gmail.com',//To
+            emailFrom, //From
+            emailSubject, //Subject
+            emailMessage //Message
+            ); 
+  },
+});
     Meteor.startup(function() {
-        
+        $('.parallaxBg').parallax("50%", 0.4);
         //jQuery to collapse the navbar on scroll
         $(window).scroll(function() {
             if ($(".navbar").offset().top > 150) {
@@ -32,3 +55,7 @@
                 $('.parallaxBg').parallax("50%", 0.4);
             });
 });
+
+Template.orgcarousel.rendered = function () {
+
+};

@@ -25,5 +25,8 @@
 Template.header.rendered = function() {
     // Anything here will get executed right when the template
     // is finished rendering.
-    $('#login-dropdown-list b').remove('.caret');
+
 };
+Meteor.startup(function() {
+
+});

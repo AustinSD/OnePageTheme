@@ -1,15 +1,3 @@
-<template name="home2">
-
-<br>
-
-{{> dealerdesk}}
-{{> vehiclestatus}}
-{{> shuttlelog}}
-{{> portertasks}}
-{{> follow}}
-{{> footer}}
-</template>
-
 <template name="home">
 <!-- 
 The #page-top ID is part of the scrolling feature.
@@ -63,53 +51,7 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
         <!-- /.container -->
     </nav>
     <!--=== End Header ===-->    
-
-
-    <!-- Intro Section -->
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <img src="images/frsrain.png" alt="...">
-      <div class="carousel-caption">
-        This is a great picture
-      </div>
-    </div>
-    <div class="item">
-      <img src="images/nova1.png" alt="...">
-      <div class="carousel-caption">
-        Great pic by me
-      </div>
-    </div>
-    <div class="item">
-      <img src="images/speedometer.png" alt="...">
-      <div class="carousel-caption">
-        dat speed
-      </div>
-    </div>
-  </div>
-
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-    <!-- End Intro Section -->
-
-    
+{{>carousel}}
     <!--  About Section -->
     <section id="about" class="about-section section-first">
         <div class="block-v1">
@@ -507,8 +449,26 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
         </div>                 
     </section>
     <!-- End Portfolio Section -->
-
+    
     <!-- Contact Section -->
+    {{>contactform}}
+    <!-- End Contact Section -->  
+    
+        <div class="copyright-section">
+            <p>2014 &copy; <a target="_blank" href="https://twitter.com/bryanpartipilo">Dealer Desk, Inc.</a> All rights reserved.</p>
+            <ul class="social-icons">
+                <li><a href="#" data-original-title="Facebook" class="social_facebook rounded-x"></a></li>
+                <li><a href="#" data-original-title="Twitter" class="social_twitter rounded-x"></a></li>
+                <li><a href="#" data-original-title="Goole Plus" class="social_googleplus rounded-x"></a></li>
+                <li><a href="#" data-original-title="Pinterest" class="social_pintrest rounded-x"></a></li>
+                <li><a href="#" data-original-title="Linkedin" class="social_linkedin rounded-x"></a></li>
+            </ul>
+            <span class="page-scroll"><a href="#body"><i class="fa fa-angle-double-up back-to-top"></i></a></span>
+        </div>
+</body>
+</template>
+
+<template name="contactform">
     <section id="contact" class="contacts-section">
         <div class="container content-lg">
             <div class="title-v1">
@@ -519,10 +479,10 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
             <div class="row contacts-in">
                 <div class="col-md-6 md-margin-bottom-40">
                     <ul class="list-unstyled">
-                        <li><i class="fa fa-home"></i> 5B Streat, City 50987 New Town US</li>
+                        <li><i class="fa fa-home"></i> San Diego, CA</li>
                         <li><i class="fa fa-phone"></i> 1(800) 220 084</li>
-                        <li><i class="fa fa-envelope"></i> <a href="info@example.com">info@dealer-logistics.com</a></li>
-                        <li><i class="fa fa-globe"></i> <a href="http://htmlstream.com">www.dealer-logistics.com</a></li>
+                        <li><i class="fa fa-envelope"></i> <a href="info@dealer-logistics.com">info@dealer-logistics.com</a></li>
+                        <li><i class="fa fa-globe"></i> <a href="www.dealer-logistics.com">www.dealer-logistics.com</a></li>
                     </ul>
                 </div>
 
@@ -531,42 +491,259 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
                         <label>Name</label>
                         <div class="row margin-bottom-20">
                             <div class="col-md-7 col-md-offset-0">
-                                <input type="text" class="form-control">
+                                <input id="emailName" type="text" class="form-control">
                             </div>                
                         </div>
                         
                         <label>Email <span class="color-red">*</span></label>
                         <div class="row margin-bottom-20">
                             <div class="col-md-7 col-md-offset-0">
-                                <input type="text" class="form-control">
+                                <input id="emailAddress" type="text" class="form-control">
                             </div>                
                         </div>
                         
                         <label>Message</label>
                         <div class="row margin-bottom-20">
                             <div class="col-md-11 col-md-offset-0">
-                                <textarea rows="8" class="form-control"></textarea>
+                                <textarea id="emailMessage" rows="8" class="form-control"></textarea>
                             </div>                
                         </div>
                         
-                        <p><button type="submit" class="btn-u btn-brd btn-brd-hover btn-u-dark">Send Message</button></p>
+                        <p><button id="contactSubmit" type="submit" class="btn-u btn-brd btn-brd-hover btn-u-dark">Send Message</button></p>
                     </form> 
                 </div>
             </div>            
         </div>
+    </section>
+</template>
 
-        <div class="copyright-section">
-            <p>2014 &copy; All Rights Reserved. Unify Theme by <a target="_blank" href="https://twitter.com/htmlstream">Htmlstream</a></p>
-            <ul class="social-icons">
-                <li><a href="#" data-original-title="Facebook" class="social_facebook rounded-x"></a></li>
-                <li><a href="#" data-original-title="Twitter" class="social_twitter rounded-x"></a></li>
-                <li><a href="#" data-original-title="Goole Plus" class="social_googleplus rounded-x"></a></li>
-                <li><a href="#" data-original-title="Pinterest" class="social_pintrest rounded-x"></a></li>
-                <li><a href="#" data-original-title="Linkedin" class="social_linkedin rounded-x"></a></li>
-            </ul>
-            <span class="page-scroll"><a href="#body"><i class="fa fa-angle-double-up back-to-top"></i></a></span>
+<template name="carousel">  
+  <div id="carousel" class="owl-carousel">
+			<div>
+				<img src="images/frsrain.png" alt="...">
+            <div class="carousel-caption">
+            	WE ARE UNIFY CREATIVE TECHNOLOGY COMPANY
+            </div>
+			</div>
+			<div>
+				<img src="images/nova1.png" alt="...">
+				<div class="carousel-caption">
+					Great pic by me
+				</div>
+			</div>
+			<div>
+				<img src="images/speedometer.png" alt="...">
+				<div class="carousel-caption">
+					dat speed
+				</div>
+			</div>
+  </div>
+</template>
+
+<template name="oldcarousel">  
+	<!-- Intro Section -->
+	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+			<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+			<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+			<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+		</ol>
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner" role="listbox">
+			<div class="item active">
+				<img src="images/frsrain.png" alt="...">
+				<div class="carousel-caption">
+					This is a great picture
+				</div>
+			</div>
+			<div class="item">
+				<img src="images/nova1.png" alt="...">
+				<div class="carousel-caption">
+					Great pic by me
+				</div>
+			</div>
+			<div class="item">
+				<img src="images/speedometer.png" alt="...">
+				<div class="carousel-caption">
+					dat speed
+				</div>
+			</div>
+		</div>
+		<!-- Controls -->
+		<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
+	<!-- End Intro Section -->
+</template>
+
+<template name="orgcarousel">
+    <!-- Intro Section -->
+    <section id="intro" class="intro-section">
+        <div class="fullscreenbanner-container">
+            <div class="fullscreenbanner">
+                <ul>
+                    <!-- SLIDE 1 -->
+                    <li data-transition="curtain-1" data-slotamount="5" data-masterspeed="700" data-title="Slide 1">
+                        <!-- MAIN IMAGE -->
+                        <img src="images/frsrain.png" alt="slidebg1" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
+
+                        <!-- LAYERS -->
+                        <div class="tp-caption rs-caption-1 sft start"
+                            data-x="center"
+                            data-hoffset="0"
+                            data-y="100"
+                            data-speed="800"
+                            data-start="2000"
+                            data-easing="Back.easeInOut"
+                            data-endspeed="300">
+                            WE ARE UNIFY CREATIVE TECHNOLOGY COMPANY
+                        </div>
+
+                        <!-- LAYER -->
+                        <div class="tp-caption rs-caption-2 sft"
+                            data-x="center"
+                            data-hoffset="0"
+                            data-y="200"
+                            data-speed="1000"
+                            data-start="3000"
+                            data-easing="Power4.easeOut"
+                            data-endspeed="300"
+                            data-endeasing="Power1.easeIn"
+                            data-captionhidden="off"
+                            style="z-index: 6">
+                            Creative freedom matters user experience.<br>
+                            We minimize the gap between technology and its audience.
+                        </div>
+
+                        <!-- LAYER -->
+                        <div class="tp-caption rs-caption-3 sft"
+                            data-x="center"
+                            data-hoffset="0"
+                            data-y="360"
+                            data-speed="800"
+                            data-start="3500"
+                            data-easing="Power4.easeOut"
+                            data-endspeed="300"
+                            data-endeasing="Power1.easeIn"
+                            data-captionhidden="off"
+                            style="z-index: 6">
+                            <span class="page-scroll"><a href="#about" class="btn-u btn-brd btn-brd-hover btn-u-light">Learn More</a></span>
+                            <span class="page-scroll"><a href="#portfolio" class="btn-u btn-brd btn-brd-hover btn-u-light">Our Work</a></span>
+                        </div>
+                    </li>
+
+                    <!-- SLIDE 2 -->
+                    <li data-transition="slideup" data-slotamount="5" data-masterspeed="1000" data-title="Slide 2">
+                        <!-- MAIN IMAGE -->
+                        <img src="images/nova1.png" alt="slidebg1"  data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
+
+                        <!-- LAYERS -->
+                        <div class="tp-caption rs-caption-1 sft start"
+                            data-x="center"
+                            data-hoffset="0"
+                            data-y="100"
+                            data-speed="800"
+                            data-start="1500"
+                            data-easing="Back.easeInOut"
+                            data-endspeed="300">
+                            DEDICATED ADVANCED TEAM
+                        </div>
+
+                        <!-- LAYER -->
+                        <div class="tp-caption rs-caption-2 sft"
+                            data-x="center"
+                            data-hoffset="0"
+                            data-y="200"
+                            data-speed="1000"
+                            data-start="2500"
+                            data-easing="Power4.easeOut"
+                            data-endspeed="300"
+                            data-endeasing="Power1.easeIn"
+                            data-captionhidden="off"
+                            style="z-index: 6">
+                            We are creative technology company providing<br> 
+                            key digital services on web and mobile.                            
+                        </div>
+
+                        <!-- LAYER -->
+                        <div class="tp-caption rs-caption-3 sft"
+                            data-x="center"
+                            data-hoffset="0"
+                            data-y="360"
+                            data-speed="800"
+                            data-start="3500"
+                            data-easing="Power4.easeOut"
+                            data-endspeed="300"
+                            data-endeasing="Power1.easeIn"
+                            data-captionhidden="off"
+                            style="z-index: 6">
+                            <span class="page-scroll"><a href="#about" class="btn-u btn-brd btn-brd-hover btn-u-light">Learn More</a></span>
+                            <span class="page-scroll"><a href="#portfolio" class="btn-u btn-brd btn-brd-hover btn-u-light">Our Work</a></span>
+                        </div>
+                    </li>
+
+                    <!-- SLIDE 3 -->
+                    <li data-transition="slideup" data-slotamount="5" data-masterspeed="700"  data-title="Slide 3">
+                        <!-- MAIN IMAGE -->
+                        <img src="images/speedometer.png"  alt="slidebg1"  data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
+
+                        <!-- LAYERS -->
+                        <div class="tp-caption rs-caption-1 sft start"
+                            data-x="center"
+                            data-hoffset="0"
+                            data-y="110"
+                            data-speed="800"
+                            data-start="1500"
+                            data-easing="Back.easeInOut"
+                            data-endspeed="300">
+                            WE DO THINGS DIFFERENTLY
+                        </div>
+
+                        <!-- LAYER -->
+                        <div class="tp-caption rs-caption-2 sfb"
+                            data-x="center"
+                            data-hoffset="0"
+                            data-y="210"
+                            data-speed="800"
+                            data-start="2500"
+                            data-easing="Power4.easeOut"
+                            data-endspeed="300"
+                            data-endeasing="Power1.easeIn"
+                            data-captionhidden="off"
+                            style="z-index: 6">
+                            Creative freedom matters user experience.<br>
+                            We minimize the gap between technology and its audience.
+                        </div>
+
+                        <!-- LAYER -->
+                        <div class="tp-caption rs-caption-3 sfb"
+                            data-x="center"
+                            data-hoffset="0"
+                            data-y="370"
+                            data-speed="800"
+                            data-start="3500"
+                            data-easing="Power4.easeOut"
+                            data-endspeed="300"
+                            data-endeasing="Power1.easeIn"
+                            data-captionhidden="off"
+                            style="z-index: 6">
+                            <span class="page-scroll"><a href="#about" class="btn-u btn-brd btn-brd-hover btn-u-light">Learn More</a></span>
+                            <span class="page-scroll"><a href="#portfolio" class="btn-u btn-brd btn-brd-hover btn-u-light">Our Work</a></span>
+                        </div>
+                    </li>                    
+                </ul>
+                <div class="tp-bannertimer tp-bottom"></div>
+                <div class="tp-dottedoverlay twoxtwo"></div>
+            </div>
         </div>
     </section>
-    <!-- End Contact Section -->  
-</body>
+    <!-- End Intro Section -->
 </template>

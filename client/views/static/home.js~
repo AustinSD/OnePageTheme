@@ -1,8 +1,31 @@
-  Template.home.events({
+Template.home.events({
 
-    });
+});
+  Template.carousel.rendered = function() {
+    $(".owl-carousel").owlCarousel({
+ 			navigation : false, // Show next and prev buttons
+			slideSpeed : 300,
+			paginationSpeed : 400,
+			singleItem:true,
+			autoPlay: true
+ 
+	});
+  };
+Template.contactform.events({
+  'click #contactSubmit': function (event) {
+   var emailFrom = $('#emailAddress').val();
+   var emailSubject = $('#emailName').val();
+   var emailMessage = $('#emailMessage').val();
+	Meteor.call('sendEmail',
+            'austin.johnson.sd@gmail.com',//To
+            emailFrom, //From
+            emailSubject, //Subject
+            emailMessage //Message
+            ); 
+  },
+});
     Meteor.startup(function() {
-        
+        $('.parallaxBg').parallax("50%", 0.4);
         //jQuery to collapse the navbar on scroll
         $(window).scroll(function() {
             if ($(".navbar").offset().top > 150) {
@@ -29,7 +52,23 @@
         });
         
         $(window).load(function(){
-        	$('#login-dropdown-list b').remove('.caret');
                 $('.parallaxBg').parallax("50%", 0.4);
+                $('.fullscreenbanner').revolution(
+	            {
+	                delay:15000,
+	                startwidth:1170,
+	                startheight:500,
+	                hideThumbs:10,
+	                fullWidth:"on",
+	                fullScreen:"on",
+	                hideCaptionAtLimit: "",
+	                dottedOverlay:"twoxtwo",
+	                navigationStyle:"preview4",
+	                fullScreenOffsetContainer: ""
+	            });
             });
 });
+
+Template.orgcarousel.rendered = function () {
+
+};

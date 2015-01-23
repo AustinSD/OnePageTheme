@@ -5,3 +5,20 @@
 }
 .footer {color: #fff; height: 200px; margin: 0px 0px 0px 0px; border-color: 607890; border: 0px solid; border-radius: 0px; padding: 5px 5px 5px 5px; background: #32566E; position: bottom }
 
+.carousel-caption {
+	margin: 40px;
+}
+
+#owl-carousel .item{
+	margin: 3px;
+}
+
+#owl-carousel .item img{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+
+
+

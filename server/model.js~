@@ -1,10 +1,26 @@
     Meteor.startup(function () {
+		process.env.MAIL_URL = 'smtp://austin%40everydayguy.net:R00zzic831@smtp.booksbyjos.com:587';
         // bootstrap the admin user if they exist -- You'll be replacing the id later
         if (Meteor.users.findOne("d9B4aPYuPcHYiMQfM"))
             Roles.addUsersToRoles("d9B4aPYuPcHYiMQfM", ['admin']);
 
     });
-       
+Meteor.methods({
+  sendEmail: function (to, from, subject, text) {
+    check([to, from, subject, text], [String]);
+
+    // Let other method calls from the same client start running,
+    // without waiting for the email sending to complete.
+    this.unblock();
+
+    Email.send({
+      to: to,
+      from: from,
+      subject: subject,
+      text: text
+    });
+  },
+  });       
 Meteor.publish("cars", function () {
 	if (!this.userId) {
         this.ready();
@@ -15,7 +31,7 @@ Meteor.publish("cars", function () {
 });
 
 Meteor.FilterCollections.publish(CarsHistory, {
-  name: 'carshistroy',
+  name: 'carshistory',
   callbacks: {
     beforePublish: function(query, handler){
       if (handler.userId)
@@ -24,7 +40,7 @@ Meteor.FilterCollections.publish(CarsHistory, {
     },
     },
 });
-Meteor.FilterCollections.publish(CarsHistory, {
+/*Meteor.FilterCollections.publish(CarsHistory, {
 name: 'carreport',
   callbacks: {
     beforePublish: function(query, handler){
@@ -33,7 +49,7 @@ name: 'carreport',
       return query;
     },
     },
-});
+});*/
 Meteor.FilterCollections.publish(ShuttleHistory, {
   name: 'shuttlehistory',
   callbacks: {
@@ -54,7 +70,7 @@ Meteor.FilterCollections.publish(TaskHistory, {
     },
     },
 });
-Meteor.FilterCollections.publish(TaskHistory, {
+/*Meteor.FilterCollections.publish(TaskHistory, {
 name: 'taskreport',
   callbacks: {
     beforePublish: function(query, handler){
@@ -63,15 +79,15 @@ name: 'taskreport',
       return query;
     },
     },
-});
-/*Meteor.publish("carshistory", function () {
+});*/
+Meteor.publish("carshistory", function () {
 	if (!this.userId) {
         this.ready();
         return;
    }
 	var company = Meteor.users.findOne(this.userId).profile.company;
 	return CarsHistory.find({company : company});
-});*/
+});
 Meteor.publish("shuttle", function () {
 	if (!this.userId) {
         this.ready();
@@ -88,22 +104,22 @@ Meteor.publish("task", function () {
 	var company = Meteor.users.findOne(this.userId).profile.company;
 	return Task.find({company : company});
 });
-/*Meteor.publish("taskhistory", function () {
+Meteor.publish("taskhistory", function () {
 	if (!this.userId) {
         this.ready();
         return;
    }
 	var company = Meteor.users.findOne(this.userId).profile.company;
 	return TaskHistory.find({company : company});
-});*/
-/*Meteor.publish("shuttlehistory", function () {
+});
+Meteor.publish("shuttlehistory", function () {
 	if (!this.userId) {
         this.ready();
         return;
    }
 	var company = Meteor.users.findOne(this.userId).profile.company;
 	return ShuttleHistory.find({company : company});
-}); */
+});
 Meteor.publish("company", function () {
 	return Company.find();
 }); 

@@ -26,11 +26,12 @@ Template.header.rendered = function() {
     // Anything here will get executed right when the template
     // is finished rendering.
     $('#login-dropdown-list b').remove('.caret');
+    $('.dropdown-toggle b').remove('.caret');
+    $('b.caret').hide();
+
 };
 Meteor.startup(function() {
-        $(function() {
-            $('#login-dropdown-list b').remove('.caret');
-            
-        });
-        
+
+    $('b.caret').hide();
+
 });

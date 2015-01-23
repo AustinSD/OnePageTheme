@@ -30,22 +30,3 @@
 		//converts timestamps to readable format
 		return moment(value).format("MM/DD/YYYY h:mm A");
 });
-Meteor.startup(
-		function() {
-		    var revapi;
-	        jQuery(document).ready(function() {
-	           revapi = jQuery('.fullscreenbanner').revolution(
-	            {
-	                delay:15000,
-	                startwidth:1170,
-	                startheight:500,
-	                hideThumbs:10,
-	                fullWidth:"on",
-	                fullScreen:"on",
-	                hideCaptionAtLimit: "",
-	                dottedOverlay:"twoxtwo",
-	                navigationStyle:"preview4",
-	                fullScreenOffsetContainer: ""
-	            });	            
-	        });
-});
