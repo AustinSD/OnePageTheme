@@ -186,6 +186,7 @@ TaskHistoryFilter = new Meteor.FilterCollections(TaskHistory, {
     Meteor.subscribe("company");
     Meteor.subscribe("task");
     Meteor.subscribe("taskhistory");
+    Meteor.subscribe("feed_entries");
     
 }
 createUserServer = function (options) {

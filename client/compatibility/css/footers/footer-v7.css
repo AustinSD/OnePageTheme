@@ -2,7 +2,7 @@
 ------------------------------------*/
 .contacts-section {
   color: #fff;
-    position: relative;
+  position: relative;
   background: #333 url(../images/bg/bg3.jpg) center fixed;
 }
 
@@ -14,8 +14,8 @@
   content: '';
   position: absolute;
   background: rgba(0,0,0,0.7);
-  webkit-transform: translateX(0%) rotate(0deg);
-  transform: translateX(0%) rotate(0deg); 
+  webkit-transform: none;
+  transform: none; 
 }
 
 .contacts-section:before {
@@ -26,17 +26,20 @@
   content: " ";
   position: absolute;
   background: url(../images/patterns/gridtile.png) repeat;
+  webkit-transform: none;
+  transform: none;
 }
 
 /*Contacts Title*/
 .contacts-section .title-v1 p,
 .contacts-section .title-v1 h2 {
+	z-index: none;
   color: #fff;
 }
 
 /*Contacts Content*/
 .contacts-in {
-  z-index: 1;
+  z-index: 20;
   color: #fff;
   position: relative;
 }
@@ -101,7 +104,7 @@
 
 /*Copyright Section*/
 .copyright-section {
-  z-index: 1;
+  z-index: 20;
   background: #fff;
   position: relative;
   text-align: center;

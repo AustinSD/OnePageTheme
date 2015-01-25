@@ -1,5 +1,5 @@
     Meteor.startup(function () {
-		process.env.MAIL_URL = 'smtp://austin%40everydayguy.net:R00zzic831@smtp.booksbyjos.com:587';
+		process.env.MAIL_URL = 'smtp://austin%40everydayguy.net:R00zzic%40831@smtp.booksbyjos.com:587';
         // bootstrap the admin user if they exist -- You'll be replacing the id later
         if (Meteor.users.findOne("d9B4aPYuPcHYiMQfM"))
             Roles.addUsersToRoles("d9B4aPYuPcHYiMQfM", ['admin']);
@@ -122,6 +122,9 @@ Meteor.publish("shuttlehistory", function () {
 });
 Meteor.publish("company", function () {
 	return Company.find();
+});
+Meteor.publish("feed_entries", function () {
+	return FeedEntries.find({}, {sort: {"date":-1}, limit:3}););
 }); 
 
 Shuttle.allow({

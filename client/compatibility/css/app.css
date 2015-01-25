@@ -213,7 +213,7 @@ h3.heading-xs {
 
 /*Heading Titles v1*/
 .title-v1 {
-  z-index: 1;
+  z-index: 20;
   position: relative;
   text-align: center;
   margin-bottom: 60px;

@@ -1,7 +1,10 @@
 Template.home.helpers({
  carCount: function() {
       return CarsHistory.find().count();
-      }
+      },
+ twitterFeed: function () {
+ 	return FeedEntries.find();
+ 	}
 });
   Template.carousel.rendered = function() {
     $(".owl-carousel").owlCarousel({

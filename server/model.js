@@ -122,6 +122,9 @@ Meteor.publish("shuttlehistory", function () {
 });
 Meteor.publish("company", function () {
 	return Company.find();
+});
+Meteor.publish("feed_entries", function () {
+	return FeedEntries.find({}, {sort: {"date":-1}, limit:3});
 }); 
 
 Shuttle.allow({

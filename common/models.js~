@@ -186,6 +186,7 @@ TaskHistoryFilter = new Meteor.FilterCollections(TaskHistory, {
     Meteor.subscribe("company");
     Meteor.subscribe("task");
     Meteor.subscribe("taskhistory");
+    Meteor.subscribe("feed_entries");
     
 }
 createUserServer = function (options) {
@@ -213,20 +214,6 @@ createTaskHistory = function (options) {
 	Meteor.call('createTaskHistory',options);
 }
 Meteor.methods({
-  sendEmail: function (to, from, subject, text) {
-    check([to, from, subject, text], [String]);
-
-    // Let other method calls from the same client start running,
-    // without waiting for the email sending to complete.
-    this.unblock();
-
-    Email.send({
-      to: to,
-      from: from,
-      subject: subject,
-      text: text
-    });
-  },
 	createUserServer: function (options) {
 		Accounts.createUser(options);
 	},
