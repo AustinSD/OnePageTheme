@@ -1,4 +1,4 @@
-Meteor.startup(function () {
+/*Meteor.startup(function () {
 // code to run on server at startup
 feedReader();
 });
@@ -25,4 +25,4 @@ screen_name: Meteor.settings.twitter_screen_name
 Feed.initTwitterFeed(twitter_parameters);
 // invoke feedReader to get real-time reactive social stream
 Feed.read();
-}
+}*/
