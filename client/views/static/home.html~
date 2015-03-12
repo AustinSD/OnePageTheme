@@ -361,12 +361,9 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">                
                     <ul class="list-unstyled owl-twitter-v1">
-                            <li class="item">
-                                <p>Unify has reached 10000 plus sales and we just want to thank you to our all customers for being part of the Unify Template success <a href="http://bit.ly/1c0UN3Y">http://bit.ly/1c0UN3Y</a></p>
-                                <span>3 min ago via <a href="https://twitter.com/bryanpartipilo">@bryanpartipilo</a></span>
-                            </li>
                     {{#each twitterFeed}}
-                        <li class="item">{{summary}}
+                        <li class="item">
+                        <p>{{summary}}</p>
                         <span>{{timeParse date}} <a href="https://twitter.com/bryan619">@bryan619</a></span>
                         </li>
                         {{/each}}
@@ -523,7 +520,7 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
 <template name="carousel">  
   <div id="carousel" class="owl-carousel">
 			<div>
-				<img src="images/frsrain.png" alt="...">
+				<img src="images/slide1.jpg" alt="...">
             <div class="carousel-caption">
             	WE ARE UNIFY CREATIVE TECHNOLOGY COMPANY
             </div>
