@@ -518,24 +518,31 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
 </template>
 
 <template name="carousel">  
-  <div id="carousel" class="owl-carousel">
-			<div>
-				<img src="images/slide1.jpg" alt="...">
-            <div class="carousel-caption">
-            	WE ARE UNIFY CREATIVE TECHNOLOGY COMPANY
-            </div>
-			</div>
-			<div>
-				<img src="images/slide2.jpg" alt="...">
-				<div class="carousel-caption">
-					Great pic by me
+  <div id="owl-example" class="owl-carousel">
+			<div class="owl-item">
+				<div >
+					<div class="item" id="slide1">
+            		<h3>Text 1</h3>
+            		<h4>WE ARE UNIFY CREATIVE TECHNOLOGY COMPANY</h4>          	
+            	</div>
 				</div>
 			</div>
-			<div>
-				<img src="images/speedometer.png" alt="...">
-				<div class="carousel-caption">
-					dat speed
+			
+			<div class="owl-item">
+				<div id="slide2">
+					<div class="carousel-caption">
+						Great pic by me
+					</div>
 				</div>
 			</div>
+			
+			<div class="owl-item">
+				<div id="slide3">
+					<div class="carousel-caption">
+						dat speed
+					</div>
+				</div>
+			</div>
+
   </div>
 </template>

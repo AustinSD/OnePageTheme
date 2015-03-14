@@ -6,30 +6,83 @@
 .footer {color: #fff; height: 200px; margin: 0px 0px 0px 0px; border-color: 607890; border: 0px solid; border-radius: 0px; padding: 5px 5px 5px 5px; background: #32566E; position: bottom }
 
 .carousel-caption {
-	margin: 40px;
+	 display: block;
+padding: 54px 0px;
+margin: 5px;
+color: #FFF;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+text-align: center;
 }
-.fullscreenbanner-container{
-  webkit-transform: translateX(0%) rotate(0deg);
-  transform: translateX(0%) rotate(0deg); 
+
+#caption-1{
+
 }
-.fullscreenbanner{
-  webkit-transform: translateX(0%) rotate(0deg);
-  transform: translateX(0%) rotate(0deg); 
+#owl-carousel .item{
+	margin: 3px;
+	background-color:transparent;
 }
-.fullscreenbanner ul{
-  webkit-transform: translateX(0%) rotate(0deg);
-  transform: translateX(0%) rotate(0deg); 
+
+#owl-carousel .item img{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+#slide1{
+	height: 800px;
+	background-image: url("images/slide1.jpg");
+
+}
+#slide2{
+	height: 800px;
+	background-image: url("images/slide2.jpg");
+}
+#slide3{
+	height: 800px;
+	background-image: url("images/speedometer.png");
+}
+/* Demo Slides */
+
+#owl-example .item{
+	
+	padding: 30px 0px;
+	margin: 10px;
+	color: #FFF;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	text-align: center;
+	
+}
+#owl-example .item img{
+	width: auto;
+	margin: 0 auto;
+	display: block;
+}
+#owl-example .item h3{
+	color: #FFF;
+	font-size: 28px;
+	font-weight: 300;
+	margin: 25px 0 0;
+}
+#owl-example .item h4{
+	margin: 5px 0 0;
+	font-size: 18px;
+}
+.item h1{
+	margin: inherit;
 }
 
 
-    #owl-carousel .item{
-    margin: 3px;
-    }
-    #owl-carousel .item img{
-    display: block;
-    width: 100%;
-    height: auto;
-    }
+
+
+
+
+
+
+
 
 
 
