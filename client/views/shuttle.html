@@ -33,6 +33,7 @@
                   <th>Phone Number</th>
                   <th>Address</th>
                   <th>Driver</th>
+                  <th>Notes</th>
                   <th>Username</th>
                   <th>Status</th>
                   <th>Time Out</th>
@@ -49,6 +50,7 @@
                   <td>{{number}}</td>
                   <td>{{address}}</td>
                   <td>{{driver}}</td>
+                  <td>{{notes}}</td>
                   <td>{{username}}</td>
                   <td>{{status}}</td>
                   <td>{{timeout}}</td>
@@ -96,6 +98,13 @@
                      	<input class="form-control" type="text" id="address" placeholder="Address">
                      	</div>
                   </div>
+                  <br>
+                    <div class="form-group form-group-sm">
+							<label class="col-sm-4 control-label" for="notes">Notes</label>
+                     	<div class="col-sm-8">
+                     	<input class="form-control" type="text" id="notes" placeholder="Notes">
+                     	</div>
+                  </div>   	
                   <br>
                   <div class="form-group form-group-sm">
                   	<label class="col-sm-4 control-label" for="direction">Direction</label>
@@ -154,6 +163,13 @@
                             <label class="col-sm-4 control-label" for="address">Customer Address</label>
                             <div class="col-sm-8" id="address">
                                 {{address}}
+                            </div>
+                        </div>
+                        <br>
+                         <div class="form-group form-group-sm">
+                            <label class="col-sm-4 control-label" for="notes">Notes</label>
+                            <div class="col-sm-8" id="notes">
+                                {{notes}}
                             </div>
                         </div>
                         <br>
@@ -240,6 +256,13 @@
 							<label class="col-sm-4 control-label" for="addressAdvisor">Customer Address</label>
                      	<div class="col-sm-8">
                      	<input class="form-control" type="text" id="addressAdvisor" placeholder="Address" value={{address}}>
+                     	</div>
+                  </div>
+                  <br>
+                     <div class="form-group form-group-sm">
+							<label class="col-sm-4 control-label" for="notesAdvisor">Notes</label>
+                     	<div class="col-sm-8">
+                     	<input class="form-control" type="text" id="notesAdvisor" placeholder="Notes" value={{notes}}>
                      	</div>
                   </div>
                   <br>

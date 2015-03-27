@@ -33,6 +33,7 @@
                   <th>Phone Number</th>
                   <th>Address</th>
                   <th>Driver</th>
+                  <th>Notes</th>
                   <th>Username</th>
                   <th>Status</th>
                   <th>Time Out</th>
@@ -49,6 +50,7 @@
                   <td>{{number}}</td>
                   <td>{{address}}</td>
                   <td>{{driver}}</td>
+                  <td>{{notes}}</td>
                   <td>{{username}}</td>
                   <td>{{status}}</td>
                   <td>{{timeout}}</td>
@@ -70,7 +72,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                    <h4 id="myModalLabel" class="modal-title">New Shuttle</h4>
+                    <h4 id="myModalLabel" class="modal-title"><i class="fa fa-bus"></i> New Shuttle</h4>
                 </div>
             <form id="newBody">
                <div class="modal-body">
@@ -96,6 +98,13 @@
                      	<input class="form-control" type="text" id="address" placeholder="Address">
                      	</div>
                   </div>
+                  <br>
+                    <div class="form-group form-group-sm">
+							<label class="col-sm-4 control-label" for="notes">Notes</label>
+                     	<div class="col-sm-8">
+                     	<input class="form-control" type="text" id="notes" placeholder="Notes">
+                     	</div>
+                  </div>   	
                   <br>
                   <div class="form-group form-group-sm">
                   	<label class="col-sm-4 control-label" for="direction">Direction</label>
@@ -125,7 +134,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                    <h4 id="myModalLabel" class="modal-title">Update Shuttle</h4>
+                    <h4 id="myModalLabel" class="modal-title"><i class="fa fa-bus"></i> Update Shuttle</h4>
                 </div>
             <div class="modal-body">
                {{#with getShuttleID}}
@@ -154,6 +163,13 @@
                             <label class="col-sm-4 control-label" for="address">Customer Address</label>
                             <div class="col-sm-8" id="address">
                                 {{address}}
+                            </div>
+                        </div>
+                        <br>
+                         <div class="form-group form-group-sm">
+                            <label class="col-sm-4 control-label" for="notes">Notes</label>
+                            <div class="col-sm-8" id="notes">
+                                {{notes}}
                             </div>
                         </div>
                         <br>
@@ -213,7 +229,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                    <h4 id="myModalLabel" class="modal-title">Update Shuttle</h4>
+                    <h4 id="myModalLabel" class="modal-title"><i class="fa fa-bus"></i> Update Shuttle</h4>
                 </div>
             <div class="modal-body">
                {{#with getShuttleID}}
@@ -240,6 +256,13 @@
 							<label class="col-sm-4 control-label" for="addressAdvisor">Customer Address</label>
                      	<div class="col-sm-8">
                      	<input class="form-control" type="text" id="addressAdvisor" placeholder="Address" value={{address}}>
+                     	</div>
+                  </div>
+                  <br>
+                     <div class="form-group form-group-sm">
+							<label class="col-sm-4 control-label" for="notesAdvisor">Notes</label>
+                     	<div class="col-sm-8">
+                     	<input class="form-control" type="text" id="notesAdvisor" placeholder="Notes" value={{notes}}>
                      	</div>
                   </div>
                   <br>

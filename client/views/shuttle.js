@@ -142,6 +142,7 @@ Template.shuttle.rendered = function(){
               name: template.find("#nameAdvisor").value,
               number: template.find("#numberAdvisor").value,
               address: template.find("#addressAdvisor").value,
+              notes: template.find("#notesAdvisor").value,
               direction: template.find("#directionAdvisor").value,
               username: Meteor.user().emails[0].address,
               company: Meteor.user().profile.company,
@@ -183,6 +184,7 @@ Template.shuttle.rendered = function(){
               name: template.find("#name").value,
               number: template.find("#number").value,
               address: template.find("#address").value,
+              notes: template.find("#notes").value,
               direction: template.find("#direction").value,
               username: Meteor.user().emails[0].address,
               company: Meteor.user().profile.company       
