@@ -82,7 +82,7 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
             </div>
         </div>-->
 
-        <div class="about-image bg-grey">
+       <!-- <div class="about-image bg-grey">
             <div class="container">
                 <div class="title-v1">
                     <h1>We are Dealer Logistics</h1>
@@ -94,11 +94,11 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
                 </div>
             </div>
         </div>        
-
+-->
         <div class="container content-lg">
             <div class="title-v1">
                 <h2>Our Vision And Mission</h2>
-                <p>We <strong>believe</strong> the interactions on the service drive are key in ensuring a positive customer experience.<br> 
+                <p>At Dealer Logistics, We <strong>believe</strong> the interactions on the service drive are key in ensuring a positive customer experience.<br> 
                  We assist you in building a reliable process which is <strong>complimented</strong> by our applications.</p>
             </div>
 
@@ -128,7 +128,7 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
                 </div>
 
                 <div class="col-md-6">
-                    <img class="img-responsive" src="images/mockup/mockup1.png" alt="">
+                    <img class="img-responsive" src="images/mockup/Option1.png" alt="">
                 </div>
             </div>
         </div>        
@@ -170,7 +170,7 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
                     <div class="service-block service-block-default">
                         <i class="icon-custom icon-lg icon-bg-blue rounded-x fa fa-bus"></i>
                         <h2 class="heading-sm">Shuttle Log</h2>
-                        <p>Improve customer service experience by effectively managing shuttle requests and route coordination as well as accurately record time management.</p>
+                        <p>Improve customer service experience by effectively managing shuttle requests.</p>
                         <ul class="list-unstyled">
                             <li>Real-Time Submission</li>
                             <li>Driver Assignment</li>
@@ -418,9 +418,9 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
                 </div>
 
                 <ul class="list-unstyled row">
-                    <li class="col-sm-3 col-xs-6 md-margin-bottom-30">
+                    <li class="col-sm-4 col-xs-6 md-margin-bottom-30">
                         <div class="team-img">
-                            <img class="img-responsive" src="images/team/bryan_about2.jpg" alt="Bryan Partipilo" height="342" width="326">
+                            <img class="img-responsive" src="images/team/bryan.jpg" alt="Bryan Partipilo">
                             <ul>
                                 <li><a href="http://www.twitter.com/bryanpartipilo" target="_blank"><i class="icon-custom icon-sm rounded-x fa fa-twitter"></i></a></li>
                                 <li><a href="#"><i class="icon-custom icon-sm rounded-x fa fa-facebook"></i></a></li>
@@ -429,11 +429,11 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
                         </div>
                         <h3>Bryan Partipilo</h3>
                         <h4>Co-Founder, CEO</h4>
-                        <p>In charge of all things related to Booger</p>
+                        <p>Bryan's Love for technology began at the age of 13 taking apart computers and creating websites. His introduction to the automotive industry was as a service department Lot Porter at Toyota of El Cajon. After getting the opportunity to show his technical skills, he quickly starting handling the IT needs and eventually was named the IT Manager.<br><br>With over 10 years of dealership experience, Bryan identified various needs for applications to help with work flow, organization, and communication. He co-founded Dealer Logistics in 2014. In his spare time he loves to watch sports, go to the gym, read books, and listen to podcasts. </p>
                     </li>
-                    <li class="col-sm-3 col-xs-6 md-margin-bottom-30">
+                    <li class="col-sm-4 col-xs-6 md-margin-bottom-30">
                         <div class="team-img">
-                            <img class="img-responsive" src="images/team/austin.jpg" alt="Austin Johnson" height="342" width="326">
+                            <img class="img-responsive" src="images/team/austin.jpg" alt="Austin Johnson">
                             <ul>
                                 <li><a href="#"><i class="icon-custom icon-sm rounded-x fa fa-twitter"></i></a></li>
                                 <li><a href="#"><i class="icon-custom icon-sm rounded-x fa fa-facebook"></i></a></li>
@@ -518,28 +518,36 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
 </template>
 
 <template name="carousel">  
-  <div id="owl-example" class="owl-carousel">
+  <div id="owl-example" >
 			<div class="owl-item">
-				<div >
+				<div>
 					<div class="item" id="slide1">
-            		<h3>Text 1</h3>
-            		<h4>THE COMPLETE SERVICE DELIVERY SOLUTION FOR ANY SIZE SERVICE DEPARTMENT.</h4>          	
+                <h1>This is a test</h1>        
+                <h3>THIS IS SO SICK</h3>
+                <br>
+                <p><a class="btn-u btn-u-lg btn-brd btn-brd-hover  btn-u-blue rounded" href="#services">VIEW OUR SERVICES</a></p>
             	</div>
 				</div>
 			</div>
-			
+
 			<div class="owl-item">
-				<div id="slide2">
-					<div class="carousel-caption">
-						Great pic by me
+			
+				<div class="item" id="slide2">
+				<h1>HAVE A QUESTION?</h1>
+				 <h3>FEEL FREE TO REACH OUT</h3>   
+				 <p><a class="btn-u btn-u-lg btn-brd btn-brd-hover  btn-u-red rounded" href="#contact">CONTACT US</a></p>
 					</div>
-				</div>
+
 			</div>
 			
 			<div class="owl-item">
-				<div id="slide3">
-					<div class="carousel-caption">
-						dat speed
+				<div class="item" id="slide3">
+					<div >
+					 <h1>SPEED UP YOUR DELIVERY PROCESS</h1>        
+                <h3>INCREASE SERVICE DRIVE EFFICIENCY</h3>
+                <br>
+                <br>
+                <p><a class="btn-u btn-u-lg btn-brd btn-brd-hover  btn-u-red rounded" href="#services">VIEW OUR SERVICES</a></p>
 					</div>
 				</div>
 			</div>

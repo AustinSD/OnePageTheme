@@ -7,7 +7,7 @@ Template.home.helpers({
  	}
 });
   Template.carousel.rendered = function() {
-    $(".owl-carousel").owlCarousel({
+    $("#owl-example").owlCarousel({
  			navigation : false, // Show next and prev buttons
 			slideSpeed : 300,
 			paginationSpeed : 400,

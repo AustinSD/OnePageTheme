@@ -3,7 +3,7 @@
 .header {
 	z-index: 99;
 	position: relative;
-	border-bottom: solid 2px #eee;
+
 }
 
 /*Navbar Logo*/
@@ -67,7 +67,7 @@
 	left: -3px;
 	z-index: 2;
 	color: #777;
-	font-size: 4px;
+	font-size: 22px;
     content: "\f10c";
 	margin-right: 6px;
 	position: absolute;
