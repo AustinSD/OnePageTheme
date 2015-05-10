@@ -16,6 +16,11 @@ border-radius: 3px;
 text-align: center;
 }
 
+
+#login-dropdown-list .dropdown-menu {
+left: auto;
+right: 0;
+}
 #caption-1{
 
 }
@@ -32,9 +37,9 @@ text-align: center;
 
 #slide1{
 	height: 800px;
-	background-image: url("images/slide1.jpg");
-
+	background-image: url("images/slide1.jpg");	
 }
+
 #slide2{
 	height: 800px;
 	background-image: url("images/slide2.jpg");
@@ -62,14 +67,20 @@ text-align: center;
 	display: block;
 }
 #owl-example .item h1{
+	margin: inherit;
+	font-size: 50px;
 	color: #FFF;
-	
-	margin-top: 30%;
+	font-weight: 800;
+	padding-bottom: 40px;
+	margin-top: 25%;
+}
+#owl-example #slide1 h1{
+	color: red;
 }
 #owl-example .item h3{
 	color: #FFF;
 	font-size: 28px;
-	font-weight: 300;
+	font-weight: 700;
 	
 }
 #owl-example .item h4{
@@ -77,11 +88,6 @@ text-align: center;
 	font-size: 18px;
 }
 
-.item h1{
-	margin: inherit;
-	color: #fff;
-	font-size: 50px;
-}
 
 
 
