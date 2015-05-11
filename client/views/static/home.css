@@ -68,14 +68,14 @@ right: 0;
 }
 #owl-example .item h1{
 	margin: inherit;
-	font-size: 50px;
+	font-size: 60px;
 	color: #FFF;
-	font-weight: 800;
+	font-weight: bold;
 	padding-bottom: 40px;
-	margin-top: 25%;
+	margin-top: 28%;
 }
 #owl-example #slide1 h1{
-	color: red;
+	color: white;
 }
 #owl-example .item h3{
 	color: #FFF;
