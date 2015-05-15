@@ -73,7 +73,3 @@ Template.contactform.events({
                 $('.parallaxBg').parallax("50%", 0.4);
             });
 });
-
-Template.orgcarousel.rendered = function () {
-
-};
