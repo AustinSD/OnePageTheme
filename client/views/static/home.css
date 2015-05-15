@@ -42,39 +42,83 @@ z-index: 100;
 	height: 800px;
 	background-image: url("images/slide1.jpg");	
 }
-
 #slide1:after {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%; 
-  content: '';
-  position: absolute;
-  background: rgba(0,0,0,0.7);
-  webkit-transform: none;
-  transform: none; 
+top: 0;
+left: 0;
+width: 100%;
+height: 100%; 
+content: '';
+position: absolute;
+background: rgba(0,0,0,0.10);
+webkit-transform: none;
+transform: none; 
 }
 
 #slide1:before {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%; 
-  content: " ";
-  position: absolute;
-  background: url(../images/patterns/gridtile.png) repeat;
-  webkit-transform: none;
-  transform: none;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%; 
+content: " ";
+position: absolute;
+background: url(../images/patterns/gridtile.png) repeat;
+webkit-transform: none;
+transform: none;
 }
-
 
 #slide2{
 	height: 800px;
 	background-image: url("images/slide2.jpg");
 }
+#slide2:after {
+top: 0;
+left: 0;
+width: 100%;
+height: 100%; 
+content: '';
+position: absolute;
+background: rgba(0,0,0,0.10);
+webkit-transform: none;
+transform: none; 
+}
+
+#slide2:before {
+top: 0;
+left: 0;
+width: 100%;
+height: 100%; 
+content: " ";
+position: absolute;
+background: url(../images/patterns/gridtile.png) repeat;
+webkit-transform: none;
+transform: none;
+}
 #slide3{
 	height: 800px;
 	background-image: url("images/speedometer.png");
+}
+#slide3:after {
+top: 0;
+left: 0;
+width: 100%;
+height: 100%; 
+content: '';
+position: absolute;
+background: rgba(0,0,0,0.10);
+webkit-transform: none;
+transform: none; 
+}
+
+#slide3:before {
+top: 0;
+left: 0;
+width: 100%;
+height: 100%; 
+content: " ";
+position: absolute;
+background: url(../images/patterns/gridtile.png) repeat;
+webkit-transform: none;
+transform: none;
 }
 /* Demo Slides */
 
@@ -96,14 +140,30 @@ z-index: 100;
 }
 #owl-example .item h1{
 	margin: inherit;
-	font-size: 60px;
+	font-size: 64px;
 	color: #FFF;
-	font-weight: bold;
+	font-weight: bolder;
 	padding-bottom: 40px;
-	margin-top: 28%;
-}
+	margin-top: 39%;
+	letter-spacing: -0.2rem;
+}	
 #owl-example #slide1 h1{
 	color: white;
+    padding-bottom: 40px;
+	margin-top: 30%;
+	position: relative;
+}
+#owl-example #slide2 h1{
+	color: white;
+	padding-bottom: 40px;
+	margin-top: 30%;
+	position: relative;
+}
+#owl-example #slide3 h1{
+	color: white;
+    padding-bottom: 40px;
+	margin-top: 30%;
+	position: relative;
 }
 #owl-example .item h3{
 	color: #FFF;
