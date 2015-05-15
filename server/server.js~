@@ -1,15 +1,15 @@
-/*Meteor.startup(function () {
+Meteor.startup(function () {
 // code to run on server at startup
 feedReader();
 });
 function feedReader() {
 var collections = {
-roles: Roles,
 feeds: Feeds,
 feed_entries: FeedEntries
 }
 Feed.collections(collections);
 var twitter_feed = {
+	//_id: "Bryan's Twitter",
 _id: Meteor.settings.twitter_id,
 category: Meteor.settings.twitter_category,
 link: Meteor.settings.twitter_link,
@@ -26,4 +26,4 @@ screen_name: Meteor.settings.twitter_screen_name
 Feed.initTwitterFeed(twitter_parameters);
 // invoke feedReader to get real-time reactive social stream
 Feed.read();
-}*/
+}

@@ -2,10 +2,20 @@ Template.home.helpers({
  carCount: function() {
       return CarsHistory.find().count();
       },
+      carWashCount: function () {
+      	return CarsHistory.find().count();
+      	},
+      	shuttleCount: function () {
+      		return ShuttleHistory.find().count();
+      		},
+      tasksCount: function () {
+      	return TaskHistory.find().count();
+      	},
  twitterFeed: function () {
  	return FeedEntries.find();
  	}
 });
+
   Template.carousel.rendered = function() {
     $("#owl-example").owlCarousel({
  			navigation : false, // Show next and prev buttons
@@ -56,6 +66,8 @@ Template.contactform.events({
         $('.navbar-nav li a, .navbar-brand').click(function() {
             $(".navbar-collapse.in").collapse('hide');
         });
+        
+        
         
         $(window).load(function(){
                 $('.parallaxBg').parallax("50%", 0.4);

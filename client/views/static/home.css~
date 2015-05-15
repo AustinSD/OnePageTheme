@@ -16,6 +16,11 @@ border-radius: 3px;
 text-align: center;
 }
 
+#login-dropdown-list .dropdown-menu {
+	left: auto;
+	right: 0;
+}
+
 #caption-1{
 
 }
@@ -64,7 +69,7 @@ text-align: center;
 #owl-example .item h1{
 	color: #FFF;
 	
-	margin-top: 40%;
+	margin-top: 30%;
 }
 #owl-example .item h3{
 	color: #FFF;

@@ -98,7 +98,7 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
         <div class="container content-lg">
             <div class="title-v1">
                 <h2>Our Vision And Mission</h2>
-                <p>At Dealer Logistics, We <strong>believe</strong> the interactions on the service drive are key in ensuring a positive customer experience.<br> 
+                <p>We <strong>believe</strong> the interactions on the service drive are key in ensuring a positive customer experience.<br> 
                  We assist you in building a reliable process which is <strong>complimented</strong> by our applications.</p>
             </div>
 
@@ -209,19 +209,19 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
                     </div>
                     <div class="col-sm-3 col-xs-6">
                         <div class="counters">
-                            <span class="counter">277</span> 
+                            <span class="counter">{{shuttleCount}}</span> 
                             <h4>Shuttle Rides</h4>
                         </div>    
                     </div>
                     <div class="col-sm-3 col-xs-6">
                         <div class="counters">
-                            <span class="counter">78</span>
+                            <span class="counter">{{carWashCount}}</span>
                             <h4>Car Washes</h4>
                         </div>    
                     </div>
                     <div class="col-sm-3 col-xs-6">
                         <div class="counters">
-                            <span class="counter">109</span>
+                            <span class="counter">{{tasksCount}}</span>
                             <h4>Tasks Completed</h4>
                         </div>    
                     </div>
@@ -522,7 +522,7 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
 			<div class="owl-item">
 				<div>
 					<div class="item" id="slide1">
-                <h1>This is a test</h1>        
+                <h1>THIS IS JUST A TEST</h1>        
                 <h3>THIS IS SO SICK</h3>
                 <br>
                 <p><a class="btn-u btn-u-lg btn-brd btn-brd-hover  btn-u-blue rounded" href="#services">VIEW OUR SERVICES</a></p>

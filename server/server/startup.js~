@@ -3,10 +3,4 @@ Meteor.startup(function() {
 	if (Meteor.roles.find({name: 'admin'}).count() < 1 ) {
 		Roles.createRole('admin');
 	}
-		if (Meteor.roles.find({name: 'porter'}).count() < 1 ) {
-		Roles.createRole('Porter');
-	}
-			if (Meteor.roles.find({name: 'advisor'}).count() < 1 ) {
-		Roles.createRole('Advisor');
-	}
 });
