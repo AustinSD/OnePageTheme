@@ -141,12 +141,14 @@ transform: none;
 }
 #owl-example .item h1{
 	margin: inherit;
-	font-size: 64px;
+	font-size: 78px;
 	color: #FFF;
-	font-weight: bolder;
+	font-weight: 900;
 	padding-bottom: 40px;
 	margin-top: 39%;
 	letter-spacing: -0.2rem;
+	font-family: sans-serif;
+	font-weight: bolder;
 }	
 #owl-example #slide1 h1{
 	color: white;
@@ -163,7 +165,7 @@ transform: none;
 #owl-example #slide3 h1{
 	color: white;
     padding-bottom: 40px;
-	margin-top: 30%;
+	margin-top: 27%;
 	position: relative;
 }
 #owl-example .item h3{
