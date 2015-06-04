@@ -8,13 +8,16 @@ Router.configure({
 	});
 
 Router.route('/', function () {
-  this.redirect('home');
+  this.redirect('cars');
 });
-Router.route('/home');
-Router.route('/about');
-Router.route('/meetstaff');
+Router.route('/home', function () {
+  this.redirect('cars');
+});
+//Router.route('/home');
+//Router.route('/about');
+//Router.route('/meetstaff');
 Router.route('/signup');
-Router.route('/report');
+//Router.route('/report');
 
 Router.route('/carshistory', {
   name: 'carshistory',
@@ -22,7 +25,7 @@ Router.route('/carshistory', {
   template: 'carshistory',
   onBeforeAction: function () {
     if (!Meteor.userId()) {
-		this.redirect('home');
+		this.redirect('cars');
   } else {
     this.next();
   }},
@@ -36,12 +39,7 @@ Router.route('/cars', {
   name: 'cars',
   path: '/cars',
   template: 'cars', 
-  onBeforeAction: function () {
-    if (!Meteor.userId()) {
-		this.redirect('home');
-  } else {
-    this.next();
-  }},
+
   action: function () {
 	this.layout('appLayout');
     // render all templates and regions for this route
@@ -54,7 +52,7 @@ Router.route('/shuttle', {
   template: 'shuttle',
   onBeforeAction: function () {
     if (!Meteor.userId()) {
-		this.redirect('home');
+		this.redirect('cars');
   } else {
     this.next();
   }},
@@ -70,7 +68,7 @@ Router.route('/shuttleD', {
   template: 'shuttle',
   onBeforeAction: function () {
     if (!Meteor.userId()) {
-		this.redirect('home');
+		this.redirect('cars');
   } else {
   	Session.set("shuttleDirection","Drop Off");
   	this.redirect('shuttle');
@@ -88,7 +86,7 @@ Router.route('/shuttleP', {
   template: 'shuttle',
   onBeforeAction: function () {
     if (!Meteor.userId()) {
-		this.redirect('home');
+		this.redirect('cars');
   } else {
   	Session.set("shuttleDirection","Pick Up");
   	this.redirect('shuttle');
@@ -106,7 +104,7 @@ Router.route('/shuttlehistory', {
   template: 'shuttlehistory',
   onBeforeAction: function () {
     if (!Meteor.userId()) {
-		this.redirect('home');
+		this.redirect('cars');
   } else {
     this.next();
   }},
@@ -122,7 +120,7 @@ Router.route('/task', {
   template: 'task',
   onBeforeAction: function () {
     if (!Meteor.userId()) {
-		this.redirect('home');
+		this.redirect('cars');
   } else {
     this.next();
   }},
@@ -138,7 +136,7 @@ Router.route('/taskhistory', {
   template: 'taskhistory',
   onBeforeAction: function () {
     if (!Meteor.userId()) {
-		this.redirect('home');
+		this.redirect('cars');
   } else {
     this.next();
   }},
@@ -154,7 +152,7 @@ Router.route('/adminTemplate', {
   template: 'adminTemplate',
   onBeforeAction: function () {
     if (!Meteor.userId()) {
-		this.redirect('home');
+		this.redirect('cars');
   } else {
     this.next();
   }},
