@@ -4,6 +4,7 @@
   color: #fff;
   position: relative;
   background: #333 url(../images/bg/bg3.jpg) center fixed;
+  background-size: cover;
 }
 
 .contacts-section:after {
