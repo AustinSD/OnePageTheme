@@ -16,6 +16,7 @@ Router.route('/meetstaff');
 Router.route('/signup');
 Router.route('/report');
 
+
 Router.route('/carshistory', {
   name: 'carshistory',
   path: '/carshistory',
@@ -148,6 +149,23 @@ Router.route('/taskhistory', {
     this.render();
   }
 });
+Router.route('/carWash', {
+  name: 'carWash',
+  path: '/carWash',
+  template: 'carWash',
+  onBeforeAction: function () {
+    if (!Meteor.userId()) {
+		this.redirect('home');
+  } else {
+    this.next();
+  }},
+  action: function () {
+	this.layout('appLayout');
+    // render all templates and regions for this route
+    this.render();
+  }
+});
+
 Router.route('/adminTemplate', {
   name: 'adminTemplate',
   path: '/adminTemplate',

@@ -1,0 +1,176 @@
+<template name="carWash">
+    <!--Modal Templates-->
+    {{> updateCarWashDialog}} 
+    
+    
+    
+    <!-- Begin Content -->
+    <div class="col-md-12">
+        <!--Basic Table-->
+        <div class="panel panel-dark-blue margin-bottom-40">
+            <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-car"></i>Car Wash</h3> 
+            </div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Timestamp</th>
+                        <th>Tag Number</th>
+                        <th>ASM</th>
+                        <th>Team</th>
+                        <th>Vehicle</th>
+                        <th>Color</th>
+                        <th>VIN - Last 4</th>
+                        <th>Status</th>
+                        <th>Additional Notes</th>
+                        <th>Porter</th>
+                        <th>Username</th>
+                        <th>Wash</th>
+                        <th>Update</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each cars}}
+                    <tr class={{statusClass status}}>
+                        <td>{{timeParse timestamp}}</td>
+                        <td>{{tagnum}}</td>
+                        <td>{{asm}}</td>
+                        <td>{{team}}</td>
+                        <td>{{vehicle}}</td>
+                        <td>{{color}}</td>
+                        <td>{{vin}}</td>
+                        <td>{{status}}</td>
+                        <td>{{notes}}</td>
+                        <td>{{porter}}</td>
+                        <td>{{username}}</td>
+                        <td>{{wash}}</td>
+                        <td><a id="updateCar" class="btn btn-primary updateCar">Update</a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+        <!--End Basic Table-->
+    </div>
+</template>
+
+<template name="updateCarWashDialog">
+    <!-- Modal -->
+    <div class="modal fade" id="updateCarWashDialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                    <h4 id="myModalLabel" class="modal-title"><i class="fa fa-car"></i> Update Car</h4>
+                </div>
+                <form id="updateBody">
+                    <div class="modal-body">
+                        {{#with getCarID}}
+
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-3 control-label" for="vehicleUpdate">Vehicle</label>
+                            <div class="col-sm-8" id="vehicleUpdate">
+                                {{vehicle}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-3 control-label" for="colorUpdate">Color</label>
+                            <div class="col-sm-8" id="colorUpdate">
+                                {{color}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-3 control-label" for="tagnumUpdate">Tag Number</label>
+                            <div class="col-sm-8" id="tagnumUpdate">
+                                {{tagnum}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-3 control-label" for="vinUpdate">VIN</label>
+                            <div class="col-sm-8" id="vinUpdate">
+                                {{vin}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-3 control-label" for="asmUpdate">ASM</label>
+                            <div class="col-sm-8" id="asmUpdate">
+                                {{asm}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-3 control-label" for="teamUpdate">Team</label>
+                            <div class="col-sm-8" id="teamUpdate">
+                                {{team}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-3 control-label" for="username">Username</label>
+                            <div class="col-sm-8" id="username">
+                                {{username}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-3 control-label" for="porterUpdate">Porter</label>
+                            <div class="col-sm-8">
+                                <select id="porterUpdate" name="porterUpdate" class="form-control">
+                                    <option></option>
+                                    {{#with company}} {{#each company.porters}}
+                                    <option {{selected getCarID.porter this }}>{{this}}</option>
+                                    {{/each}} {{/with}}
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-3 control-label" for="statusUpdate">Status</label>
+                            <div class="col-sm-8">
+                                <select id="statusUpdate" name="statusUpdate" class="form-control">
+                                    <option {{selected status "Prep"}}>Prep</option>
+                                    <option {{selected status "Ready"}}>Ready</option>
+                                    <option {{selected status "Waiting"}}>Waiting</option>
+                                    <option {{selected status "Completed"}}>Completed</option>
+                                    <option {{selected status "Delete"}}>Delete</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-3 control-label" for="washUpdate">Wash</label>
+                            <div class="col-sm-8">
+                                <select id="washUpdate" name="washUpdate" class="form-control">
+                                    <option {{selected wash "Yes"}}>Yes</option>
+                                    <option {{selected wash "No"}}>No</option>
+                                    <option {{selected wash "In Progress"}}>In Progress</option>
+                                    <option {{selected wash "Already Washed"}}>Already Washed</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-3 control-label" for="notesUpdate">Notes</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" type="text" id="notesUpdate" value={{notes}}>
+                            </div>
+                        </div>
+                        <br> {{/with}}
+
+                        <br>
+                    </div>
+                </form>
+                <div class="modal-footer">
+                    <button data-dismiss="modal" class="btn-u btn-u-default" type="button">Close</button>
+                    <button class="btn-u save" type="button">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal -->
+</template>
