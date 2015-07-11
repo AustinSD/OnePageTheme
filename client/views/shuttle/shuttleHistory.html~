@@ -1,11 +1,53 @@
-<template name="taskhistory">
+<template name="shuttlehistory2">
+   <h1>Shuttle History</h1>
+   <div class="datagrid">
+   <div class="table-responsive">
+      <table>
+         <thead>
+            <tr>
+               <th>Timestamp</th>
+					<th>Completed</th>
+               <th>Time Requested</th>
+               <th>Customer Name</th>
+               <th>Phone Number</th>
+               <th>Address</th>
+               <th>Driver</th>
+               <th>Username</th>
+               <th>Status</th>
+               <th>Time Out</th>
+               <th>Time In</th>
+            </tr>
+         </thead>
+         <tbody>
+            {{#each shuttlehistory}}
+            <tr class={{statusClass status}}>
+               <td>{{timeParse timestamp}}</td>
+					<td>{{timeParse completestamp}}</td>
+               <td>{{time}}</td>
+               <td>{{name}}</td>
+               <td>{{number}}</td>
+               <td>{{address}}</td>
+               <td>{{driver}}</td>
+               <td>{{username}}</td>
+               <td>{{status}}</td>
+               <td>{{timeout}}</td>
+               <td>{{timein}}</td>
+            </tr>
+            {{/each}}
+         </tbody>
+      </table>
+   </div>
+   </div>
+</template>
+
+<template name="shuttlehistory">
 
             <!-- Begin Content -->
             <div class="col-md-12">
                 <!--Basic Table-->
                 <div class="panel panel-dark-blue margin-bottom-40">
                     <div class="panel-heading">
-                        <h3 class="panel-title"><i class="fa fa-tasks"></i>Task History</h3>
+                        <h3 class="panel-title"><i class="fa fa-bus"></i>Shuttle History</h3>
                     </div>
                     <div class="panel-body">
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -28,36 +70,39 @@
 <button type="button" class="btn btn-default submitrange">Show Date Range</button>                       
 </form>
 </div>
-
+<a href="#" class="export">Export Table data into CSV</a>
 <!-- End Datepicker Forms -->
-<a href="#" class="export"><i class="fa fa-file-excel-o"></i> Export</a>
                     </div> <!-- End panel-body -->                                     
-                    <table class="table table-bordered" id="taskhisttable">
+                    <table class="table table-bordered" id="shuttlehisttable">
          <thead>
             <tr>
                <th>Timestamp</th>
-               <th>Completed</th>
-               <th>Time</th>
-               <th>ASM</th>
-               <th>Task</th>
-               <th>Porter</th>
-               <th>Status</th>
-               <th>Additional Notes</th>
+					<th>Completed</th>
+               <th>Time Requested</th>
+               <th>Customer Name</th>
+               <th>Phone Number</th>
+               <th>Address</th>
+               <th>Driver</th>
                <th>Username</th>
+               <th>Status</th>
+               <th>Time Out</th>
+               <th>Time In</th>
             </tr>
          </thead>
          <tbody>
             {{#each fcResults}}
             <tr class={{statusClass status}}>
                <td>{{timeParse timestamp}}</td>
-               <td>{{timeParse completestamp}}</td>
+					<td>{{timeParse completestamp}}</td>
                <td>{{time}}</td>
-               <td>{{asm}}</td>
-               <td>{{task}}</td>
-               <td>{{porter}}</td>
-               <td>{{status}}</td>
-               <td>{{notes}}</td>
+               <td>{{name}}</td>
+               <td>{{number}}</td>
+               <td>{{address}}</td>
+               <td>{{driver}}</td>
                <td>{{username}}</td>
+               <td>{{status}}</td>
+               <td>{{timeout}}</td>
+               <td>{{timein}}</td>
             </tr>
             {{/each}}
          </tbody>
@@ -108,42 +153,3 @@
                 </div>
                 
 </template>
-
-<template name="taskhistory2">
-   <h1>Task History</h1>
-   <div class="datagrid">
-   <div class="table-responsive">
-    <table>
-         <thead>
-            <tr>
-               <th>Timestamp</th>
-               <th>Completed</th>
-               <th>Time</th>
-               <th>ASM</th>
-               <th>Task</th>
-               <th>Porter</th>
-               <th>Status</th>
-               <th>Additional Notes</th>
-               <th>Username</th>
-            </tr>
-         </thead>
-         <tbody>
-            {{#each taskhistory}}
-            <tr class={{statusClass status}}>
-               <td>{{timeParse timestamp}}</td>
-               <td>{{timeParse completestamp}}</td>
-               <td>{{time}}</td>
-               <td>{{asm}}</td>
-               <td>{{task}}</td>
-               <td>{{porter}}</td>
-               <td>{{status}}</td>
-               <td>{{notes}}</td>
-               <td>{{username}}</td>
-            </tr>
-            {{/each}}
-         </tbody>
-      </table>
-   </div>
-   </div>
-</template>
-

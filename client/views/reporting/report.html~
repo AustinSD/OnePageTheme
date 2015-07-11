@@ -172,7 +172,7 @@
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                         		<div id="chart" class="epoch the-epoch-chart" style="width: 700px; height: 250px"></div>
+                         		<div id="lineChart" class="epoch the-epoch-chart" style="width: 700px; height: 250px"></div>
                             <div id="morris-area-chart">
                             <canvas id="myChart" style="width:100%; height:100%"></canvas>
                             </div>
