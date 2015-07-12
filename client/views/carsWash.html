@@ -15,15 +15,14 @@
                 <thead>
                     <tr>
                         <th>Timestamp</th>
-                        <th>Tag Number</th>
                         <th>ASM</th>
-                        <th>Team</th>
+                        <th>Tag Number</th>
                         <th>Vehicle</th>
                         <th>Color</th>
                         <th>VIN - Last 4</th>
                         <th>Status</th>
                         <th>Additional Notes</th>
-                        <th>Porter</th>
+                        <th>Wash Attendant</th>
                         <th>Username</th>
                         <th>Wash</th>
                         <th>Update</th>
@@ -33,18 +32,17 @@
                     {{#each cars}}
                     <tr class={{statusClass status}}>
                         <td>{{timeParse timestamp}}</td>
-                        <td>{{tagnum}}</td>
                         <td>{{asm}}</td>
-                        <td>{{team}}</td>
+                        <td>{{tagnum}}</td>
                         <td>{{vehicle}}</td>
                         <td>{{color}}</td>
                         <td>{{vin}}</td>
                         <td>{{status}}</td>
                         <td>{{notes}}</td>
-                        <td>{{porter}}</td>
+                        <td>{{washer}}</td>
                         <td>{{username}}</td>
                         <td>{{wash}}</td>
-                        <td><a id="updateCar" class="btn btn-primary updateCar">Update</a>
+                        <td><a id="updateWash" class="btn btn-primary updateWash">Update</a>
                         </td>
                     </tr>
                     {{/each}}
@@ -62,7 +60,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                    <h4 id="myModalLabel" class="modal-title"><i class="fa fa-car"></i> Update Car</h4>
+                    <h4 id="myModalLabel" class="modal-title"><i class="fa fa-car"></i> Update Car Wash</h4>
                 </div>
                 <form id="updateBody">
                     <div class="modal-body">
@@ -118,12 +116,12 @@
                         </div>
                         <br>
                         <div class="form-group form-group-sm">
-                            <label class="col-sm-3 control-label" for="porterUpdate">Porter</label>
+                            <label class="col-sm-3 control-label" for="washerUpdate">Wash Attendant</label>
                             <div class="col-sm-8">
-                                <select id="porterUpdate" name="porterUpdate" class="form-control">
+                                <select id="washerUpdate" name="washerUpdate" class="form-control">
                                     <option></option>
-                                    {{#with company}} {{#each company.porters}}
-                                    <option {{selected getCarID.porter this }}>{{this}}</option>
+                                    {{#with company}} {{#each company.washers}}
+                                    <option {{selected getCarID.washer this }}>{{this}}</option>
                                     {{/each}} {{/with}}
                                 </select>
                             </div>

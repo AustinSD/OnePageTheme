@@ -6,7 +6,7 @@
 
 
   Template.carWash.events({
-    'click .updateCar': function(e, t) {
+    'click .updateWash': function(e, t) {
       Session.set("carID", this._id);
       e.preventDefault();
         $("#updateCarWashDialog").modal("show");
@@ -43,7 +43,7 @@
       var properties = {
         status: template.find("#statusUpdate").value,
         notes: template.find("#notesUpdate").value,
-        porter: template.find("#porterUpdate").value,
+        washer: template.find("#washerUpdate").value,
         wash: template.find("#washUpdate").value,
         completestamp: moment().format() //moment().format('MM/DD/YYYY h:mm A')
       };
