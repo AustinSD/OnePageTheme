@@ -104,7 +104,7 @@ Meteor.methods({
 
 	},
 	
-	updatePorter: function(asms, porters,drivers, company) {
-		Company.update({companyname: company},{$set:{asm: asms, porters: porters, drivers: drivers}});
+	updatePorter: function(asms, porters, drivers, washers, company) {
+		Company.update({companyname: company},{$set:{asm: asms, porters: porters, drivers: drivers, washers: washers}});
 	},
 });
