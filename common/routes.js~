@@ -10,14 +10,25 @@ Router.configure({
 Router.route('/', function () {
   this.redirect('cars');
 });
-Router.route('/home', function () {
-  this.redirect('cars');
+/*Router.route('/home', function () {
+  this.redirect('http://google.com');
+});*/
+/*Router.route('/home' , function() {
+  this.response.writeHead(302, {
+    'Location': "http://www.google.com"
+  });
+  this.response.end();
+});*/
+Router.route('/home', {where: 'server'}).get(function() {
+  this.response.writeHead(302, {
+    'Location': "https://www.google.com/"
+  });
+  this.response.end();
 });
 //Router.route('/home');
-//Router.route('/about');
-//Router.route('/meetstaff');
+Router.route('/contact');
 Router.route('/signup');
-//Router.route('/report');
+Router.route('/report');
 
 Router.route('/carshistory', {
   name: 'carshistory',

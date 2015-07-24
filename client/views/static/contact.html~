@@ -1,0 +1,94 @@
+<template name="contact">
+    <!--=== Header ===-->    
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#body">
+                    <img src="images/logosmall.png" alt="Logo"> 
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="page-scroll home">
+                        <a href="#body">Home</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#about">About Us</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#services">Services</a>
+                    </li>
+<!--                    <li class="page-scroll">
+                        <a href="#news">News</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#portfolio">Portfolio</a>
+                    </li>-->
+                    <li class="page-scroll">
+                        <a href="#contact">Contact</a>
+                    </li>                    
+                    <li class="page-scroll">
+                        <a href={{pathFor 'cars'}}>App</a>
+                    </li>
+                    {{> loginButtons }}
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+
+    <section id="contact" class="contacts-section">
+        <div class="container content-lg">
+            <div class="title-v1">
+                <h2>Contact Us</h2>
+                <p>Interested in learning more about Dealer Logistics and our services? Fill out this quick form and one of our representatives will contact you as soon as possible.</p>
+            </div>
+
+            <div class="row contacts-in">
+                <div class="col-md-6 md-margin-bottom-40">
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-home"></i> San Diego, CA</li>
+                        <li><i class="fa fa-phone"></i>(619) 320-8732</li>
+                        <li><i class="fa fa-envelope"></i> <a href="info@dealer-logistics.com">info@dealer-logistics.com</a></li>
+                        <li><i class="fa fa-globe"></i> <a href="www.dealer-logistics.com">www.dealer-logistics.com</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-6">
+                    <form>
+                        <label>Name</label>
+                        <div class="row margin-bottom-20">
+                            <div class="col-md-7 col-md-offset-0">
+                                <input id="emailName" type="text" class="form-control">
+                            </div>                
+                        </div>
+                        
+                        <label>Email <span class="color-red">*</span></label>
+                        <div class="row margin-bottom-20">
+                            <div class="col-md-7 col-md-offset-0">
+                                <input id="emailAddress" type="text" class="form-control">
+                            </div>                
+                        </div>
+                                               
+                        <label>Message</label>
+                        <div class="row margin-bottom-20">
+                            <div class="col-md-11 col-md-offset-0">
+                                <textarea id="emailMessage" rows="8" class="form-control"></textarea>
+                            </div>                
+                        </div>
+                        
+                        <p><button id="contactSubmit" type="submit" class="btn-u btn-brd btn-brd-hover btn-u-dark">Send Message</button></p>
+                    </form> 
+                </div>
+            </div>            
+        </div>
+    </section>
+</template>

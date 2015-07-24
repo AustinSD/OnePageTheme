@@ -1,8 +1,8 @@
     Meteor.startup(function () {
 		process.env.MAIL_URL = 'smtp://austin%40everydayguy.net:R00zzic%40831@smtp.booksbyjos.com:587';
         // bootstrap the admin user if they exist -- You'll be replacing the id later
-        if (Meteor.users.findOne("d9B4aPYuPcHYiMQfM"))
-            Roles.addUsersToRoles("d9B4aPYuPcHYiMQfM", ['admin']);
+        if (Meteor.users.findOne("qqhR5d68stCLW92LK"))
+            Roles.addUsersToRoles("qqhR5d68stCLW92LK", ['admin']);
 
     });
 Meteor.methods({
@@ -80,14 +80,14 @@ name: 'taskreport',
     },
     },
 });*/
-Meteor.publish("carshistory", function () {
+/*Meteor.publish("carshistory", function () {
 	if (!this.userId) {
         this.ready();
         return;
    }
 	var company = Meteor.users.findOne(this.userId).profile.company;
 	return CarsHistory.find({company : company});
-});
+});*/
 Meteor.publish("shuttle", function () {
 	if (!this.userId) {
         this.ready();

@@ -42,6 +42,6 @@ $( "#start" ).datepicker( "option", "maxDate", selectedDate );
     var myQuery = {
     selector: {"timestamp": {"$gte": startTime, "$lt": finishTime}},
     };
-  CarHistoryFilter.query.set(myQuery);
+  ShuttleHistory.query.set(myQuery);
   	}
   });
