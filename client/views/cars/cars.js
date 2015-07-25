@@ -5,6 +5,10 @@
     isCreateUser: function() {
       return Roles.userIsInRole(Meteor.user(), ['admin', 'Advisor']);
     },
+    lastNote: function (id) {
+    	var lastNote = Cars.findOne({_id: id},{ sort: {"notes.time": -1}});
+    	return lastNote.notes[lastNote.notes.length -1 ];	
+    }
   });
 
 

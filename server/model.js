@@ -83,14 +83,6 @@ name: 'taskreport',
     },
     },
 });*/
-Meteor.publish("carshistory", function () {
-	if (!this.userId) {
-        this.ready();
-        return;
-   }
-	var company = Meteor.users.findOne(this.userId).profile.company;
-	return CarsHistory.find({company : company});
-});
 Meteor.publish("shuttle", function () {
 	if (!this.userId) {
         this.ready();
@@ -106,22 +98,6 @@ Meteor.publish("task", function () {
    }
 	var company = Meteor.users.findOne(this.userId).profile.company;
 	return Task.find({company : company});
-});
-Meteor.publish("taskhistory", function () {
-	if (!this.userId) {
-        this.ready();
-        return;
-   }
-	var company = Meteor.users.findOne(this.userId).profile.company;
-	return TaskHistory.find({company : company});
-});
-Meteor.publish("shuttlehistory", function () {
-	if (!this.userId) {
-        this.ready();
-        return;
-   }
-	var company = Meteor.users.findOne(this.userId).profile.company;
-	return ShuttleHistory.find({company : company});
 });
 Meteor.publish("company", function () {
 	return Company.find();

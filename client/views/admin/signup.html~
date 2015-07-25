@@ -1,5 +1,5 @@
 <template name="signup">
-<form id="signUp">
+<!--<form id="signUp">
   {{#if error}}
     <span id="error" style="color: red;">
       {{error}}<br>
@@ -11,4 +11,9 @@ Address: 			<input type="text" id="address" placeholder="Address" /><br>
 Phone:				<input type="tel" id="phone" placeholder="Phone" /><br>
 <a type="submit" id="btnCompanySignUp" class="btn btn-primary CompanySignUp">Sign Up Company</a>
 </form>
+-->
+<div  ng-app="signup">
+	<div ng-include="'singup.ng.html'"></div>
+</div>
+
 </template>

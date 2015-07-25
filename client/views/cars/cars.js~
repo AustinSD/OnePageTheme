@@ -5,6 +5,11 @@
     isCreateUser: function() {
       return Roles.userIsInRole(Meteor.user(), ['admin', 'Advisor']);
     },
+    lastNote: function (id) {
+    	var lastNote = Cars.findOne({_id: id},{ sort: {"notes.time": -1}});
+    	console.log(lastNote.notes[lastNote.notes.length -1 ]);
+    	return lastNote;	
+    }
   });
 
 
@@ -24,7 +29,11 @@
         $("#updateCarDialog").modal("show");
       }
     },
-
+    'click #notesCar': function(e, t) {
+      e.preventDefault();
+      $('#updateNotesBody').get(0).reset();
+      $("#updateNotes").modal("show");
+    },
   });
 
   ///////////////////////////////////////////////////////////////////////////////
@@ -100,7 +109,6 @@
       return Roles.userIsInRole(Meteor.user(), ['admin', 'Advisor']);
     },
   });
-
   Template.updateCarDialogAdvisor.events({
     'click .save': function(event, template) {
       event.preventDefault();
@@ -112,7 +120,7 @@
         team: template.find("#teamUpdateAdvisor").value,
         asm: template.find("#asmUpdateAdvisor").value,
         status: template.find("#statusUpdateAdvisor").value,
-        notes: template.find("#notesUpdateAdvisor").value,
+        //$push: {notes: [ {time: moment().format(),note: template.find("#notesUpdateAdvisor").value}]}
         porter: template.find("#porterUpdateAdvisor").value,
         wash: template.find("#washUpdateAdvisor").value,
         completestamp: moment().format() //moment().format('MM/DD/YYYY h:mm A')
@@ -120,6 +128,12 @@
       Cars.update(Session.get("carID"), {
         $set: properties
       });
+      if(template.find("#notesUpdateAdvisor").value != ""){
+        Cars.update(Session.get("carID"), {
+            $push: {notes:  {time: moment().format(),note: template.find("#notesUpdateAdvisor").value}}
+          });
+          template.find("#notesUpdateAdvisor").value = "";
+      }
       if (template.find("#statusUpdateAdvisor").value == "Completed" || template.find("#statusUpdateAdvisor").value == "Delete") {
         createCarHistory(Session.get("carID"));
         Cars.remove({
@@ -160,7 +174,7 @@
         team: template.find("#teamNew").value,
         asm: template.find("#asmNew").value,
         status: template.find("#statusNew").value,
-        notes: template.find("#notesNew").value,
+        notes: [ {time: moment().format(),note: template.find("#notesNew").value}],
         porter: '',
         username: Meteor.user().emails[0].address,
         wash: template.find("#washNew").value,

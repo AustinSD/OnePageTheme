@@ -43,9 +43,9 @@
                         <td>{{vin}}</td>
                         <td>{{status}}</td>
                         <td>
-                        {{#each notes}}
-                        {{timeParse time}}: {{note}}
-                        {{/each}}
+                        {{#with lastNote _id}}
+	                        	{{timeParse time}}: {{note}}
+                        {{/with}}
                         </td>
                         <td>{{porter}}</td>
                         <td>{{username}}</td>
