@@ -4,8 +4,8 @@
         if (Meteor.users.findOne("qqhR5d68stCLW92LK"))
             Roles.addUsersToRoles("qqhR5d68stCLW92LK", ['admin']);
             
-        if (Meteor.users.findOne("nCAZCfDDXXF7iYMdt"))
-            Roles.addUsersToRoles("nCAZCfDDXXF7iYMdt", ['admin']);
+        if (Meteor.users.findOne("nBvn7p6s9AZYBbLFa"))
+            Roles.addUsersToRoles("nBvn7p6s9AZYBbLFa", ['admin']);
 
     });
 Meteor.methods({

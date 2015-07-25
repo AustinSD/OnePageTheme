@@ -62,7 +62,6 @@
 
       var properties = {
         status: template.find("#statusUpdate").value,
-        notes: template.find("#notesUpdate").value,
         porter: template.find("#porterUpdate").value,
         wash: template.find("#washUpdate").value,
         completestamp: moment().format() //moment().format('MM/DD/YYYY h:mm A')
@@ -70,12 +69,18 @@
       Cars.update(Session.get("carID"), {
         $set: properties
       });
+      if(template.find("#notesUpdate").value != ""){
+        Cars.update(Session.get("carID"), {
+            $push: {notes:  {time: moment().format(),note: template.find("#notesUpdate").value}}
+          });
+          template.find("#notesUpdate").value = "";
+      };
       if (template.find("#statusUpdate").value == "Completed" || template.find("#statusUpdate").value == "Delete") {
         createCarHistory(Session.get("carID"));
         Cars.remove({
           _id: Session.get("carID")
         });
-      }
+      };
       $("#updateCarDialog").modal("hide");
     },
     'click .cancel': function() {

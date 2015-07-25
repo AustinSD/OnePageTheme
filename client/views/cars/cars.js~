@@ -7,8 +7,7 @@
     },
     lastNote: function (id) {
     	var lastNote = Cars.findOne({_id: id},{ sort: {"notes.time": -1}});
-    	console.log(lastNote.notes[lastNote.notes.length -1 ]);
-    	return lastNote;	
+    	return lastNote.notes[lastNote.notes.length -1 ];	
     }
   });
 
@@ -63,7 +62,6 @@
 
       var properties = {
         status: template.find("#statusUpdate").value,
-        notes: template.find("#notesUpdate").value,
         porter: template.find("#porterUpdate").value,
         wash: template.find("#washUpdate").value,
         completestamp: moment().format() //moment().format('MM/DD/YYYY h:mm A')
@@ -71,6 +69,12 @@
       Cars.update(Session.get("carID"), {
         $set: properties
       });
+      if(template.find("#notesUpdate").value != ""){
+        Cars.update(Session.get("carID"), {
+            $push: {notes:  {time: moment().format(),note: template.find("#notesUpdate").value}}
+          });
+          template.find("#notesUpdate").value = "";
+      };
       if (template.find("#statusUpdate").value == "Completed" || template.find("#statusUpdate").value == "Delete") {
         createCarHistory(Session.get("carID"));
         Cars.remove({
