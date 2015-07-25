@@ -63,7 +63,11 @@
                <td>{{color}}</td>
                <td>{{vin}}</td>
                <td>{{status}}</td>
-               <td>{{notes}}</td>
+               <td>
+               	{{#each notes}}
+               		{{timeParse time}}: {{note}}<br>
+               	{{/each}}
+               </td>
                <td>{{porter}}</td>
                <td>{{username}}</td>
                <td>{{wash}}</td>
