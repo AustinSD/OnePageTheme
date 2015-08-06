@@ -80,7 +80,7 @@
         Cars.remove({
           _id: Session.get("carID")
         });
-      }
+      };
       $("#updateCarDialog").modal("hide");
     },
     'click .cancel': function() {

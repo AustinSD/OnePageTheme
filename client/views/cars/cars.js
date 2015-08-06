@@ -11,7 +11,6 @@
     }
   });
 
-
   Template.cars.events({
     'click #btnNewCar': function(e, t) {
       e.preventDefault();
