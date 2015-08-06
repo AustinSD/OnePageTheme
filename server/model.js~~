@@ -82,7 +82,11 @@ name: 'taskreport',
       return query;
     },
     },
+<<<<<<< HEAD
 });
+=======
+});*/
+>>>>>>> bryan
 Meteor.publish("shuttle", function () {
 	if (!this.userId) {
         this.ready();
