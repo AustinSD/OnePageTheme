@@ -17,7 +17,7 @@ Router.route('/home', function () {
 //Router.route('/about');
 //Router.route('/meetstaff');
 Router.route('/signup');
-//Router.route('/report');
+Router.route('/report');
 
 Router.route('/carshistory', {
   name: 'carshistory',

@@ -43,8 +43,8 @@ Meteor.FilterCollections.publish(CarsHistory, {
     },
     },
 });
-/*Meteor.FilterCollections.publish(CarsHistory, {
-name: 'carreport',
+Meteor.FilterCollections.publish(CarsHistory, {
+name: 'report',
   callbacks: {
     beforePublish: function(query, handler){
       if (handler.userId)
@@ -52,7 +52,7 @@ name: 'carreport',
       return query;
     },
     },
-});*/
+});
 Meteor.FilterCollections.publish(ShuttleHistory, {
   name: 'shuttlehistory',
   callbacks: {
@@ -73,7 +73,7 @@ Meteor.FilterCollections.publish(TaskHistory, {
     },
     },
 });
-/*Meteor.FilterCollections.publish(TaskHistory, {
+Meteor.FilterCollections.publish(TaskHistory, {
 name: 'taskreport',
   callbacks: {
     beforePublish: function(query, handler){
@@ -82,7 +82,7 @@ name: 'taskreport',
       return query;
     },
     },
-});*/
+});
 Meteor.publish("shuttle", function () {
 	if (!this.userId) {
         this.ready();
