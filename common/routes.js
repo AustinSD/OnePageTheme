@@ -195,23 +195,6 @@ Router.route('/adminTemplate', {
   }
 });
 
-Router.route('/report', {
-  name: 'report',
-  path: '/report',
-  template: 'report', 
-onBeforeAction: function () {
-    if (!Meteor.userId()) {
-		this.redirect('home');
-  } else {
-    this.next();
-  }},
-  action: function () {
-  	this.layout('appLayout');
-    // render all templates and regions for this route
-    this.render();
-  }
-});
-
 Router.route('/siteAdmin', {
   name: 'siteAdmin',
   path: '/siteAdmin',
