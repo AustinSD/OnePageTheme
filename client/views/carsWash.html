@@ -38,7 +38,11 @@
                         <td>{{color}}</td>
                         <td>{{vin}}</td>
                         <td>{{status}}</td>
-                        <td>{{notes}}</td>
+                        <td>
+                            {{#with lastNote _id}}
+	                        	{{timeParse time}}: {{note}}
+                            {{/with}}
+                        </td>
                         <td>{{washer}}</td>
                         <td>{{username}}</td>
                         <td>{{wash}}</td>
@@ -155,7 +159,18 @@
                         <div class="form-group form-group-sm">
                             <label class="col-sm-3 control-label" for="notesUpdate">Notes</label>
                             <div class="col-sm-8">
-                                <input class="form-control" type="text" id="notesUpdate" value={{notes}}>
+                                {{#each notes}}
+                                <tr>
+                                    <td>{{timeParse time}}: {{note}}</td>
+                                 </tr>
+                                {{/each}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-3 control-label" for="notesUpdate">Notes</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" type="text" id="notesUpdate">
                             </div>
                         </div>
                         <br> {{/with}}

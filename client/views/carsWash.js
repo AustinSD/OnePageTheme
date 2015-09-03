@@ -1,6 +1,10 @@
   Template.carWash.helpers({
     cars: function() {
       return Cars.find({$or:[{wash: 'Yes'},{wash: 'In Progress'}]});
+    },
+    lastNote: function (id) {
+    	var lastNote = Cars.findOne({_id: id},{ sort: {"notes.time": -1}});
+    	return lastNote.notes[lastNote.notes.length -1 ];	
     }
   });
 
@@ -42,7 +46,6 @@
 
       var properties = {
         status: template.find("#statusUpdate").value,
-        notes: template.find("#notesUpdate").value,
         washer: template.find("#washerUpdate").value,
         wash: template.find("#washUpdate").value,
         completestamp: moment().format() //moment().format('MM/DD/YYYY h:mm A')
@@ -50,6 +53,12 @@
       Cars.update(Session.get("carID"), {
         $set: properties
       });
+      if(template.find("#notesUpdate").value != ""){
+        Cars.update(Session.get("carID"), {
+            $push: {notes:  {time: moment().format(),note: template.find("#notesUpdate").value}}
+          });
+          template.find("#notesUpdate").value = "";
+      };
       if (template.find("#statusUpdate").value == "Completed" || template.find("#statusUpdate").value == "Delete") {
         createCarHistory(Session.get("carID"));
         Cars.remove({
