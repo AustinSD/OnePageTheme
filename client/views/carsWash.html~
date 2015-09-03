@@ -40,7 +40,7 @@
                         <td>{{status}}</td>
                         <td>
                             {{#with lastNote _id}}
-	                        	{{user}}: {{note}}
+	                        	{{timeParse time}}: {{note}}
                             {{/with}}
                         </td>
                         <td>{{washer}}</td>

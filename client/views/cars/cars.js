@@ -70,7 +70,7 @@
       });
       if(template.find("#notesUpdate").value != ""){
         Cars.update(Session.get("carID"), {
-            $push: {notes:  {time: moment().format(),note: template.find("#notesUpdate").value}}
+            $push: {notes:  {time: moment().format(),note: template.find("#notesUpdate").value, user: Meteor.user().profile.name}}
           });
           template.find("#notesUpdate").value = "";
       };
