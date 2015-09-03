@@ -19,6 +19,22 @@ Router.route('/home', function () {
 Router.route('/signup');
 //Router.route('/report');
 
+Router.route('/report', {
+  name: 'report',
+  path: '/report',
+  template: 'report',
+  onBeforeAction: function () {
+    if (!Meteor.userId()) {
+		this.redirect('cars');
+  } else {
+    this.next();
+  }},
+  action: function () {
+	this.layout('appLayout');
+    // render all templates and regions for this route
+    this.render();
+  }
+});
 Router.route('/carshistory', {
   name: 'carshistory',
   path: '/carshistory',
@@ -146,6 +162,23 @@ Router.route('/taskhistory', {
     this.render();
   }
 });
+Router.route('/carWash', {
+  name: 'carWash',
+  path: '/carWash',
+  template: 'carWash',
+  onBeforeAction: function () {
+    if (!Meteor.userId()) {
+		this.redirect('home');
+  } else {
+    this.next();
+  }},
+  action: function () {
+	this.layout('appLayout');
+    // render all templates and regions for this route
+    this.render();
+  }
+});
+
 Router.route('/adminTemplate', {
   name: 'adminTemplate',
   path: '/adminTemplate',
@@ -158,6 +191,22 @@ Router.route('/adminTemplate', {
   }},
   action: function () {
   	this.layout('appLayout');
+    // render all templates and regions for this route
+    this.render();
+  }
+});
+Router.route('/siteAdmin', {
+  name: 'siteAdmin',
+  path: '/siteAdmin',
+  template: 'siteAdmin',
+  onBeforeAction: function () {
+    if (!Meteor.userId()) {
+		this.redirect('cars');
+  } else {
+    this.next();
+  }},
+  action: function () {
+	this.layout('appLayout');
     // render all templates and regions for this route
     this.render();
   }

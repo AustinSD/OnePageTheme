@@ -1,0 +1,9 @@
+Template.siteadmin.helpers({
+isCreateUser: function() {
+      return Roles.userIsInRole(Meteor.user(), ['siteAdmin']);
+    },
+});
+  
+Template.siteadmin.events({
+
+});

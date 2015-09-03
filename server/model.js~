@@ -6,6 +6,15 @@
             
         if (Meteor.users.findOne("nBvn7p6s9AZYBbLFa"))
             Roles.addUsersToRoles("nBvn7p6s9AZYBbLFa", ['admin']);
+            
+			if (Meteor.users.findOne("qqhR5d68stCLW92LK"))
+            Roles.addUsersToRoles("qqhR5d68stCLW92LK", ['siteAdmin']);
+            
+        if (Meteor.users.findOne("nBvn7p6s9AZYBbLFa"))
+            Roles.addUsersToRoles("nBvn7p6s9AZYBbLFa", ['siteAdmin']);
+            
+      Houston.add_collection(Meteor.users);
+		Houston.add_collection(Houston._admins);
 
     });
 Meteor.methods({

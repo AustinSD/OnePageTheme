@@ -9,7 +9,7 @@
         <!--Basic Table-->
         <div class="panel panel-dark-blue margin-bottom-40">
             <div class="panel-heading">
-                <h3 class="panel-title"><i class="fa fa-car"></i>Service Drive</h3> {{#if isCreateUser}}
+                <h3 class="panel-title"><i class="fa fa-car"></i>Service Desk</h3> {{#if isCreateUser}}
                 <button id="btnNewCar" class="btn btn-default btn-sm newCar">New Car</button>
                 {{/if}}
             </div>
@@ -50,7 +50,7 @@
                         <td>{{porter}}</td>
                         <td>{{username}}</td>
                         <td>{{wash}}</td>
-                        <td><a id="updateCar" class="btn btn-primary updateCar">Update</a>
+                        <td><a id="updateCar" class="btn btn-primary updateCar">Update Car</a>
                         </td>
                     </tr>
                     {{/each}}

@@ -6,10 +6,13 @@
 {{> yield "header"}}
 </header>-->
 
+<body>
+   
 <div class="mainBody">
 {{> yield}}
 </div>
 
+</body>
 </template>
 
 <template name="appLayout">
@@ -17,11 +20,14 @@
   <title>Dealer Logistics</title>
 </head>
 <header>
-{{> yield "header2"}}
+{{> yield "header"}}
 </header>
 
+<body>
+      
 <div class="mainBody">
 {{> yield}}
 </div>
 
+</body>
 </template>
