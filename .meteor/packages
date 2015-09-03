@@ -14,9 +14,10 @@ mizzao:bootboxjs
 accounts-google
 mrt:moment
 tsega:filter-collections
-houston:admin
 
 gerardnantel:chartjs
 email
 richsilv:owl-carousel
 danielqiu:feed
+houston:admin
+urigo:angular

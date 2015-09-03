@@ -55,8 +55,8 @@ CarHistoryFilter = new Meteor.FilterCollections(CarsHistory, {
   }
   // Other arguments explained later. See Configuration.
 });
-/*ReportCarHistoryFilter = new Meteor.FilterCollections(CarsHistory, {
-	name: 'carreport',
+ReportCarHistoryFilter = new Meteor.FilterCollections(CarsHistory, {
+	name: 'report',
 	//template: 'report',
     sort:{
     order: ['desc', 'asc'],
@@ -73,9 +73,9 @@ CarHistoryFilter = new Meteor.FilterCollections(CarsHistory, {
 		},
 	},
   pager: {
-    itemsPerPage: 1000,
+    itemsPerPage: 10000,
   }
-});*/
+});
 ShuttleHistoryFilter = new Meteor.FilterCollections(ShuttleHistory, {
   template: 'shuttlehistory',
     sort:{
@@ -167,9 +167,9 @@ TaskHistoryFilter = new Meteor.FilterCollections(TaskHistory, {
   }
   // Other arguments explained later. See Configuration.
 });
-/*ReportTaskHistoryFilter = new Meteor.FilterCollections(TaskHistory, {
+ReportTaskHistoryFilter = new Meteor.FilterCollections(TaskHistory, {
 	name: 'taskreport',
-	template: 'report',
+	//template: 'report',
 	filters: {
 		"name": {
 			title: 'Name',
@@ -178,14 +178,14 @@ TaskHistoryFilter = new Meteor.FilterCollections(TaskHistory, {
 			searchable: 'required'
 		}
 	},
-});*/
+});
   	 Meteor.subscribe("cars");
     Meteor.subscribe("carshistory");
     Meteor.subscribe("shuttle");
     //Meteor.subscribe("shuttlehistory");
     Meteor.subscribe("company");
     Meteor.subscribe("task");
-    Meteor.subscribe("taskhistory");
+    //Meteor.subscribe("taskhistory");
     Meteor.subscribe("feed_entries");
     
 }

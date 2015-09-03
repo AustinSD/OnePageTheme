@@ -812,6 +812,7 @@
   position: relative;
   text-align: center;
   background: url(../images/bg/bg2.jpg) center fixed;
+  background-size: cover;
 }
 
 .parallax-twitter:after {
@@ -837,6 +838,7 @@
 .parallax-twitter-in {
   z-index: 1;
   position: relative;
+  background-color : transparent;
 }
 
 /*Twitter Block (owl-controls)*/
@@ -846,17 +848,20 @@
 
 .parallax-twitter-in li {
   color: #333;
+  background-color : transparent;
 }
 
 .parallax-twitter-in li p {
-  color: #000;
-  font-size: 18px;
-  font-weight: 200;
+  color: white;
+  font-size: 22px;
+  font-weight: 500;
 }
 
 .parallax-twitter-in li a {
-  color: #5C2626;
+  color: white;
   text-decoration: underline;
+  font-size: 14px;
+  font-weight: 400;
 }
 
 .parallax-twitter-in li a:hover {
@@ -864,7 +869,7 @@
 }
 
 .parallax-twitter-in li span {
-  color: #5C2626;
+  color: white;
   display: block;
   font-size: 14px;
   font-weight: 400;

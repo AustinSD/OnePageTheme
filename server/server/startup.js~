@@ -6,7 +6,7 @@ Meteor.startup(function() {
 	if (Meteor.roles.find({name: 'Porter'}).count() < 1 ) {
 		Roles.createRole('Porter');
 	}
-	if (Meteor.roles.find({name: 'ASM'}).count() < 1 ) {
-		Roles.createRole('ASM');
+	if (Meteor.roles.find({name: 'Advisor'}).count() < 1 ) {
+		Roles.createRole('Advisor');
 	}
 });

@@ -67,6 +67,13 @@
     {{.}} 
     {{/each}}
     {{/with}}
+    <br>
+    Washers:
+    {{#with company}}   
+    {{#each company.washers}}
+    {{.}} 
+    {{/each}}
+    {{/with}}
     
     {{> modifyPorterModal}}
     {{> addUserModal }}

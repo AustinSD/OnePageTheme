@@ -8,13 +8,32 @@ Router.configure({
 	});
 
 
-Router.route('/',function(){this.redirect('home')});
+Router.route('/', function () {
+  this.redirect('home');
+});
+
 Router.route('/home');
 //Router.route('/about');
 //Router.route('/meetstaff');
 Router.route('/signup');
 //Router.route('/report');
 
+Router.route('/report', {
+  name: 'report',
+  path: '/report',
+  template: 'report',
+  onBeforeAction: function () {
+    if (!Meteor.userId()) {
+		this.redirect('home');
+  } else {
+    this.next();
+  }},
+  action: function () {
+	this.layout('appLayout');
+    // render all templates and regions for this route
+    this.render();
+  }
+});
 Router.route('/carshistory', {
   name: 'carshistory',
   path: '/carshistory',
@@ -82,7 +101,7 @@ Router.route('/shuttleP', {
   template: 'shuttle',
   onBeforeAction: function () {
     if (!Meteor.userId()) {
-		this.redirect('cars');
+		this.redirect('home');
   } else {
   	Session.set("shuttleDirection","Pick Up");
   	this.redirect('shuttle');
@@ -142,6 +161,23 @@ Router.route('/taskhistory', {
     this.render();
   }
 });
+Router.route('/carWash', {
+  name: 'carWash',
+  path: '/carWash',
+  template: 'carWash',
+  onBeforeAction: function () {
+    if (!Meteor.userId()) {
+		this.redirect('home');
+  } else {
+    this.next();
+  }},
+  action: function () {
+	this.layout('appLayout');
+    // render all templates and regions for this route
+    this.render();
+  }
+});
+
 Router.route('/adminTemplate', {
   name: 'adminTemplate',
   path: '/adminTemplate',
@@ -158,10 +194,34 @@ Router.route('/adminTemplate', {
     this.render();
   }
 });
+
 Router.route('/report', {
   name: 'report',
   path: '/report',
   template: 'report', 
+onBeforeAction: function () {
+    if (!Meteor.userId()) {
+		this.redirect('home');
+  } else {
+    this.next();
+  }},
+  action: function () {
+  	this.layout('appLayout');
+    // render all templates and regions for this route
+    this.render();
+  }
+});
+
+Router.route('/siteAdmin', {
+  name: 'siteAdmin',
+  path: '/siteAdmin',
+  template: 'siteAdmin',
+  onBeforeAction: function () {
+    if (!Meteor.userId()) {
+		this.redirect('home');
+  } else {
+    this.next();
+  }},
 
   action: function () {
 	this.layout('appLayout');

@@ -11,7 +11,6 @@
     }
   });
 
-
   Template.cars.events({
     'click #btnNewCar': function(e, t) {
       e.preventDefault();
@@ -80,7 +79,7 @@
         Cars.remove({
           _id: Session.get("carID")
         });
-      }
+      };
       $("#updateCarDialog").modal("hide");
     },
     'click .cancel': function() {
