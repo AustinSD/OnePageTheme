@@ -7,13 +7,9 @@ Router.configure({
 	}
 	});
 
-Router.route('/', function () {
-  this.redirect('cars');
-});
-Router.route('/home', function () {
-  this.redirect('cars');
-});
-//Router.route('/home');
+
+Router.route('/',function(){this.redirect('home')});
+Router.route('/home');
 //Router.route('/about');
 //Router.route('/meetstaff');
 Router.route('/signup');
@@ -25,7 +21,7 @@ Router.route('/carshistory', {
   template: 'carshistory',
   onBeforeAction: function () {
     if (!Meteor.userId()) {
-		this.redirect('cars');
+		this.redirect('home');
   } else {
     this.next();
   }},
@@ -52,7 +48,7 @@ Router.route('/shuttle', {
   template: 'shuttle',
   onBeforeAction: function () {
     if (!Meteor.userId()) {
-		this.redirect('cars');
+		this.redirect('home');
   } else {
     this.next();
   }},
@@ -68,7 +64,7 @@ Router.route('/shuttleD', {
   template: 'shuttle',
   onBeforeAction: function () {
     if (!Meteor.userId()) {
-		this.redirect('cars');
+		this.redirect('home');
   } else {
   	Session.set("shuttleDirection","Drop Off");
   	this.redirect('shuttle');
@@ -104,7 +100,7 @@ Router.route('/shuttlehistory', {
   template: 'shuttlehistory',
   onBeforeAction: function () {
     if (!Meteor.userId()) {
-		this.redirect('cars');
+		this.redirect('home');
   } else {
     this.next();
   }},
@@ -120,7 +116,7 @@ Router.route('/task', {
   template: 'task',
   onBeforeAction: function () {
     if (!Meteor.userId()) {
-		this.redirect('cars');
+		this.redirect('home');
   } else {
     this.next();
   }},
@@ -136,7 +132,7 @@ Router.route('/taskhistory', {
   template: 'taskhistory',
   onBeforeAction: function () {
     if (!Meteor.userId()) {
-		this.redirect('cars');
+		this.redirect('home');
   } else {
     this.next();
   }},
@@ -152,12 +148,23 @@ Router.route('/adminTemplate', {
   template: 'adminTemplate',
   onBeforeAction: function () {
     if (!Meteor.userId()) {
-		this.redirect('cars');
+		this.redirect('home');
   } else {
     this.next();
   }},
   action: function () {
   	this.layout('appLayout');
+    // render all templates and regions for this route
+    this.render();
+  }
+});
+Router.route('/report', {
+  name: 'report',
+  path: '/report',
+  template: 'report', 
+
+  action: function () {
+	this.layout('appLayout');
     // render all templates and regions for this route
     this.render();
   }
