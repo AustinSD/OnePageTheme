@@ -133,7 +133,7 @@
       });
       if(template.find("#notesUpdateAdvisor").value != ""){
         Cars.update(Session.get("carID"), {
-            $push: {notes:  {time: moment().format(),note: template.find("#notesUpdateAdvisor").value}}
+            $push: {notes:  {time: moment().format(),note: template.find("#notesUpdateAdvisor").value, user: Meteor.user().profile.name}}
           });
           template.find("#notesUpdateAdvisor").value = "";
       }
@@ -177,7 +177,7 @@
         team: template.find("#teamNew").value,
         asm: template.find("#asmNew").value,
         status: template.find("#statusNew").value,
-        notes: [ {time: moment().format(),note: template.find("#notesNew").value}],
+        notes: [ {time: moment().format(),note: template.find("#notesNew").value, user: Meteor.user().profile.name}],
         porter: '',
         username: Meteor.user().emails[0].address,
         wash: template.find("#washNew").value,

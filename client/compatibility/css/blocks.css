@@ -851,6 +851,10 @@ background-color: #32566E;
   background: url(../images/patterns/gridtile.png) repeat;
 }
 
+#quote-button {
+  color: #fff;
+}
+
 .parallax-quote-in {
   z-index: 1;
   padding: 0 80px;
@@ -862,6 +866,11 @@ background-color: #32566E;
   font-size: 28px;
   text-transform: uppercase;
   font-family: 'Open Sans', sans-serif;
+}
+.parallax-quote-in h1 {
+  color: #fff;
+  font-size: 42px;
+  font-weight: 900;
 }
 
 .parallax-quote-in p:after,
