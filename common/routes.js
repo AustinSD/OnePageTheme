@@ -17,6 +17,7 @@ Router.route('/home');
 //Router.route('/meetstaff');
 Router.route('/signup');
 //Router.route('/report');
+Router.route('/uplist');
 
 Router.route('/report', {
   name: 'report',

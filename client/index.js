@@ -30,3 +30,7 @@
 		//converts timestamps to readable format
 		return moment(value).format("MM/DD/YYYY h:mm A");
 });
+	UI.registerHelper("timeUplist" , function(value){
+		//converts timestamps to readable format
+		return moment(value).format("h:mm A");
+});

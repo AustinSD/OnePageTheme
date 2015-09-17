@@ -114,7 +114,9 @@ Meteor.publish("company", function () {
 Meteor.publish("feed_entries", function () {
 	return FeedEntries.find({}, {sort: {"date":-1}, limit:3});
 }); 
-
+Meteor.publish("uplist", function () {
+	return Uplist.find();
+});
 Shuttle.allow({
   insert: function (userId, doc) {
     return true;

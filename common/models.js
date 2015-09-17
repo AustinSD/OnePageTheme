@@ -187,6 +187,7 @@ ReportTaskHistoryFilter = new Meteor.FilterCollections(TaskHistory, {
     Meteor.subscribe("task");
     //Meteor.subscribe("taskhistory");
     Meteor.subscribe("feed_entries");
+	Meteor.subscribe("uplist");
     
 }
 createUserServer = function (options) {
@@ -213,6 +214,10 @@ createTask = function (options) {
 createTaskHistory = function (options) {
 	Meteor.call('createTaskHistory',options);
 }
+createUp = function (options) {
+	Meteor.call('createUp',options);
+};
+
 Meteor.methods({
 	createUserServer: function (options) {
 		Accounts.createUser(options);
@@ -352,5 +357,13 @@ Meteor.methods({
 		var userId = Meteor.users.findOne({emails:{$elemMatch:{address: options.admin}}})._id;
 		Roles.addUsersToRoles(userId, ['admin']);
 		Meteor.users.update({_id: userId},{$set: {profile: {company: options.companyname}}});
+	},
+	createUp: function (options) {
+		
+			
+		Uplist.insert({
+			timestamp:	options.timestamp,
+			salesperson:			options.salesperson,
+		});
 	},
 });

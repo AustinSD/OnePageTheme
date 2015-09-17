@@ -8,3 +8,4 @@ TaskHistory = new Meteor.Collection('taskhistory');
 
 Feeds = new Meteor.Collection("feeds");
 FeedEntries = new Meteor.Collection("feed_entries");
+Uplist = new Meteor.Collection("uplist");
