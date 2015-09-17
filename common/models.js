@@ -224,7 +224,6 @@ Meteor.methods({
 			throw new Meteor.Error(413, "No Company");
 		if (options.asm.length == 0)
 			throw new Meteor.Error(413, "No ASM");
-
 		Cars.insert({
 			timestamp:	options.timestamp,
 			vehicle:		options.vehicle,
@@ -239,7 +238,7 @@ Meteor.methods({
 			username: 	options.username,
 			wash: 		options.wash,
 			company:		options.company
-		});
+		}, function(error, result) {});;
 	},
 	createCarHistory: function (carID) {
 		var options = Cars.findOne({_id: carID});

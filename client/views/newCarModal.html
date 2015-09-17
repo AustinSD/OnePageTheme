@@ -1,0 +1,176 @@
+<template name="newCarDialog">
+    <div class="modal fade" id="newCarDialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                    <h4 id="myModalLabel" class="modal-title"><i class="fa fa-car"></i> New Car</h4>
+                </div>
+  {{> quickForm collection="Cars" id="newCarDialog" type="insert"}}
+  </div>
+  </div>
+  </div>
+</template>
+
+<template name="newCarDialog2">
+    <!-- Modal -->
+    <div class="modal fade" id="newCarDialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                    <h4 id="myModalLabel" class="modal-title"><i class="fa fa-car"></i> New Car</h4>
+                </div>
+                <form id="newBody">
+                    <div class="modal-body">
+
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-3 control-label" for="vehicleNew">Vehicle</label>
+                            <div class="col-sm-8">
+                                <select id="vehicleNew" name="vehicleNew" class="form-control">
+                                    <option {{selected vehicle "Corolla"}}>Corolla</option>
+                                    <option {{selected vehicle "Camry"}}>Camry</option>
+                                    <option {{selected vehicle "Avalon"}}>Avalon</option>
+                                    <option {{selected vehicle "Yaris"}}>Yaris</option>
+                                    <option {{selected vehicle "Sienna"}}>Sienna</option>
+                                    <option {{selected vehicle "Tacoma"}}>Tacoma</option>
+                                    <option {{selected vehicle "Tundra"}}>Tundra</option>
+                                    <option {{selected vehicle "RAV4"}}>RAV4</option>
+                                    <option {{selected vehicle "Venza"}}>Venza</option>
+                                    <option {{selected vehicle "Highlander"}}>Highlander</option>
+                                    <option {{selected vehicle "FJ Cruiser"}}>FJ Crusier</option>
+                                    <option {{selected vehicle "4Runner"}}>4Runner</option>
+                                    <option {{selected vehicle "Sequoia"}}>Sequoia</option>
+                                    <option {{selected vehicle "Land Cruiser"}}>Land Cruiser</option>
+                                    <option {{selected vehicle "Prius"}}>Prius</option>
+                                    <option {{selected vehicle "Prius C"}}>Prius C</option>    
+                                    <option {{selected vehicle "Prius V"}}>Prius V</option>
+                                    <option {{selected vehicle "Matrix"}}>Matrix</option>
+                                    <option {{selected vehicle "Solara"}}>Solara</option>
+                                    <option {{selected vehicle "Celica"}}>Celica</option>
+                                    <option {{selected vehicle "Cressida"}}>Cressida</option>
+                                    <option {{selected vehicle "Pickup"}}>Pickup</option>
+                                    <option {{selected vehicle "Previa"}}>Previa</option>
+                                    <option {{selected vehicle "Tercel"}}>Tercel</option>
+                                    <option {{selected vehicle "Echo"}}>Echo</option>
+                                    <option {{selected vehicle "Scion FR-S"}}>Scion FR-S</option>
+                                    <option {{selected vehicle "Scion tC"}}>Scion tC</option>
+                                    <option {{selected vehicle "Scion iQ"}}>Scion iQ</option>
+                                    <option {{selected vehicle "Scion xB"}}>Scion xB</option>
+                                    <option {{selected vehicle "Scion xA"}}>Scion xA</option>
+                                    <option {{selected vehicle "Scion xD"}}>Scion xD</option>
+                                    <option {{selected vehicle "Scion FR-S"}}>Scion FR-S</option>
+                                    <option {{selected vehicle "Other"}}>Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-3 control-label" for="colorNew">Color</label>
+                            <div class="col-sm-8">
+                                <select id="colorNew" name="colorNew" class="form-control">
+                                    <option></option>
+                                    <option {{selected status "White"}}>White</option>
+                                    <option {{selected status "Black"}}>Black</option>
+                                    <option {{selected status "Blue"}}>Blue</option>
+                                    <option {{selected status "Light Blue"}}>Light Blue</option>
+                                    <option {{selected status "Silver"}}>Silver</option>
+                                    <option {{selected status "Grey"}}>Grey</option>
+                                    <option {{selected status "Red"}}>Red</option>
+                                    <option {{selected status "Burgandy"}}>Burgandy</option>
+                                    <option {{selected status "Green"}}>Green</option>
+                                    <option {{selected status "Mint Green"}}>Mint Green</option>
+                                    <option {{selected status "Brown"}}>Brown</option>
+                                    <option {{selected status "Beige"}}>Beige</option>
+                                    <option {{selected status "Orange"}}>Orange</option>
+                                    <option {{selected status "Yellow"}}>Yellow</option>
+                                    <option {{selected status "Purple"}}>Purple</option>
+                                    <option {{selected status "Beige"}}>Beige</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-3 control-label" for="tagnumNew">Tag Number</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" type="text" id="tagnumNew" placeholder="Tag Number">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-3 control-label" for="vinNew">VIN</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" type="text" id="vinNew" placeholder="VIN">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-3 control-label" for="asmNew">ASM</label>
+                            <div class="col-sm-8">
+                                <select class="form-control" id="asmNew" name="asmNew">
+                                    <option></option>
+                                    {{#with company}} {{#each company.asm}}
+                                    <option value={{this}}>{{this}}</option>
+                                    {{/each}} {{/with}}
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-3 control-label" for="teamNew">Team</label>
+                            <div class="col-sm-8">
+                                <select id="teamNew" name="teamNew" class="form-control">
+                                    <option {{selected status "TXM"}}>TXM</option>
+                                    <option {{selected status "Silver"}}>Silver</option>
+                                    <option {{selected status "Yellow"}}>Yellow</option>
+                                    <option {{selected status "Brown"}}>Brown</option>
+                                    <option {{selected status "Gold"}}>Gold</option>
+                                    <option {{selected status "Purple"}}>Purple</option>
+                                    <option {{selected status "Red"}}>Red</option>
+                                    <option {{selected status "Orange"}}>Orange</option>
+                                    <option {{selected status "Detail"}}>Detail</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-3 control-label" for="statusNew">Status</label>
+                            <div class="col-sm-8">
+                                <select id="statusNew" name="statusNew" class="form-control">
+                                    <option {{selected status "Prep"}}>Prep</option>
+                                    <option {{selected status "Ready"}}>Ready</option>
+                                    <option {{selected status "Waiting"}}>Waiting</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-3 control-label" for="notesNew">Notes</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" type="text" id="notesNew" placeholder="Notes">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-3 control-label" for="washNew">Wash</label>
+                            <div class="col-sm-8">
+                                <select id="washNew" class="form-control">
+                                    <option {{selected wash "Yes"}}>Yes</option>
+                                    <option {{selected wash "No"}}>No</option>
+                                    <option {{selected wash "In Progress"}}>In Progress</option>
+                                    <option {{selected wash "Already Washed"}}>Already Washed</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                </form>
+                <div class="modal-footer">
+                    <button data-dismiss="modal" class="btn-u btn-u-default" type="button">Close</button>
+                    <button class="btn-u save" type="button">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal -->
+</template>
