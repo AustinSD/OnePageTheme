@@ -44,7 +44,7 @@
                         <td>{{status}}</td>
                         <td>
                         {{#with lastNote _id}}
-	                        	{{timeParse time}}: {{note}}
+	                        	{{user}}: {{note}}
                         {{/with}}
                         </td>
                         <td>{{porter}}</td>
@@ -196,6 +196,13 @@
                             <label class="col-sm-3 control-label" for="notesNew">Notes</label>
                             <div class="col-sm-8">
                                 <input class="form-control" type="text" id="notesNew" placeholder="Notes">
+                                <div class="col-sm-8">
+                                {{#each notes}}
+                                <tr>
+                                    <td>{{user}}:  {{note}} - {{timeParse time}}</td>
+                                 </tr>
+                                {{/each}}
+                            </div>
                             </div>
                         </div>
                         <br>
@@ -327,7 +334,7 @@
                             <div class="col-sm-8">
                                 {{#each notes}}
                                 <tr>
-                                    <td>{{timeParse time}}: {{note}}</td>
+                                    <td>{{user}}:  {{note}} - {{timeParse time}}</td>
                                  </tr>
                                 {{/each}}
                             </div>
@@ -525,7 +532,7 @@
                             <div class="col-sm-8">
                                 {{#each notes}}
                                 <tr>
-                                    <td>{{timeParse time}}: {{note}}</td>
+                                    <td>{{user}}:  {{note}} - {{timeParse time}}</td>
                                  </tr>
                                 {{/each}}
                             </div>

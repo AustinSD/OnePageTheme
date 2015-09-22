@@ -70,7 +70,7 @@
       });
       if(template.find("#notesUpdate").value != ""){
         Cars.update(Session.get("carID"), {
-            $push: {notes:  {time: moment().format(),note: template.find("#notesUpdate").value}}
+            $push: {notes:  {time: moment().format(),note: template.find("#notesUpdate").value, user: Meteor.user().profile.name}}
           });
           template.find("#notesUpdate").value = "";
       };
@@ -133,7 +133,7 @@
       });
       if(template.find("#notesUpdateAdvisor").value != ""){
         Cars.update(Session.get("carID"), {
-            $push: {notes:  {time: moment().format(),note: template.find("#notesUpdateAdvisor").value}}
+            $push: {notes:  {time: moment().format(),note: template.find("#notesUpdateAdvisor").value, user: Meteor.user().profile.name}}
           });
           template.find("#notesUpdateAdvisor").value = "";
       }
@@ -177,16 +177,21 @@
         team: template.find("#teamNew").value,
         asm: template.find("#asmNew").value,
         status: template.find("#statusNew").value,
-        notes: [ {time: moment().format(),note: template.find("#notesNew").value}],
+        //notes: [ {time: moment().format(),note: template.find("#notesNew").value, user: Meteor.user().profile.name}],
         porter: '',
         username: Meteor.user().emails[0].address,
         wash: template.find("#washNew").value,
         company: Meteor.user().profile.company
       };
-      //if (ValidationCar.valid_name(properties.asm)) {
+      
+      console.log(properties);
+       if(template.find("#notesNew").value != ""){
+            properties.notes = [{time: moment().format(),note: template.find("#notesNew").value, user: Meteor.user().profile.name}];
+            console.log(properties);
+          };
+          
       createCar(properties);
-      $("#newCarDialog").modal("hide");
-      //} 	    
+      $("#newCarDialog").modal("hide");	    
     },
     'click .cancel': function() {
       $("#newCarDialog").modal("hide");
@@ -212,3 +217,4 @@
       }
     },
   };
+
