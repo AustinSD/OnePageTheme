@@ -11,7 +11,7 @@ Feed.collections(collections);
 var twitter_feed = {
 	_id: "Bryan's Twitter",
 	category: "Twitter",
-	link: "https://twitter.com/bryan619",
+	link: "https://twitter.com/dealerlogistics",
 	refresh_interval: 5000
 //_id: Meteor.settings.twitter_id,
 /*category: Meteor.settings.twitter_category,
@@ -24,7 +24,7 @@ var twitter_parameters = {
 consumer_secret: "dZqgB4JdWSeexTdxfvpHjakzBxVPAHcFt2FFP8O94tfIC7ZyvA",
 access_token: "381206011-oIHSdW6oAy3lgj7I78LoEWXkesGyKNpBZTpu8KSs",
 access_token_secret: "eiPUeNU3VtKvA7cEEAIBOBOrGj7KV9KwuanUUedXZf2NZ",
-screen_name: "bryan619"
+screen_name: "dealerlogistics"
 /*consumer_key: Meteor.settings.twitter_consumer_key,
 consumer_secret: Meteor.settings.twitter_consumer_secret,
 access_token: Meteor.settings.twitter_access_token,

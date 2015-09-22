@@ -9,4 +9,7 @@ Meteor.startup(function() {
 	if (Meteor.roles.find({name: 'Advisor'}).count() < 1 ) {
 		Roles.createRole('Advisor');
 	}
+	if (Meteor.roles.find({name: 'siteAdmin'}).count() < 1 ) {
+		Roles.createRole('siteAdmin');
+	}
 });

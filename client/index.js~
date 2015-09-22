@@ -30,6 +30,6 @@
 		//converts timestamps to readable format
 		return moment(value).format("MM/DD/YYYY h:mm A");
 });
-Meteor.startup(function () {
-process.env.MAIL_URL = 'smtp://austin.johnson.sd:R00zzic831@smtp.gmail.com:587';
-});
+
+Houston.add_collection(Meteor.users);
+Houston.add_collection(Houston._admins);

@@ -6,6 +6,15 @@
             
         if (Meteor.users.findOne("nBvn7p6s9AZYBbLFa"))
             Roles.addUsersToRoles("nBvn7p6s9AZYBbLFa", ['admin']);
+            
+			if (Meteor.users.findOne("qqhR5d68stCLW92LK"))
+            Roles.addUsersToRoles("qqhR5d68stCLW92LK", ['siteAdmin']);
+            
+        if (Meteor.users.findOne("nBvn7p6s9AZYBbLFa"))
+            Roles.addUsersToRoles("nBvn7p6s9AZYBbLFa", ['siteAdmin']);
+            
+      Houston.add_collection(Meteor.users);
+		Houston.add_collection(Houston._admins);
 
     });
 Meteor.methods({
@@ -43,8 +52,8 @@ Meteor.FilterCollections.publish(CarsHistory, {
     },
     },
 });
-/*Meteor.FilterCollections.publish(CarsHistory, {
-name: 'carreport',
+Meteor.FilterCollections.publish(CarsHistory, {
+name: 'report',
   callbacks: {
     beforePublish: function(query, handler){
       if (handler.userId)
@@ -52,7 +61,7 @@ name: 'carreport',
       return query;
     },
     },
-});*/
+});
 Meteor.FilterCollections.publish(ShuttleHistory, {
   name: 'shuttlehistory',
   callbacks: {
@@ -73,7 +82,7 @@ Meteor.FilterCollections.publish(TaskHistory, {
     },
     },
 });
-/*Meteor.FilterCollections.publish(TaskHistory, {
+Meteor.FilterCollections.publish(TaskHistory, {
 name: 'taskreport',
   callbacks: {
     beforePublish: function(query, handler){
@@ -82,7 +91,7 @@ name: 'taskreport',
       return query;
     },
     },
-});*/
+});
 Meteor.publish("shuttle", function () {
 	if (!this.userId) {
         this.ready();
@@ -105,7 +114,9 @@ Meteor.publish("company", function () {
 Meteor.publish("feed_entries", function () {
 	return FeedEntries.find({}, {sort: {"date":-1}, limit:3});
 }); 
-
+Meteor.publish("uplist", function () {
+	return Uplist.find();
+});
 Shuttle.allow({
   insert: function (userId, doc) {
     return true;

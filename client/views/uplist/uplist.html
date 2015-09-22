@@ -1,0 +1,96 @@
+<template name="uplist">    
+    
+ {{> newSalesDialog}}
+  <!-- Begin Content -->
+    <div class="col-md-12">
+        <!--Basic Table-->
+        <div class="panel panel-dark-blue margin-bottom-40">
+            <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-car"></i>Uplist</h3>
+                <div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Dropdown
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+   
+   {{#with company}} {{#each company.asm}}
+    <li><a onclick="fakeFunction('{{this}}')">{{this}}</a></li>
+                                {{/each}} {{/with}}
+  </ul>
+</div>
+            </div>
+            
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th class="col-md-3">Timestamp</th>
+                        <th class="col-md-3">Salesperson</th>
+                        <th class="col-md-6">Update</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each uplist}}
+                    <tr class={{statusClass status}}>
+                        <td>{{timeUplist timestamp}}</td>
+                        <td>{{salesperson}}</td>                 
+                        <td><a id="updateSales" class="btn btn-primary updateSales">Update Salesperson</a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+		</div>
+        <!--End Basic Table-->
+		</template>
+        
+        
+        
+        <template name="newSalesDialog">
+    <!-- Modal -->
+    <div class="modal fade" id="newSalesDialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                    <h4 id="myModalLabel" class="modal-title"><i class="fa fa-tasks"></i> Uplist</h4>
+                </div>
+                <form id="newBody">
+               <div class="modal-body">
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-3 control-label" for="time">Time</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" type="text" id="time" placeholder="Time">
+                            </div>
+                        </div>
+                  <br>
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-3 control-label" for="salesperson">Salesperson</label>
+                            <div class="col-sm-8" >
+                                <select class="form-control" id="asm" name="asm">
+                                    <option></option>
+                                    {{#with company}} {{#each company.salesperson}}
+                                    <option value={{this}}>{{this}}</option>
+                                    {{/each}} {{/with}}
+                                </select>
+                            </div>
+                        </div>
+                  <br>
+                       <div class="form-group form-group-sm">
+                            <label class="col-sm-3 control-label" for="uplist">Uplist</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" type="text" id="uplist" placeholder="uplist">
+                            </div>
+                        </div>
+                  <br>
+               </div>
+            </form>
+            <div class="modal-footer">
+               <a href="#" class="btn cancel">Cancel</a>
+               <a href="#" class="btn btn-primary save">Save uplist</a>
+            </div>
+         </div>
+      </div>
+   </div>
+</template>

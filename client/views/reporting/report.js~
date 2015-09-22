@@ -6,6 +6,8 @@ Template.report.helpers({
 			var date = moment();
 			var startTime = moment(date).format('YYYY-MM-01');
 			var finishTime = moment(date).format('YYYY-MM-30');
+			console.log(startTime);
+			console.log(finishTime);
 			return CarsHistory.find({"timestamp": {"$gte": startTime, "$lt": finishTime}}).count();
 		},
 		taskCount: function () {
@@ -135,6 +137,7 @@ Template.report.events ({
     selector: {"timestamp": {"$gte": startTime, "$lt": finishTime}},
     options: {limit: 999,skip: 0}
     };
+    console.log(myQuery);
   CarHistoryFilter.query.set(myQuery);
   	}
 });

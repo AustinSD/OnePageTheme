@@ -783,7 +783,8 @@
 /*Parallax Counter Block*/
 .parallax-counter {
   padding: 30px 0;
-  background: url(../images/wallpaper.png) repeat fixed;
+/*  background: url(../images/wallpaper.png) repeat fixed;*/
+background-color: #32566E;
 }
 
 .parallax-counter .counters {
@@ -827,7 +828,7 @@
   padding: 100px 0;
   position: relative;
   text-align: center;
-  background: #32566E;
+   background: url("images/slide2.jpg") center fixed;
 }
 
 .parallax-quote:after {
@@ -837,7 +838,7 @@
   height: 100%; 
   content: " ";
   position: absolute;
-  background: #32566E;
+  background: rgba(0,0,0,0.5);
 }
 
 .parallax-quote:before {
@@ -847,7 +848,11 @@
   height: 100%; 
   content: " ";
   position: absolute;
-  background: #32566E;
+  background: url(../images/patterns/gridtile.png) repeat;
+}
+
+#quote-button {
+  color: #fff;
 }
 
 .parallax-quote-in {
@@ -861,6 +866,11 @@
   font-size: 28px;
   text-transform: uppercase;
   font-family: 'Open Sans', sans-serif;
+}
+.parallax-quote-in h1 {
+  color: #fff;
+  font-size: 42px;
+  font-weight: 900;
 }
 
 .parallax-quote-in p:after,

@@ -55,8 +55,8 @@ CarHistoryFilter = new Meteor.FilterCollections(CarsHistory, {
   }
   // Other arguments explained later. See Configuration.
 });
-/*ReportCarHistoryFilter = new Meteor.FilterCollections(CarsHistory, {
-	name: 'carreport',
+ReportCarHistoryFilter = new Meteor.FilterCollections(CarsHistory, {
+	name: 'report',
 	//template: 'report',
     sort:{
     order: ['desc', 'asc'],
@@ -73,9 +73,9 @@ CarHistoryFilter = new Meteor.FilterCollections(CarsHistory, {
 		},
 	},
   pager: {
-    itemsPerPage: 1000,
+    itemsPerPage: 10000,
   }
-});*/
+});
 ShuttleHistoryFilter = new Meteor.FilterCollections(ShuttleHistory, {
   template: 'shuttlehistory',
     sort:{
@@ -167,9 +167,9 @@ TaskHistoryFilter = new Meteor.FilterCollections(TaskHistory, {
   }
   // Other arguments explained later. See Configuration.
 });
-/*ReportTaskHistoryFilter = new Meteor.FilterCollections(TaskHistory, {
+ReportTaskHistoryFilter = new Meteor.FilterCollections(TaskHistory, {
 	name: 'taskreport',
-	template: 'report',
+	//template: 'report',
 	filters: {
 		"name": {
 			title: 'Name',
@@ -178,15 +178,16 @@ TaskHistoryFilter = new Meteor.FilterCollections(TaskHistory, {
 			searchable: 'required'
 		}
 	},
-});*/
+});
   	 Meteor.subscribe("cars");
     Meteor.subscribe("carshistory");
     Meteor.subscribe("shuttle");
     //Meteor.subscribe("shuttlehistory");
     Meteor.subscribe("company");
     Meteor.subscribe("task");
-    Meteor.subscribe("taskhistory");
+    //Meteor.subscribe("taskhistory");
     Meteor.subscribe("feed_entries");
+	Meteor.subscribe("uplist");
     
 }
 createUserServer = function (options) {
@@ -213,6 +214,10 @@ createTask = function (options) {
 createTaskHistory = function (options) {
 	Meteor.call('createTaskHistory',options);
 }
+createUp = function (options) {
+	Meteor.call('createUp',options);
+};
+
 Meteor.methods({
 	createUserServer: function (options) {
 		Accounts.createUser(options);
@@ -352,5 +357,13 @@ Meteor.methods({
 		var userId = Meteor.users.findOne({emails:{$elemMatch:{address: options.admin}}})._id;
 		Roles.addUsersToRoles(userId, ['admin']);
 		Meteor.users.update({_id: userId},{$set: {profile: {company: options.companyname}}});
+	},
+	createUp: function (options) {
+		
+			
+		Uplist.insert({
+			timestamp:	options.timestamp,
+			salesperson:			options.salesperson,
+		});
 	},
 });
