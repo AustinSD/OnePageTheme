@@ -177,7 +177,7 @@
         team: template.find("#teamNew").value,
         asm: template.find("#asmNew").value,
         status: template.find("#statusNew").value,
-        //notes: [ {time: moment().format(),note: template.find("#notesNew").value, user: Meteor.user().profile.name}],
+        notes: [],
         porter: '',
         username: Meteor.user().emails[0].address,
         wash: template.find("#washNew").value,
