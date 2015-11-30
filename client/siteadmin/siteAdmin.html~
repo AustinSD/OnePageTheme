@@ -155,7 +155,7 @@
             {{#each users}}
                 <tr>
                     <td>
-                            <span data-toggle="modal" href="#deletesiteaccount" class="glyphicon glyphicon-trash clickable"></span>
+                            <span data-toggle="modal" href="#deleteaccount" class="glyphicon glyphicon-trash clickable"></span>
                             <span data-toggle="modal" href="#updateaccount" class="glyphicon glyphicon-pencil clickable"></span>
                             <span data-toggle="modal" href="#infoaccount" class="glyphicon glyphicon-info-sign clickable"></span>
                     </td>
@@ -206,7 +206,7 @@
     {{> modifyPorterModal}}
     {{> addUserSiteAdminModal }}
     {{> updateRolesModal}}
-    {{> deleteSiteAccountModal}}
+    {{> deleteAccountModal}}
     {{> infoAccountModal}}
     {{> updateAccountModal}}
 </template>
