@@ -13,11 +13,8 @@ Router.route('/', function () {
 Router.route('/home', function () {
   this.redirect('cars');
 });
-//Router.route('/home');
-//Router.route('/about');
-//Router.route('/meetstaff');
+
 Router.route('/signup');
-Router.route('/report');
 
 Router.route('/carshistory', {
   name: 'carshistory',
@@ -150,6 +147,22 @@ Router.route('/adminTemplate', {
   name: 'adminTemplate',
   path: '/adminTemplate',
   template: 'adminTemplate',
+  onBeforeAction: function () {
+    if (!Meteor.userId()) {
+		this.redirect('cars');
+  } else {
+    this.next();
+  }},
+  action: function () {
+  	this.layout('appLayout');
+    // render all templates and regions for this route
+    this.render();
+  }
+});
+Router.route('/siteAdmin', {
+  name: 'siteAdmin',
+  path: '/siteAdmin',
+  template: 'siteAdmin',
   onBeforeAction: function () {
     if (!Meteor.userId()) {
 		this.redirect('cars');
