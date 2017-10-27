@@ -1,6 +1,8 @@
 Meteor.startup(function () {
 // code to run on server at startup
-feedReader();
+
+// Removed for clean up
+//feedReader();
 });
 function feedReader() {
 var collections = {
