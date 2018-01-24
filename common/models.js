@@ -151,7 +151,8 @@ TaskHistoryFilter = new Meteor.FilterCollections(TaskHistory, {
     Meteor.subscribe("shuttle");
     Meteor.subscribe("company");
     Meteor.subscribe("task");
-    Meteor.subscribe("feed_entries");
+	Meteor.subscribe("feed_entries");
+	Meteor.subscribe("vehicles");
     
 }
 createUserServer = function (options) {

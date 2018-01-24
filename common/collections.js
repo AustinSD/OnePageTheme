@@ -5,6 +5,6 @@ Shuttle = new Meteor.Collection('shuttle');
 ShuttleHistory = new Meteor.Collection('shuttlehistory');
 Task = new Meteor.Collection('task');
 TaskHistory = new Meteor.Collection('taskhistory');
-
+Vehicles = new Meteor.Collection('vehicles')
 Feeds = new Meteor.Collection("feeds");
 FeedEntries = new Meteor.Collection("feed_entries");

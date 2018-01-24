@@ -102,6 +102,9 @@ Meteor.publish("task", function () {
 Meteor.publish("company", function () {
 	return Company.find();
 });
+Meteor.publish("vehicles", function () {
+	return Vehicles.find();
+});
 Meteor.publish("feed_entries", function () {
 	return FeedEntries.find({}, {sort: {"date":-1}, limit:3});
 }); 
@@ -173,6 +176,19 @@ Cars.deny({
   }
 });
 Task.allow({
+  insert: function (userId, doc) {
+    return true;
+  },
+
+  update: function (userId, doc, fieldNames, modifier) {
+    return true;
+  },
+
+  remove: function (userId, doc) {
+    return true;
+  }
+});
+Vehicles.allow({
   insert: function (userId, doc) {
     return true;
   },
