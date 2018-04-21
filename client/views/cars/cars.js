@@ -108,6 +108,11 @@
         companyname: Meteor.user().profile.company
       });
     },
+    vehicles: function() {
+      //return ["Car1", "Car2"];
+      console.log(Vehicles.find({MAKE:'TOYOTA'}));
+      return Vehicles.find({MAKE:'TOYOTA'});
+    },
     isCreateUser: function() {
       return Roles.userIsInRole(Meteor.user(), ['admin', 'Advisor']);
     },
